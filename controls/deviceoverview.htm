@@ -1,0 +1,90 @@
+﻿<#checkobjecttype objecttype="device">
+<#isonpodlocalprobe var="pod">
+<div id="overview-device" class="flex-layout">
+	<span class="prtg-plugin" data-plugin="status">
+		<#include file="controls\deviceoverviewsmalldata.htm">
+	</span>
+	<div class="panel space-between">
+    <div class="panel col-panel responsiveobjectoverview_panelA"> <!-- Left part-->
+      <div class="responsiveobjectoverview_panel1"> <!-- narrow: above panel 2; wide: on the right -->
+        <div class="zoomable">
+          <div style="position: relative">
+          	<div class="prtg-plugin deviceoverviewsensorvalues"
+          			data-plugin="channelgauges"
+          			data-objectid="<#objectid>"
+          			data-type="sensors">
+                <!--
+                {
+                "objects":<#table
+                					output='json'
+                					noraw='1'
+                					content='sensors'
+                					sortby='-position'
+                					count='100'
+                          filter_priority='4'
+                          filter_priority='5'
+                					columns='objid,position=treejson,sensor=textraw,info=treejson,minimum,maximum,lastvalue_,status=textraw,priority=raw,message=textraw'>
+                }
+                -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="responsiveobjectoverview_panel2"> <!-- narrow: below panel 1; wide: in the middle-->
+        <div class="prtg-plugin clear" data-plugin="prtg-table" data-sortable="tbody tr">
+        	<#table tableid="devicesensortable" content="sensors" columns="position=textshort,sensor=htmllong,status,message,minigraph,priority,checkbox" tools="edit,acknowledge,pause,fave,prio,scan,delete,position" sortby="position" sortable="true" links="true" count="100" refreshable="true">
+        </div>
+        <div id="sensortreelinks" style="<#system type="hideforreadonlyusers"> <#system type="hideforclusterdevice">">
+          <a class="actionbutton" href="/addsensor.htm?id=<#objectid>"><i class="ui-icon ui-icon-circle-plus"></i><#lang key="html.global.addsensor" default="Add Sensor"></a>
+          <a class="actionbutton display<#showsuggest count="1"> <#if value="@pod" is="true" then="hide" else="" varexpand="value">" title="<#lastautodisco recommender='true'>" onclick="_Prtg.objectTools.recommendNow.call(this,<#objectid>);return false;"><i class="ui-icon ui-icon-info"></i><#langjs key="js.contextmenus.RecommendNow" default="Recommend Now"></a>
+          <div class="tablebuttonbox display<#showsuggest count="1"> <#if value="@pod" is="true" then="hide" else="" varexpand="value">">
+            <h3 class="tabletitle"><#lang key="html.recommended.sensors" default="Recommended Sensors"></h3>
+            <div class="refreshable" refreshurl="/controls/recommendedsensors.htm?id=<#objectid>">
+              <#include file="/controls/recommendedsensors.htm">
+            </div>
+            <div class="oskhelpbox">
+              <div class="helpheader"><b><#lang key="html..deviceoverview.helprecommendedsensors" default="What is this?"></b></div>
+              <div>
+                <#lang key="html.deviceoverview.helprecommendedsensors" default="PRTG can inspect your devices to recommend useful sensor types. Add these sensors to get a much better and more detailed picture about the status of this device in the future.">
+              </div>
+            </div>
+          </div>
+          <div>
+            <#objectproperty name="sensorinfo" show="oskdef">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel col-panel responsiveobjectoverview_panelB"> <!-- Right part-->
+      <#system type='showhelp' tct="theater" page="deviceoverview" isreadonly="false" version="trial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="c-deviceoverview" isreadonly="false" version="commercial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="p-deviceoverview" isreadonly="false" version="podtest" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="pc-deviceoverview" isreadonly="false" version="podpayed" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <div class="<#selectionlist content="geomapprovider" asClass="true">">
+          <a href="geomap.htm?id=<#objectid>">
+            <div class="graphbox">
+              <div id="geomap_deviceoverview" class="refreshable geomap <#selectionlist content="geomapprovider">" refreshurl="/controls/geomap.htm?id=<#objectid>&width=410&height=130&maxlegenditems=4&domobjectid=geomap_deviceoverview&nolegend=1">
+                <#selectionlist content="locationlist" width="410" height="130" maxlegenditems="4" domobjectid="geomap_deviceoverview" nolegend="1">
+              </div>
+            </div>
+          </a>
+      </div>
+      <div class="graphbox">
+        <#sensor type="graph" forcesvg="true" graphid="1" graphtitle="@@notitle@@" charttext="@@period@@" bgcolor="#f3f2f2" clickurl="/device.htm?id=@objectid@%2526tabid=2" width="400" maxwidth="500" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+      </div>
+      <div class="graphbox">
+        <#sensor type="graph" forcesvg="true" graphid="2" graphtitle="@@notitle@@" charttext="@@period@@" bgcolor="#f3f2f2" clickurl="/device.htm?id=@objectid@%2526tabid=3" width="400" maxwidth="500" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+      </div>
+      <div class="graphbox">
+        <#sensor type="graph" forcesvg="true" graphid="3" graphtitle="@@notitle@@" charttext="@@period@@" bgcolor="#f3f2f2" clickurl="/device.htm?id=@objectid@%2526tabid=4" width="400" maxwidth="500" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+      </div>
+      <div class="graphbox">
+        <#sensor type="legend"  width="410" maxwidth="410">
+      </div>
+    </div>
+  </div>
+</div>

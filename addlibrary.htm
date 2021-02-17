@@ -1,0 +1,31 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.addlibrary.title" default="Add Library" var="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#lang key="html.addlibrary.node" default="Node" var="nodename">
+<#lang key="html.addlibrary.library" default="Library" var="libname"><#breadcrumbs  trail="<a href='/libraries.htm'>@libs</a>" varexpand="trail,this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1><#lang key="html.addlibrary.head" default="Add <b>Library</b>"></h1>
+	<#lang key="html.global.libraries" default="Libraries" var="libs">
+	<div id="content" class="ui-dialog-content">
+		<form id="addobjectdialogform" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form library-settings">
+			<#object type="settings" objecttype="library">
+			<#hiddenid>
+      <input type="hidden" id="targetid" name="targetid" value="<#inserturlparam parameter='targetid'>" target="<#inserturlparam parameter='target'>">
+			<#hiddenaddid>
+			<span id="defaultname" class="hidden"><#defaultname varexpand="type" type="@libname"></span>
+			<span id="nodename" class="hidden"><#defaultname varexpand="type" type="@nodename"></span>
+			<span id="alternatehead" class="hidden"><#lang key="html.addlibrary.headnode" default="Add <b>Library Node</b>"></span>
+			<div class="submitbuttonboxanchor">
+				<div class="submitbuttonbox" style="position: static!important;">
+					<input style="<#system type="hideforreadonlyusers">" class="submit btngrey button" type="submit" value="<#lang key="html.global.continuegt" default="Continue &gt;">">
+					<input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

@@ -1,0 +1,189 @@
+﻿/* report.css */
+body, p, h1, h2, h3, h4, div, td, th, dd, input, select, textarea, button {
+  font-family: "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-size: 11px;
+}
+
+body {
+  background: #fff;
+  background-image: none;
+  overflow: auto;
+  padding: 25px;
+  width: auto!important;
+  min-width: auto!important;
+}
+
+h1, h2 {
+  font-family: "Lucida Sans-Serif", "Segoe UI", Tahoma, Arial, Helvetica, Verdana, sans-serif;
+  font-size: 18px;
+  color: <#colorcode color="linkcolor">;
+  padding-bottom: 10px;
+  padding-left: 2px;
+  margin: 11px 0 5px 0;
+  max-width: 100%;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+div.avoid-page-break-inside{
+  display: inline-block;
+  page-break-inside: avoid!important;
+}
+div..avoid-page-break-inside:after{
+  content:"";
+  display:block;
+  height:0px;
+  visibility: hidden;
+}
+div#thepage {
+  background-color: <#colorcode color="mousegray">;
+  background-image: none;
+  border: none;
+  margin: 2px;
+  padding: 0;
+  width: 100%;
+}
+
+h1 {
+  font-weight: normal !important;
+}
+
+table {
+  padding-bottom: 15px;
+}
+
+table.table, table.overview {
+  width: 850px;
+}
+
+table.table tr td {
+  overflow: hidden;
+}
+
+.reportgraph {
+  padding-bottom: 15px;
+  padding-top: 0px;
+}
+
+.onereport {
+  margin-bottom: 10px;
+  margin-top: 0px;
+  page-break-after: always;
+}
+
+body>div:nth-last-of-type(2){
+  page-break-after: avoid;
+}
+
+#reportbody.report1 {
+  page-break-before: avoid;
+}
+
+.reportsensorlist {
+  border: 1px solid #888;
+  width: 850px;
+}
+
+.reportsensorlist td, .reportsensorlist th {
+  border-bottom: 1px solid #888;
+  border-right: 1px solid #888;
+}
+
+.reportsensorlist table {
+  border-spacing: 1px;
+  width: 100%;
+}
+
+.reportsensorlist table td {
+  border: 0px;
+  border-bottom: 1px solid <#colorcode color="lightgray">;
+  border-left: 1px solid <#colorcode color="lightgray">;
+}
+
+.reportsensorlist div.noblocklinks a {
+  display: block !important;
+}
+
+.reportsensorlist th {
+  font-weight: bold;
+}
+
+.reportsensorlist td div.onename {
+  overflow: hidden;
+  width: 155px;
+}
+
+td.rightalign {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.table .probegroupdevice .groupmenu, .table .probegroupdevice .probemenu {
+  opacity: 1!important;
+  color: #444 !important;
+}
+
+.onereport table.table thead.tabletitle th {
+  border: none !important;
+  font-size: 14px;
+}
+
+.onereport .radio-control>input[type="radio"] + .radio-control-label {
+  display: none;
+}
+
+.onereport .radio-control>input[type="radio"]:checked + .radio-control-label {
+  display: block;
+  padding: 6px;
+  border: none;
+  background: none;
+}
+
+.onereport .prtg-form fieldset>.control-group {
+  overflow: visible;
+}
+
+.onereport .prtg-form fieldset>.control-group .controls {
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid #fff;
+  background: <#colorcode color="lightgray">;
+}
+
+.onereport .prtg-form fieldset input, .onereport .prtg-form fieldset textarea {
+  background: none;
+}
+
+.onereport .prtg-form .controls select {
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.onereport .radio-control>input[type="radio"]:checked + .radio-control-label>i,
+.onereport .resettodefaultlink {
+  display: none;
+}
+
+.onereport .prtg-form fieldset legend {
+  font-size: 12px;
+}
+
+.onereport table.table, table.overview {
+  width: 100%;
+}
+
+.onereport input,
+.onereport select,
+.onereport textarea,
+ .onereport .radio-control .radio-control-label
+{color:#000!important}
+
+
+.onereport .prtg-form fieldset>.control-group .controls
+{
+  width:674px;
+}

@@ -1,0 +1,83 @@
+﻿<!--Monitoring Email Round Trip-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="quality_of_service_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="monitoring_backups.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring Email Round Trip</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring Email Round Trip</h1> 
+      <p>Email Round Trip sensors ensure the end-to-end delivery of emails and make it possible to monitor availability and performance of a complete email delivery process. <span class="f_ListBulleted">There are two sensor types for this task:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="smtp_pop3_round_trip_sensor.htm" class="topiclink">SMTP&amp;POP3 Round Trip Sensor</a> </span></li>
+<li><span class="f_BoldCustom"><a href="smtp_imap_round_trip_sensor.htm" class="topiclink">SMTP&amp;IMAP Round Trip Sensor</a> </span></li>
+</ul>
+<p>Both initially deliver an email to a mail server using SMTP. Afterwards the receiving mailbox is scanned using Post Office Protocol version 3 (POP3) or Internet Message Access Protocol (IMAP) until the email arrives. The test email contains a unique code in the topic which is used to identify the email, such as <span class="f_ItalicCustom">PRTG Roundtrip Mail: {6D136420-5A3E-46CF-871A-1DAF0C4F3D5D}</span></p>
+<p>When PRTG successfully received an email in this email round trip cycle, it marks the respective message for deletion on the mail server. Usually, a mail server will then delete this email. For best performance, we recommend using a dedicated email accounts for email round trip sensors.</p>
+<div class="p_ImageCaption"><div style="width:491px;padding:0px"><img src="monitoring-an-email-round-trip_zoom54.png" width="491" height="330" style="border:none" alt="Monitoring an Email Round Trip" title="Monitoring an Email Round Trip" /><p style="text-align:center"><span class="f_ImageCaption">Monitoring an Email Round Trip</span></p></div></div>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Click here to enlarge: <a href="http://media.paessler.com/prtg-screenshots/monitoring-an-email-round-trip.png" target="_blank" class="weblink">http://media.paessler.com/prtg-screenshots/monitoring-an-email-round-trip.png</a> </span></p>
+<p>In the scenario shown above, there are three steps in the round trip:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Step 1</span><br />
+<span class="f_ListBulleted">PRTG delivers an email via the SMTP protocol to a mail server (just like an email client).</span></li>
+<li><span class="f_BoldCustom">Step 2</span><br />
+<span class="f_ListBulleted">The SMTP server delivers the email to a POP3/IMAP server (which can be located at a remote site, in your local LAN or on the same server as well).</span></li>
+<li><span class="f_BoldCustom">Step 3</span><br />
+<span class="f_ListBulleted">Every few seconds PRTG connects to the POP3/IMAP server until the test email arrives.</span></li>
+</ul>
+<p class="p_InTopicHeading"><a id="configuration"></a><span class="f_InTopicHeading">Recommended Configuration</span></p>
+<p>Here is a simple concept to check delivery of email out of and into your organization:</p>
+<ol style="text-indent:0px; margin-left: 15px;list-style-position:outside;">
+<li value=""1""><span class="f_ListNumbered">Create a dedicated email account for this test in your mail system.</span></li>
+<li value=""2""><span class="f_ListNumbered">Set up an external email account (hosted mail server, free mail service, etc.) and configure it to send all emails back to this dedicated email account in your organization (which you created in </span><span class="f_ItalicCustom">Step 1</span><span class="f_ListNumbered">).</span></li>
+<li value=""3""><span class="f_ListBulleted">Set up a PR</span><span class="f_ListNumbered">TG round trip sensor to send an email to the external email account (which you created in </span><span class="f_ItalicCustom">Step 2</span><span class="f_ListNumbered">) using your network's mail server and then check for the email account on your mail system (which you created in </span><span class="f_ItalicCustom">Step 1</span><span class="f_ListNumbered">) for arrival of the email.</span></li>
+</ol>
+<p>With this technique you are testing multiple aspects of your email server setup. As long as the sensor shows a green light, this means:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">Your email server accepts emails via SMTP.</span></li>
+<li><span class="f_ListBulleted">Emails are being sent to the outside world (internet connection works, MX lookups work etc.).</span></li>
+<li><span class="f_ListBulleted">Emails from external mail server can be delivered into your mail system (this includes aspects like the fact that the MX records for your domain are correct, your mail server can be reached from the outside world, your email filtering is working etc.).</span></li>
+<li><span class="f_ListBulleted">Emails can be retrieved using POP3 (or IMAP).</span></li>
+</ul>
+<p class="p_Remarks"><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_Remarks">Please use dedicated email accounts with this sensor type. If you use more sensors of this type, please make sure that each sensor uses its own email accounts.</span></p>
+<p class="p_InTopicHeading"><a id="conclusion"></a><span class="f_InTopicHeading">Conclusion</span></p>
+<p>These two sensor types are a great tool to ensure delivery of email from and to your mail servers. Compared to the standard SMTP, POP3, and IMAP sensors, which only check the availability of these services, the two roundtrip sensor types actually monitor the complete transaction from accepting the email on the first email server to delivery of the email on the final POP3/IMAP server.</p>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Sensor Technologies—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="snmp_monitoring.htm" class="topiclink">Monitoring via SNMP</a></span></li>
+<li><span class="f_BoldCustom"><a href="wmi_monitoring.htm" class="topiclink">Monitoring via WMI</a></span></li>
+<li><span class="f_BoldCustom"><a href="ssh_monitoring.htm" class="topiclink">Monitoring via SSH</a></span></li>
+<li><span class="f_BoldCustom"><a href="packet_sniffer_monitoring.htm" class="topiclink">Monitoring Bandwidth via Packet Sniffing</a></span></li>
+<li><span class="f_BoldCustom"><a href="flow_monitoring.htm" class="topiclink">Monitoring Bandwidth via Flows</a></span></li>
+<li><span class="f_BoldCustom"><a href="bandwidth_monitoring_comparison.htm" class="topiclink">Bandwidth Monitoring Comparison</a></span></li>
+<li><span class="f_BoldCustom"><a href="quality_of_service_monitoring.htm" class="topiclink">Monitoring Quality of Service</a></span></li>
+<li><span class="f_BoldCustom"><a href="email_round_trip_monitoring.htm" class="topiclink">Monitoring Email Round Trip</a> </span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_backups.htm" class="topiclink">Monitoring Backups</a></span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_virtual_environments.htm" class="topiclink">Monitoring Virtual Environments</a></span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_databases.htm" class="topiclink">Monitoring Databases</a></span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_syslogs_and_snmp_traps.htm" class="topiclink">Monitoring Syslogs and SNMP Traps</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Email Round Trip,Email Round Trip Technology</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="quality_of_service_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="monitoring_backups.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

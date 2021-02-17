@@ -1,0 +1,126 @@
+﻿<#checkobjecttype objecttype="sensor">
+<div id="overview_sensor" class="<#udpsensor syslog="no-" trap="no-">flex-layout">
+  <span class="sensoroverview prtg-plugin" data-plugin="status">
+    <#include file="controls/sensoroverviewsmalldata.htm">
+  </span>
+  <div class="panel space-between">
+    <div class="panel col-panel stretch-items responsiveobjectoverview_panelA"> <!-- Left part-->
+      <div class="responsiveobjectoverview_panel1"> <!-- narrow: above panel 2; wide: on the right -->
+        <div class="sensoroverviewtoplistspreviews prtg-plugin clear" style="<#toplisttabstyle>" data-plugin="toplists">
+          <div class="refresh-on-change" refreshurl="/controls/toplists.htm?id=<#objectid>">
+            <#alltoplistinclude file="controls/toplistpreview.htm">
+          </div>
+          <div class="sensoroverviewtoplist" style="<#toplisttabstyle>;float:left;">
+            <div class="name">
+              Add Toplist
+            </div>
+            <div class="toplistsettings toplistcontainer toplist-add">
+              <div title="<#langjs key=" js.common.add " default="Add " >" class="toplistsettings add"
+              data-id="<#objectid>" data-subid="new" style="top:0;height:auto;<#system type='displaydependingonrights' right='write' hideobjectif='false'>">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="position:relative">
+          <div id="channelvalues" data-plugin="channelgauges" class="prtg-plugin" data-primarychannel='<#objectproperty name="primarychannel" show="number">'
+           data-objectid="<#objectid>" data-type="channels" data-sensortype="<#objectproperty name="sensorkind=textraw">">
+            <!--
+            {
+            "objects":<#table output='json'
+                      noraw='1'
+                      content='channels'
+                      count='*'
+                      sortby='name'
+                      columns='name=textraw,info=treejson,minimum,maximum,condition,lastvalue'>
+            }
+            -->
+          </div>
+        </div>
+      </div>
+      <div class="responsiveobjectoverview_panel2"> <!-- narrow: below panel 1; wide: in the middle-->
+
+        <div id="displaytable" class="clear">
+          <#cluster skiptagfornonclusterobject="true" type="state" var="title2">
+          <div class="prtg-plugin" data-plugin="prtg-table">
+            <#table skiptagforclusterobject="true" tableid="channeldisplaytable" content="channels"
+            showhide="1" columns="name,objid,lastvalue_,minimum,maximum,links" sortby="name" sortable="true" links="true" refreshable="true" count="101">
+          </div>
+          <div class="prtg-plugin" data-plugin="prtg-table">
+            <#table skiptagfornonclusterobject="true" tableid="channeldisplaytablecluster" content="channels"
+            columns="name,objid,lastvalue_,links" sortby="name" sortable="true" links="true" refreshable="true" count="101">
+          </div>
+          <div style="<#clusterdependent showfor='clustertreeobject'>" class="prtg-plugin" data-plugin="prtg-table">
+            <#table skiptagfornonclusterobject="true" varexpand="tabletitle" tabletitle="@title"
+            tableid="clustertable" content="clustervalues" columns="clusternode,status,lastvalue,message"
+            sortby="member" sortable="false" links="false" refreshable="true" tools="edit">
+          </div>
+
+          <div class="<#udpsensor syslog="prtg-plugin" trap="prtg-plugin" flow="prtg-plugin"> udpmessagepreview" data-plugin="prtg-udpmessages" data-objid="<#inserturlparam parameter="id">" data-preview="true" style="<#udpsensor none="display: none">" data-udptype="<#udpsensor syslog="syslog" trap="trap" flow="flow">" data-columns="<#udpsensor trap="datetime,source,host,message,value,msgid,name,knowntime,condition" syslog="datetime,source,message,host,knowntime,condition,tags,location,name,procid,msgid,value">">
+            <table cellspacing="0" class="table hoverable udpmessage">
+              <thead class="tabletitle">
+                <tr>
+                  <th colspan="12" style="<#udpsensor trap="display: none" flow="display: none">">Syslog messages</th>
+                  <th colspan="12" style="<#udpsensor syslog="display: none" flow="display: none">">Trap messages</th>
+                  <th colspan="12" style="<#udpsensor syslog="display: none" trap="display: none">">Flows</th>
+                </tr>
+              </thead>
+            </table>
+            <div class="udpmessages-output">
+              <p class="loading"></p>
+            </div>
+          </div>
+
+        </div>
+        <div style="<#system type=" correlationstatus " show="hideifoff ">" class="prtg-plugin clear"
+        data-plugin="prtg-table">
+          <#lang key="html.sensoroverview.correlation1" default="Similar Sensors" var="cortitle">
+          <#table content="correlation" tableid="correlationtable2" columns="value,channel,correlatedsensor"
+          sortby="-value" varexpand="tabletitle" tabletitle="@cortitle" count="10" sortable="false"
+          links="false" refreshable="true">
+        </div>
+          <div style="<#system type="correlationstatus" show="hideifoff" codeifon="display: none;">">
+            <div id="oskhelpbox" class="oskhelpbox">
+              <div>
+                <#lang key="html.sensor.overview.similarsensors.infotext1" default="The similar sensors analysis is a heuristic calculation that shows similar behavior of all sensors across your entire PRTG configuration. This way, PRTG can detect relationships between different components in your network that you might have never thought of and optimize your sensor usage.">
+              </div>
+              <div class="helpheader"><b><#lang key="html.sensor.overview.similarsensors.infotext2" default="Why can't I see any sensor similarities here?"></b></div>
+              <ul>
+                <li>
+                  <a href="systemsetup.htm?tabid=2" target="_blank"><#lang key="html.sensor.overview.similarsensors.infotext3" default="Similar Sensors Analysis is turned off because of your current configuration. You can enable the analysis in section Similar Sensors Detection of PRTG's System Administration"></a>
+                </li>
+                <li>
+                  <a href="help/similar_sensors.htm" target="_blank"><#lang key="html.sensor.overview.similarsensors.infotext4" default="For more information about Similar Sensors Analysis, please see PRTG Manual: Similar Sensors."></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <#objectproperty name="sensorinfo" show="oskdef">
+      </div>
+    </div>
+    <div class="panel col-panel nogrow-panel responsiveobjectoverview_panelB"> <!-- Right part-->
+      <#system type='showhelp' tct="theater" page="sensoroverview" isreadonly="false" version="trial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="c-sensoroverview" isreadonly="false" version="commercial" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="p-sensoroverview" isreadonly="false" version="podtest" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <#system type='showhelp' tct="theater" page="pc-sensoroverview" isreadonly="false" version="podpayed" var="tctfile">
+      <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >
+      <div class="graphbox">
+        <#sensor type="graph" forcesvg="true" graphid="0" graphtitle="@@notitle@@" charttext="@@period@@" bgcolor="#f3f2f2" clickurl="/sensor.htm?id=@objectid@%2526tabid=2" width="450" maxwidth="500" height="205" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+      </div>
+      <div class="graphbox">
+        <#sensor type="graph" forcesvg="true" graphid="1" graphtitle="@@notitle@@" charttext="@@period@@" bgcolor="#f3f2f2" clickurl="/sensor.htm?id=@objectid@%2526tabid=3" width="450" maxwidth="500" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+      </div>
+      <div class="graphbox">
+        <#sensor type="graph" forcesvg="true" graphid="2" graphtitle="@@notitle@@" charttext="@@period@@" bgcolor="#f3f2f2" clickurl="/sensor.htm?id=@objectid@%2526tabid=4" width="450" maxwidth="500" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+      </div>
+      <div class="graphbox">
+        <#sensor type="graph" forcesvg="true" graphid="3" graphtitle="@@notitle@@" charttext="@@period@@" bgcolor="#f3f2f2" clickurl="/sensor.htm?id=@objectid@%2526tabid=5" width="450" maxwidth="500" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+      </div>
+      <div class="graphbox">
+       <#sensor type="legend" width="400" maxwidth="500">
+      </div>
+    </div>
+  </div>
+ </div>

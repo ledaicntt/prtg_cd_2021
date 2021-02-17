@@ -1,0 +1,57 @@
+﻿<#checkobjecttype objecttype="group,probenode">
+<#objectid var="objid">
+<#objectstatus name="probegroupdevice">
+
+	<div class="overviewsmalldata ui-layout-north overviewsmalldatastatus<#objectstatus name="status" show="textraw"> overviewsmalldatastatus<#objectstatus name="condition" show="textraw">">
+  <table width="100%" >
+    <tr>
+      <td class="label">
+        <#lang key="html.devicedata.status" default="Status">:</td>
+      <td class="allowwordwrap" style="max-width:150px">
+				<div title="<#objectstatus name="message" show="treejson"> <#objectstatus name="condition" show="treejson">">
+					<b><span class="displayobjectstatus"><#objectstatus name="message" show="htmllong"> </span><#objectstatus name="condition"></b>
+				</div>
+      </td>
+      <td title="<#lang key="html.devicedata.sensors" default="Sensors">">
+					<b><#include file="/controls/treesensorswitches.htm">&nbsp;</b>
+					(<#lang key="html.addsensor.xsensors_of_ysensors" default="of">&nbsp;<span class='totalsens'><#objectstatus name="totalsens"></span>)
+			</td>
+    </tr>
+  </table>
+</div>
+<div class="overviewsmalldata">
+  <table width="100%" >
+    <tr>
+      <td style="<#if value="@objid" is="0" then="display: none;" else="" varexpand="value">">
+        <#lang key="html.devicedata.dependency" default="Dependency">:
+      </td>
+			<td>
+				<#lang key="html.sensorstatusdata.interval" default="Interval">:
+			</td>
+      <td class="<#if value="@objid" is="0" then="hide" varexpand="value">" style="<#showbyobjecttype showonlyforobjecttype="group">">
+      	<#lang key="html.devicedata.lastautodiscovery" default="Last Auto-Discovery">:
+      </td>
+      <td>
+        <#lang key="html.devicedata.ID" default="ID">:
+      </td>
+    </tr>
+    <tr>
+      <td style="<#if value="@objid" is="0" then="display: none;" else="" varexpand="value">">
+        <b><#objectstatus name="dependency"></b>
+      </td>
+			<td style="white-space:nobreak;">
+        <b status="interval"><#objectproperty name="interval" inherit="true"></b>
+      </td>
+      <td class="<#if value="@objid" is="0" then="hide" varexpand="value">"  style="<#showbyobjecttype showonlyforobjecttype="group">">
+        <dummy><b status="lastautodiscovery"><#lastautodisco></b></dummy>
+      </td>
+			<td><b>#<#objectid></b></td>
+    </tr>
+  </table>
+</div>
+
+<div style="position:relative;" class="<#selectionlist content="geomapprovider" asClass="true">">
+	<div id="geomap_grouptooltip" class="refreshable geomap <#selectionlist content="geomapprovider">" refreshurl="/controls/geomap.htm?id=<#objectid>&width=445&height=225&maxlegenditems=4&domobjectid=geomap_grouptooltip&nolegend=1">
+		<#selectionlist content="locationlist" width="445" height="225" maxlegenditems="4" domobjectid="geomap_grouptooltip" loadlater="true" nolegend="1">
+	</div>
+</div>

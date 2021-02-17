@@ -1,0 +1,25 @@
+﻿<#system type="denyreadonlyusers">
+<#lang key="html.addreport.title" default="Add Report" var="pagetitle">
+<#include file="includes\htmlheader.htm"  bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs  trail="<a href='/reports.htm'>Reports</a>" varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1><#lang key="html.addreport.head" default="Add <b>Report</b>"></h1>
+  <div id=content>
+    <form id="addobjectdialogform" action="/editsettings" method="post" class="prtg-form prtg-plugin" data-plugin="prtg-form">
+        <#object type="settings" objecttype="report">
+        <#hiddenid>
+        <#hiddenaddid>
+        <input type="hidden" name="targeturl" value="/report.htm?tabid=4">
+        <div class="submitbuttonboxanchor">
+          <div class="submitbuttonbox">
+            <input style="<#system type="hideforreadonlyusers">" class="submit actionbutton button" type="submit" value="<#lang key="html.global.continuegt" default="Continue &gt;">">
+            <input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+          </div>
+        </div>
+    </form>
+  </div>
+</div> 
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

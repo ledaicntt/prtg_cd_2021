@@ -1,0 +1,86 @@
+﻿<!--Glossary-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="appendix.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="list_of_abbreviations.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Glossary</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Glossary</h1> 
+      <p>This section explains special words used in the context of PRTG Network Monitor.<br />
+<img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />Here, only explanations are given. For information on where to find detailed instructions for a specific key word, please see the <span class="f_BoldCustom">Index</span> section. It is only available in the PDF version of this manual.</p>
+<p class="p_InTopicHeading"><a id="channel"></a><span class="f_InTopicHeading">Channel</span></p>
+<p>The monitoring data of a <a href="glossary.htm#sensor" class="topiclink">sensor</a> is shown in sensor channels. For example, for sensors that measure network traffic, there is one channel each for traffic <span class="f_ItalicCustom">in</span> and traffic <span class="f_ItalicCustom">out</span>. You can set various triggers for each channel, so you can define sensor status changes or notifications based on the monitoring data received.</p>
+<p class="p_InTopicHeading"><a id="cloud_probe"></a><span class="f_InTopicHeading">Cloud Probe</span></p>
+<p>The cloud probe relates to PRTG in the cloud like the <a href="glossary.htm#local_probe" class="topiclink">local probe</a> relates to PRTG on premises. When creating a PRTG in the cloud instance, the system automatically adds the cloud probe. The cloud probe is always running on the PRTG core server system that we host for you and shows monitoring values of your PRTG instance in the cloud. You can use the cloud probe to monitor devices, servers, and services that are publicly accessible in the internet like, for example, websites. To monitor your Local Area Network (LAN), you need at least one <a href="install_a_prtg_remote_probe.htm" class="topiclink">remote probe</a> installation in your network. The local probe is not available in PRTG in the cloud.</p>
+<p class="p_InTopicHeading"><a id="cluster"></a><span class="f_InTopicHeading">Cluster</span></p>
+<p>You can configure PRTG as a failover cluster for fail-safe monitoring. In a cluster, one or more <a href="glossary.htm#core_server" class="topiclink">core servers</a> work together in one configuration. Every node can monitor every device in a network for gapless monitoring, so you can additionally compare monitoring results measured from different perspectives.</p>
+<p class="p_InTopicHeading"><a id="cluster_node"></a><span class="f_InTopicHeading">Cluster Node</span></p>
+<p>Sometimes used as synonym for <a href="glossary.htm#node" class="topiclink">Node</a>.</p>
+<p class="p_InTopicHeading"><a id="cluster_probe"></a><span class="f_InTopicHeading">Cluster Probe</span></p>
+<p>When running PRTG in cluster mode, a cluster probe is automatically created. All <a href="glossary.htm#object" class="topiclink">objects</a> created on the cluster probe or below in the <a href="glossary.htm#device_tree" class="topiclink">device tree</a> are monitored by all nodes in the cluster. Create or move <a href="glossary.htm#object" class="topiclink">objects</a> there to monitor them fail-safely. If one node fails, the other nodes will continue to monitor them. You can add <a href="glossary.htm#group" class="topiclink">groups</a> and <a href="glossary.htm#device" class="topiclink">devices</a> to the probe. On a PRTG installation, the cluster probe runs as part of this installation's <a href="glossary.htm#local_probe" class="topiclink">local probe</a>. Your <a href="glossary.htm#remote_probe" class="topiclink">remote probes</a> can send monitoring data to your cluster nodes so you can view the data of each probe on each cluster node.</p>
+<p class="p_InTopicHeading"><a id="core_server"></a><span class="f_InTopicHeading">Core Server</span></p>
+<p>The central unit of PRTG. It receives monitoring data from the <a href="glossary.htm#probe" class="topiclink">probe(s)</a> and handles reporting and notifications, provides the web server for the user interfaces, and many other things. In a <a href="glossary.htm#cluster" class="topiclink">cluster</a>, one core server is installed on every node.</p>
+<p class="p_InTopicHeading"><a id="dashboard"></a><span class="f_InTopicHeading">Dashboard</span></p>
+<p>In the <span style="font-weight: bold;">Home</span> menu of the web interface are several pre-configured dashboards available that show a quick overview of the overall status of your monitoring configuration. You can create custom dashboards using the <a href="glossary.htm#maps" class="topiclink">Maps</a> function.</p>
+<p class="p_InTopicHeading"><a id="device"></a><span class="f_InTopicHeading">Device</span></p>
+<p>A device in PRTG represents a &quot;real&quot; physical device in the network. For an easily understandable tree structure, you usually create one PRTG device for each physical device you want to monitor (exceptions apply to some sensors that you can only create on the <a href="glossary.htm#local_probe" class="topiclink">local probe</a> device, and for sensor types that are not bound to a certain device, such as HTTP sensors, which are also usually created on the local probe). You can add one or more <a href="glossary.htm#sensor" class="topiclink">sensors</a> on every device.</p>
+<p class="p_InTopicHeading"><a id="device_tree"></a><span class="f_InTopicHeading">Device Tree</span></p>
+<p>The configuration of PRTG is represented in a hierarchical tree structure, the device tree, containing all <a href="glossary.htm#object" class="topiclink">objects</a>. While building the tree, you can relate to your network's topology to make your monitoring setup easy to understand.</p>
+<p class="p_InTopicHeading"><a id="failover_master"></a><span class="f_InTopicHeading">Failover Master (Node)</span></p>
+<p>If the <a href="glossary.htm#primary_master" class="topiclink">primary master</a> node fails, a <a href="glossary.htm#failover_node" class="topiclink">failover node</a> is promoted to current failover master and takes over the master role until the primary master node re-joins the <a href="glossary.htm#cluster" class="topiclink">cluster</a>.</p>
+<p class="p_InTopicHeading"><a id="failover_node"></a><span class="f_InTopicHeading">Failover Node</span></p>
+<p>In a <a href="glossary.htm#cluster" class="topiclink">cluster</a> a failover node monitors all <a href="glossary.htm#sensor" class="topiclink">sensors</a> on the <a href="glossary.htm#cluster_probe" class="topiclink">cluster probe</a>, providing monitoring data for the <a href="glossary.htm#core_server" class="topiclink">core server</a>. Additionally, it serves as a backup in case the <a href="glossary.htm#master_node" class="topiclink">master node</a> fails.</p>
+<p class="p_InTopicHeading"><a id="geo_maps"></a><span class="f_InTopicHeading">Geo Maps</span></p>
+<p>Geo Maps show the different locations of your devices on a map, depending on the location data that you provide in the settings of groups or devices. The tiles on the maps that represent your devices also show the overall status of a location. This is useful for monitoring distributed networks.</p>
+<p class="p_InTopicHeading"><a id="group"></a><span class="f_InTopicHeading">Group</span></p>
+<p>A group is an organizational unit in your PRTG tree structure that helps to arrange your devices. You can add devices or additional sub-groups to existing groups. This way you can model your physical network's topology within the PRTG configuration.</p>
+<p class="p_InTopicHeading"><a id="library"></a><span class="f_InTopicHeading">Library</span></p>
+<p>Libraries are a way to show parts of your <a href="glossary.htm#device_tree" class="topiclink">device tree</a> in a different layout or with different filters enabled. There is an editor available that allows you to create libraries directly in your browser.</p>
+<p class="p_InTopicHeading"><a id="local_probe"></a><span class="f_InTopicHeading">Local Probe</span></p>
+<p>When installing PRTG on premises, the PRTG local probe is installed together with the PRTG <a href="glossary.htm#core_server" class="topiclink">core server</a>. All <a href="glossary.htm#object" class="topiclink">objects</a> created on the local probe, or below it in the <a href="glossary.htm#device_tree" class="topiclink">device tree</a>, are monitored by the local core system. You can add <a href="glossary.htm#group" class="topiclink">groups</a> and <a href="glossary.htm#device" class="topiclink">devices</a> to the probe. If you use PRTG in the cloud, the <a href="glossary.htm#cloud_probe" class="topiclink">cloud probe</a> replaces the local probe. There are some <a href="differences_between_prtg_on_premises_and_prtg_in_the_cloud.htm" class="topiclink">differences between PRTG in the cloud and PRTG on premises</a>.</p>
+<p class="p_InTopicHeading"><a id="maps"></a><span class="f_InTopicHeading">Map</span></p>
+<p>Maps (sometimes referred to as &quot;<a href="glossary.htm#dashboard" class="topiclink">dashboard</a>&quot;) are a way to present monitoring the way you want to arrange it. There is an editor available that allows creating maps directly in your browser.</p>
+<p class="p_InTopicHeading"><a id="master_node"></a><span class="f_InTopicHeading">Master Node</span></p>
+<p>In a <a href="glossary.htm#cluster" class="topiclink">cluster</a>, the master node controls the settings and cluster management. It also takes over notifications. All changes to the monitoring configuration are made on the master node.</p>
+<p class="p_InTopicHeading"><a id="node"></a><span class="f_InTopicHeading">Node</span></p>
+<p>In a <a href="glossary.htm#cluster" class="topiclink">cluster</a> there is one <a href="glossary.htm#master_node" class="topiclink">master node</a> and one or more <a href="glossary.htm#failover_node" class="topiclink">failover nodes</a>. On each node, one PRTG <a href="glossary.htm#core_server" class="topiclink">core server</a> installation is running independently. All nodes are connected to each other, exchanging configuration and monitoring data.</p>
+<p class="p_InTopicHeading"><a id="object"></a><span class="f_InTopicHeading">Object</span></p>
+<p>All different items in the <a href="glossary.htm#device_tree" class="topiclink">device tree</a> are generally referred to as objects or monitoring objects. An object can be a <a href="glossary.htm#probe" class="topiclink">probe</a>, a <a href="glossary.htm#group" class="topiclink">group</a>, a <a href="glossary.htm#device" class="topiclink">device</a>, or a <a href="glossary.htm#sensor" class="topiclink">sensor</a>.</p>
+<p class="p_InTopicHeading"><a id="primary_master"></a><span class="f_InTopicHeading">Primary Master (Node)</span></p>
+<p>The <span class="f_ItalicCustom">primary</span> master node in a <a href="glossary.htm#cluster" class="topiclink">cluster</a> is the <a href="glossary.htm#node" class="topiclink">node</a> that is master by configuration. Only if it fails, one of the <a href="glossary.htm#failover_node" class="topiclink">failover nodes</a> becomes <a href="glossary.htm#failover_master" class="topiclink">failover master</a> and takes over the master role until the primary master node re-joins the cluster.</p>
+<p class="p_InTopicHeading"><a id="probe"></a><span class="f_InTopicHeading">Probe</span></p>
+<p>On a probe, the actual monitoring takes place. A probe can run as <a href="glossary.htm#local_probe" class="topiclink">local probe</a> on the local system where the <a href="glossary.htm#core_server" class="topiclink">core server</a> is installed. There are also <a href="glossary.htm#cluster_probe" class="topiclink">cluster probes</a> and <a href="glossary.htm#remote_probe" class="topiclink">remote probes</a>.</p>
+<p class="p_InTopicHeading"><a id="remote_probe"></a><span class="f_InTopicHeading">Remote Probe</span></p>
+<p>A remote probe is a small piece of software installed on a computer in the local or remote network. It scans the network from there and sends monitoring results to the <a href="glossary.htm#core_server" class="topiclink">core server</a>. Once the connection is established, the remote probe is shown in the PRTG tree structure. All <a href="glossary.htm#object" class="topiclink">objects</a> created on the remote probe, or below it in the <a href="glossary.htm#device_tree" class="topiclink">device tree</a>, are monitored by the remote system running the remote probe. You can add <a href="glossary.htm#group" class="topiclink">groups</a> and <a href="glossary.htm#device" class="topiclink">devices</a> to the probe. In a <a href="glossary.htm#cluster" class="topiclink">cluster</a>, remote probes can connect to all cluster nodes so you can view monitoring data of a probe on all nodes.</p>
+<p><a id="sensor"></a><span class="f_InTopicHeading">Sensor</span></p>
+<p>A sensor monitors one aspect of a <a href="glossary.htm#device" class="topiclink">device</a>. For example, monitoring if a device responds to a Ping request is done by one sensor. Monitoring the traffic of one Ethernet port of a router device is done by another sensor. For monitoring the CPU load of the local system yet another sensor is set up, and so on. The data of sensors is shown in their respective <a href="glossary.htm#channel" class="topiclink">channels</a>.</p>
+<p class="p_InTopicHeading"><a id="sensor_tree"></a><span class="f_InTopicHeading">Sensor Tree</span></p>
+<p>Sometimes used as synonym for <a href="glossary.htm#device_tree" class="topiclink">device tree</a>.</p>
+<p class="p_InTopicHeading"><a id="tickets"></a><span class="f_InTopicHeading">Tickets</span></p>
+<p><span class="f_BoldCustom"><a href="tickets.htm" class="topiclink">Tickets</a></span> are created by the system or a PRTG user and contain important messages or action steps for the administrator or another specific user to take. Every ticket should be viewed to take appropriate actions. You can access the list of tickets from the main menu.</p>
+<p class="p_InTopicHeading"><a id="xflow"></a><span class="f_InTopicHeading">xFlow</span></p>
+<p>Paessler designates all kinds of flow protocols as xFlow. Currently, PRTG supports NetFlow V5 and V9, IPFIX, sFlow V5, and jFlow V5.</p>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="appendix.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="list_of_abbreviations.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

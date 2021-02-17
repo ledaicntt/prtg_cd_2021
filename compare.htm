@@ -1,0 +1,49 @@
+﻿<#lang key="html.compare.title" default="Compare Graphs" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<div id="content" class="freeform prtg-plugin" data-plugin="comparison-multi">
+	<h1 class="sitecaption"><#lang key="html.compare.compareobjectgraphs2a" default="Compare Graphs of Two or More Monitoring Objects"></h1>
+		<wingui-hidden>
+		<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+		</wingui-hidden>
+		<div class="prtg-form">
+			<input type="hidden" id="comparecount" value="<#inserturlparam parameter="count">">
+			<fieldset>
+				<legend class="prtg-header"><#lang key="html.compare.Options" default="Options"></legend>
+				<div class="control-group">
+					<label for="channelsdropdown" class="control-label no_help"><#lang key="html.compare.wiza" default="Time Span"></label>
+					<div class="controls">
+						<div class="radio-control">
+							<input type="radio" class="radio graphid hidden" name="graphid" id="graphid1" value="1">
+							<label for="graphid1" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#system type="2period"></label>
+							<input type="radio" checked="checked" class="radio graphid hidden" name="graphid" id="graphid2" value="2">
+							<label for="graphid2" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#system type="3period"></label>
+							<input type="radio" class="radio graphid hidden" name="graphid" id="graphid3" value="3">
+							<label for="graphid3" class="radio-control-label"><i class="icon-gray icon-radio-on"></i><#system type="4period"></label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset id="compareobjects">
+				<legend class="prtg-header"><#lang key="html.compare.head" default="Data Comparison">
+					<wingui-hidden>
+					<i id="popout" class="right icon-dark icon-newwin" title="<#lang key="html.compare.opennewwin" default="Open in new window">"></i>
+					</wingui-hidden>
+				</legend>
+			</fieldset>
+		</div>
+	</div>
+<#lang key="html.compare.help.title2" default="Compare Objects" var="helptitle">
+<#lang key="html.compare.help.text2" default="This page is used to quickly compare the historic graphs of two monitoring objects (groups, devices and sensors).
+ Click 'Change' to select the objects you want to compare." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

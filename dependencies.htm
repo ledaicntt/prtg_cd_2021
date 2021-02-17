@@ -1,0 +1,70 @@
+﻿<#checkobjecttype objecttype="probenode,group">
+<#lang key="html.dependencies.title" default="Dependencies" var="pagetitle">
+<#objectproperty name="name" var="objectname">
+<#lang key="html.dependencies.title" default="Dependencies" var="title">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+
+<div id="main" data-title="<#pagetitle>" class="dependencies">
+<dummy class="prtg-plugin" data-plugin="status" style="height:100px;">
+    <#include file="controls\groupheader.htm" varexpand="title" title="@title">
+</dummy>
+<a class="button btngrey" href="/<#objectproperty type="nodename">.htm?id=<#objectid>"><#lang key="html.dependencies.backtogroup" default="Group View"></a>
+<a class="button btngrey" href="/dependencies_simple.htm?id=<#objectid>&filter_dependency=@above(2)"><#lang key="html.dependencies.tableselects" default="Select Dependencies Table"></a>
+<a class="button btngrey" href="/dependencies_simple.htm?id=<#objectid>&filter_dependency=2"><#lang key="html.dependencies.tablemasters" default="Master Dependencies Table"></a>
+<div id="content" class="loading">
+  <div class="prtg-plugin dependenciesGraph ui-layout-center"
+        style="min-width:100%;height:800px;background-color: white;"
+        data-plugin="dependenciesGraph"
+        data-objid="<#objectid>">
+<!--
+ {"objects":<#selectionlist
+    content="groupsanddevices_as_json"
+    id="0"
+    probes="1"
+    groups="@groups"
+    devices="1"
+    allowone="1"
+    allowself="1"
+    showsensor="1"
+    dependency="1"
+    altformat="1">
+  }
+ -->
+    <div id="dependencygraphlegend">
+        <div id="Zoom_Sunburst" class="olControlZoom olControlNoSelect">
+            <a class="olControlZoomIn olButton" data-placement="right" title="<#lang key="html.common.zoomin" default="Zoom&nbsp;in">">+</a>
+            <a class="olControlZoomOut olButton" data-placement="right" title="<#lang key="html.common.zoomout" default="Zoom&nbsp;out">">-</a></div>
+        <div class="radio-control" style="display:inline-block;<#system type="browserdependent" browsertype="Trident/" aboveversion='0'  browsercontent="display:none;">">
+            <input checked="checked" class="radio hidden" type="radio" value="false" name="showhidemaster" id="hidemaster"><label for="hidemaster" class="radio-control-label inline"><i class="icon-gray icon-radio-on"></i><#lang key="html.dependecies.mastershowthem" default="Hide Master Dependencies"></label>
+            <input class="radio hidden" type="radio" value="true" name="showhidemaster" id="showmaster"><label for="showmaster" class="radio-control-label inline"><i class="icon-gray icon-radio-on"></i><#lang key="html.dependecies.masterhidethem" default="Show Master Dependencies"></label>
+        </div>
+        <div class="legend Parent"></div><#lang key="dependencies.legend.parent" default="Parent Dependency">
+        <div class="legend Master"></div><#lang key="dependencies.legend.master" default="Master Dependency">
+        <div class="legend Select"></div><#lang key="dependencies.legend.select" default="Select Dependency">
+        <div class="legend Broken"></div><span class="Broken"><#lang key="dependencies.legend.broken" default="Broken Dependency"></span>
+    </div>
+    <svg id="dependencygraph" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <marker id="markerCircle" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refx="5" refy="5"><circle cx="5" cy="5" r="3" style="stroke: none;"/></marker>
+            <marker id="Master" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10,0 l 0,10 l -10,-5 z"></path></marker>
+            <marker id="Select" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" orient="auto"><path d="M 10,0 l 0,10 l -10,-5 z"></path></marker>
+            <symbol id="zoomicon">
+                <circle cx="7" cy="7" r="7" stroke-width="0" fill="<#colorcode color="darkgray">" />
+                <circle cx="7" cy="7" r="5" stroke-width="0" fill="white" />
+                <circle cx="7" cy="7" r="3" stroke-width="0" fill="<#colorcode color="darkgray">" />
+                <circle cx="7" cy="7" r="1" stroke-width="0" fill="white" />
+            </symbol>
+        </defs>
+    </svg>
+  </div>
+</div>
+<#lang key="html.dependencies.help.title" default="Dependency Details" var="helptitle">
+
+<#lang key="html.dependencies.help.text" default="[p]This page shows you all dependencies between sensors and objects. The lines follow a color code to show the kind of dependency:[/p] [p][b]Grey:[/b] inherited[br] [b]Red:[/b] source[br] [b]Blue:[/b] custom[br] [b]Green:[/b] master[br][/p] [p][a href='/help/show_dependencies.htm' target='_blank']][b]Help: Show Dependencies[/b][/a][/p][/p]" var="helptext">
+
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

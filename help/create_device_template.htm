@@ -1,0 +1,145 @@
+﻿<!--Create Device Template-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="multi_edit_lists.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="show_dependencies.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Create Device Template</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Create Device Template</h1> 
+      <p>If you want to add a certain device several times, you can create a device template from an existing device in your device tree. When creating a device template, PRTG will save information for nearly all sensors on this device to a template file that you can later use in combination with <span class="f_BoldCustom"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a> </span>(<a href="create_device_template.htm#exceptions" class="topiclink">restrictions</a> apply for a few sensor types). </p>
+<p>From the sensors, all relevant settings are saved, except settings that refer to other objects, such as <a href="scheduling.htm" class="topiclink">schedules</a>, <a href="notifications.htm" class="topiclink">notification triggers</a>, and <a href="user_access_rights.htm" class="topiclink">access rights</a>. PRTG will automatically revert them to <span class="f_BoldCustom">Inherit</span>.</p>
+<p>To start, right-click a device in your device tree. From the <a href="context_menus.htm" class="topiclink">context menu</a>, select <span class="f_BoldCustom">Create Device Template...</span>. An assistant appears.</p>
+<div class="p_ImageCaption"><div style="width:250px;padding:0px"><img src="device_template2_zoom45.png" width="250" height="433" style="border:none" alt="Create Device Template Assistant" title="Create Device Template Assistant" /><p style="text-align:center"><span class="f_ImageCaption">Create Device Template Assistant</span></p></div></div>
+<p class="p_InTopicHeading"><a id="settings"></a><span class="f_InTopicHeading">Device Template Settings</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Choose Template Name</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">File Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted">Enter a name under which PRTG will store the file. Template files have the extension <span class="f_ItalicCustom">.odt</span> in the <span class="f_ItalicCustom">\PRTG Network Monitor\devicetemplates</span> sub-directory of <a href="data_storage.htm" class="topiclink">your PRTG core installation</a> (of the Master node, if in a <a href="clustering.htm" class="topiclink">cluster</a>). If a file with this name already exists in this directory, you will see an according error message.</p>
+<p class="p_ListBulleted"><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The device templates folder is not accessible on PRTG in the cloud. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Template Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter a meaningful display name for the template as it will appear in the web interface.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Exclude Sensors</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select sensors that you do not want to include into the device template. Mark the corresponding checkboxes of the sensors that you do not want to include into the device template.</span></p>
+<p class="p_ListBulleted"><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted"><a href="create_device_template.htm#exceptions" class="topiclink">Sensors that cannot be saved into templates</a> will not appear in this list.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted"><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">Sensor types that dynamically scan for available monitoring items when you add the sensor to a device will not appear in this list. PRTG includes these sensors automatically into the template if they support template functionality. You cannot exclude them from the device template that you create. </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>Click the <span class="f_BoldCustom">Continue </span>button to save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p>If your template file was saved successfully, you will see an according message and can review the sensors that were added. Click <span class="f_BoldCustom">OK</span> to finish. The device template is now stored in the program path of your PRTG core installation. Your device template file contains all sensors, including their settings, of the original device.</p>
+<p>During your next auto-discovery, choose the <span class="f_BoldCustom">Automatic sensor creation using specific device template(s)</span> option and select the name of your newly created device template from the list. PRTG will then try to discover the stored sensor types on the new (or existing) device. If the physical device answers to a sensor request, the sensor is added to the PRTG device. For detailed information, please see <span class="f_BoldCustom"><a href="auto_discovery.htm" class="topiclink">Auto-Discovery</a></span> section.</p>
+<p class="p_InTopicHeading"><a id="exceptions"></a><span class="f_InTopicHeading">Settings That Are Not Saved</span></p>
+<p>There are a few settings that you cannot save into a device template, so PRTG will set them to default, for example, the <span class="f_ItalicCustom">Dependency Type</span> setting <span class="f_BoldCustom">Master object for parent</span> (in <span class="f_BoldCustom">Schedules and Dependencies </span>section) and <span class="f_ItalicCustom">Result Handling</span> settings <span class="f_BoldCustom">Write result do disk</span> (because this is intended for debugging purposes only). Also, settings in the <span class="f_BoldCustom">Access Rights</span> section are not saved to avoid security flaws.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />In general, you cannot save all <span style="font-weight: bold;"><a href="sensor_settings.htm" class="topiclink">Sensor Settings</a></span> and <span style="font-weight: bold;"><a href="sensor_channels_settings.htm" class="topiclink">Sensor Channels Settings</a></span> (for example, channel limits) of sensor types that dynamically scan for available monitoring items when you add the sensor. This affects, for example, <span class="f_BoldCustom">traffic sensors</span> where you can choose interfaces that you want to monitor in the <a href="add_a_sensor.htm" class="topiclink">add sensor dialog</a>.</p>
+<p>Furthermore, due to internal restrictions, the following sensor types will not be saved into a device template:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Amazon CloudWatch sensors</span></li>
+<li><span class="f_BoldCustom">Business Process</span></li>
+<li><span class="f_BoldCustom">Core/Probe/Cluster Health</span></li>
+<li><span class="f_BoldCustom">DHCP</span></li>
+<li><span class="f_BoldCustom">Docker Container Status</span></li>
+<li><span class="f_BoldCustom">Dropbox</span></li>
+<li><span class="f_BoldCustom">Enterprise Virtual Array</span></li>
+<li><span class="f_BoldCustom">Google Analytics</span></li>
+<li><span class="f_BoldCustom">Google Drive</span></li>
+<li><span class="f_BoldCustom">IPFIX</span></li>
+<li><span class="f_BoldCustom">IPFIX (Custom)</span></li>
+<li><span class="f_BoldCustom">IPMI System Health</span></li>
+<li><span class="f_BoldCustom">jFlow V5</span></li>
+<li><span class="f_BoldCustom">jFlow V5 (Custom)</span></li>
+<li><span class="f_BoldCustom">Microsoft OneDrive</span></li>
+<li><span class="f_BoldCustom">NetApp cDOT Aggregate (SOAP)</span></li>
+<li><span class="f_BoldCustom">NetApp cDOT I/O (SOAP)</span></li>
+<li><span class="f_BoldCustom">NetApp cDOT Physical Disk (SOAP)</span></li>
+<li><span class="f_BoldCustom">NetApp cDOT System Health (SOAP)</span></li>
+<li><span class="f_BoldCustom">NetFlow V5</span></li>
+<li><span class="f_BoldCustom">NetFlow V5 (Custom)</span></li>
+<li><span class="f_BoldCustom">NetFlow V9</span></li>
+<li><span class="f_BoldCustom">NetFlow V9 (Custom)</span></li>
+<li><span class="f_BoldCustom">Packet Sniffer</span></li>
+<li><span class="f_BoldCustom">Packet Sniffer (Custom)</span></li>
+<li><span class="f_BoldCustom">Passive Application Performance</span></li>
+<li><span class="f_BoldCustom">QoS (Quality of Service)</span></li>
+<li><span class="f_BoldCustom">QoS (Quality of Service) Roundtrip</span></li>
+<li><span class="f_BoldCustom">Sensor Factory</span></li>
+<li><span class="f_BoldCustom">sFlow</span></li>
+<li><span class="f_BoldCustom">sFlow (Custom)</span></li>
+<li><span class="f_BoldCustom">SNMP Trap Receiver</span></li>
+<li><span class="f_BoldCustom">Syslog Receiver</span></li>
+<li><span class="f_BoldCustom">WMI Security Center</span></li>
+</ul>
+<p class="p_InTopicHeading"><a id="notes"></a><span class="f_InTopicHeading">No Update of Device Templates</span></p>
+<p>Once a device template is created, it is not possible to add additional sensors to it via the PRTG web interface. If you want to create a template with an extended set of sensors, please create a new one. </p>
+<p><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" />When saving a new device template, all internal IDs of the sensors in this template are updated. Because of this, when you apply a new template to an existing device, PRTG will newly create all sensors that this template contains on this device, even if these sensors were previously created using another device template!</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />You cannot directly delete device templates. </p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />You cannot edit existing template files on PRTG in the cloud.</p>
+<p class="p_InTopicHeading"><a id="related"></a><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="clone_object.htm" class="topiclink">Clone Object</a> </span></li>
+<li><span class="f_BoldCustom"><a href="manage_device_tree.htm" class="topiclink">Manage Device Tree</a></span></li>
+</ul>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Ajax Web Interface—Advanced Procedures—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="toplists.htm" class="topiclink">Toplists</a></span></li>
+<li><span class="f_BoldCustom"><a href="arrange_objects.htm" class="topiclink">Arrange Objects</a></span></li>
+<li><span class="f_BoldCustom"><a href="clone_object.htm" class="topiclink">Clone Object</a></span></li>
+<li><span class="f_BoldCustom"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit</a></span></li>
+<li><span class="f_BoldCustom"><a href="create_device_template.htm" class="topiclink">Create Device Template</a></span></li>
+<li><span class="f_BoldCustom"><a href="show_dependencies.htm" class="topiclink">Show Dependencies</a></span></li>
+<li><span class="f_BoldCustom"><a href="geo_maps.htm" class="topiclink">Geo Maps</a></span></li>
+<li><span class="f_BoldCustom"><a href="notifications.htm" class="topiclink">Notifications</a></span></li>
+<li><span class="f_BoldCustom"><a href="libraries.htm" class="topiclink">Libraries</a></span></li>
+<li><span class="f_BoldCustom"><a href="reports.htm" class="topiclink">Reports</a></span></li>
+<li><span class="f_BoldCustom"><a href="maps.htm" class="topiclink">Maps</a></span></li>
+<li><span class="f_BoldCustom"><a href="setup.htm" class="topiclink">Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="ajax_gui_basic.htm" class="topiclink">Ajax Web Interface—Basic Procedures</a></span></li>
+<li><span class="f_BoldCustom"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+</ul>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+<li><span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Device,Device Template</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="multi_edit_lists.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="show_dependencies.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

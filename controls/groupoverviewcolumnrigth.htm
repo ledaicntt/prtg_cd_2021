@@ -1,0 +1,29 @@
+﻿<div id="overviewgraphs">
+  <#system type='showhelp' tct="theater" page="groupoverviewcolumnrigth" isreadonly="false" version="trial" var="tctfile">
+  <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+  <#system type='showhelp' tct="theater" page="c-groupoverviewcolumnrigth" isreadonly="false" version="commercial" var="tctfile">
+  <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+  <#system type='showhelp' tct="theater" page="p-groupoverviewcolumnrigth" isreadonly="false" version="podtest" var="tctfile">
+  <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+  <#system type='showhelp' tct="theater" page="pc-groupoverviewcolumnrigth" isreadonly="false" version="podpayed" var="tctfile">
+  <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+  <div class="<#selectionlist content="geomapprovider" asClass="true">">
+	  <a href="geomap.htm?id=<#objectid>">
+	  <div class="graphbox">
+		<div id="geomap_deviceoverview" class="refreshable geomap <#selectionlist content="geomapprovider">" refreshurl="/controls/geomap.htm?id=<#objectid>&width=325&height=130&maxlegenditems=4&domobjectid=geomap_deviceoverview&nolegend=1">
+		<#selectionlist content="locationlist" width="325" height="130" maxlegenditems="4" domobjectid="geomap_deviceoverview" nolegend="1">
+		</div>
+	  </div>
+	  </a>
+  </div>
+  <div class="graphbox">
+	<#group type="graph" forcesvg="true" graphid="1" bgcolor="#f3f2f2" graphtitle="@@notitle@@"  charttext="@@period@@" onclickscript="_Prtg.Plugins['prtg-tabs'].plugin.activateTab(2,true);return(false)" width="325" maxwidth="410" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+  </div>
+  <div class="graphbox">
+	<#group type="graph" forcesvg="true" graphid="2" bgcolor="#f3f2f2" graphtitle="@@notitle@@"  charttext="@@period@@" onclickscript="_Prtg.Plugins['prtg-tabs'].plugin.activateTab(3,true);return(false)" width="325" maxwidth="410" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+  </div>
+  <div class="graphbox">
+	<#group type="graph" forcesvg="true" graphid="3" bgcolor="#f3f2f2" graphtitle="@@notitle@@"  charttext="@@period@@" onclickscript="_Prtg.Plugins['prtg-tabs'].plugin.activateTab(4,true);return(false)" width="325" maxwidth="410" height="130" graphstylefile="graphstyling.htm" animationandinteraction="0" datastylefile="graphdatastyling.htm" graphstyling="showLegend='0'" refreshable="true">
+  </div>
+  <div class="graphbox"><#sensor type="legend" width="276"></div>
+</div>

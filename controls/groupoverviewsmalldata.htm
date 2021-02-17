@@ -1,0 +1,45 @@
+﻿<#objectstatus name="objid" show="text" var="objid">
+  <div status="objectstatus,class,overviewsmalldata " class="overviewsmalldata overviewsmalldatastatus<#objectstatus name="status" show="textraw"> overviewsmalldatastatus<#objectstatus name="condition" show="textraw">">
+		<table style="width:100%">
+			<tr class="overviewsmalldatatitles">
+				<td><#lang key="html.devicedata.status" default="Status">:</td>
+				<td><#lang key="html.devicedata.sensors" default="Sensors">:</td>
+				<td><label for="treesearch"><#lang key="html.devicedata.searchtext" default="Search">:</label></td>
+				<td rowspan="2"><#include file="/controls/treeswitches.htm"></td>
+				<td class="size-by-switch <#system type='groupviewsize' overwriteifnottree='show'>"><#lang key="html.devicedata.sizeby" default="Size by">:</td>
+			  <td class="<#if value="@objid" is="0" then="hide" varexpand="value">"><#lang key="html.devicedata.dependency" default="Dependency">:</td>
+				<td><#lang key="html.devicedata.defaultinterval" default="Default Interval">:</td>
+        <td class="<#if value="@objid" is="0" then="hide" varexpand="value">" style="<#showbyobjecttype showonlyforobjecttype="group">"><#lang key="html.devicedata.lastautodiscovery" default="Last Auto-Discovery">:</td>
+				<td><#lang key="html.devicedata.ID" default="ID">:</td>
+				<td rowspan="2" class="qrcoderow" width="50">
+					<div class="prtg-plugin qrcode" data-plugin="prtgqrcode" data-placement="left" title='<#lang key="html.qrcode.tooltip" default="Click to enlarge">' data-name='<#objectproperty name="Name" show="textraw" utfencode="true">' data-host=''></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="allowwordwrap">
+					<div message="title" status="messagetitle,title" title="<#objectstatus name="message" show="treejson"> <#objectstatus name="condition" show="treejson">">
+						<b><span class="displayobjectstatus" status="message"><#objectstatus name="message" show="htmllong"> </span><dummy status="condition"><#objectstatus name="condition"></dummy></b>
+					</div>
+				</td>
+				<td style="min-width:150px;white-space:normal;">
+					<b><#include file="/controls/treesensorswitches.htm">&nbsp;</b>
+					(<#lang key="html.addsensor.xsensors_of_ysensors" default="of">&nbsp;<span class='totalsens' status="totalsens"><#objectstatus name="totalsens"></span>)
+				</td>
+				<td style="min-width:90px;">
+					<div class="treesearchbox"><input tabindex="1" id="treesearch" class="searchstring" style="border:none!important" data-trigger="manual" titleX="<#langjs key="html.sensortree.searchtitle" default="RETURN for next hit">" type="text" placeholder="<#lang key="html.global.search2" default="Search...">" name="searchtext"><label for="treesearch" class="ui-icon ui-icon-search ui-icon-gray searchlogo"></label></div>
+				</td>
+				<td class="size-by-switch control <#system type='groupviewsize' overwriteifnottree='prtg-plugin'>" data-plugin="groupviewsize"></td>
+	      <td style="<#if value="@objid" is="0" then="display: none;" else="" varexpand="value">">
+	        <b><#objectstatus name="dependency"></b>
+	      </td>
+				<td style="white-space:nobreak;">
+          <#lang key="html.global.everyintervalevery" default="every">
+          <b status="interval"><#objectproperty name="interval" inherit="true"></b>
+				</td>
+        <td class="<#if value="@objid" is="0" then="hide" varexpand="value">"  style="<#showbyobjecttype showonlyforobjecttype="group">">
+          <dummy><b status="lastautodiscovery"><#lastautodisco></b></dummy>
+        </td>
+				<td><b>#<#objectid></b></td>
+			</tr>
+	 	</table>
+	 </div>

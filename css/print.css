@@ -1,0 +1,66 @@
+﻿/* print.css */
+
+/* macht das Drucken möglich -> von Images die über CSS eingebunden werden */
+* {
+  -webkit-print-color-adjust:exact;
+}
+
+body {
+  background: #fff;
+  background-image: none;
+  margin-top: 0px;
+  padding-top: 0px;
+/*
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform: scale(.75);
+  -webkit-transform: scale(.75);
+*/
+}
+div#thepage {
+  padding: 0;
+  margin: 2px;
+  background-image: none;
+  background-color: #fff;
+  border: 1px solid #3A5C86;
+}
+#alarmnotify,
+.searchlogo,
+.searchbox,
+.searchstring,
+#statborder,
+div#refreshmessage,
+div#menus,
+.buttonbox,
+.submitbuttonbox,
+#sendfeedbackbox,
+#footertable,
+.tabs-hide {
+  display: none;
+}
+.anchors {
+  display: block;
+}
+.ui-tabs-nav {
+  display: inline-block;
+}
+thead {
+  display: table-header-group;
+}
+
+img{
+  page-break-inside: avoid;
+}
+
+table { page-break-inside:auto }
+tr    { page-break-inside:avoid!important; page-break-after:auto }
+thead { display:table-header-group }
+tfoot { display:table-footer-group }
+
+
+#table_statstable td.col-sensor,
+#table_statstable td.col-sensor > a{
+	width: 20em;
+	white-space: normal;
+	overflow: visible;
+}

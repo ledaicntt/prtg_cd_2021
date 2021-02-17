@@ -1,0 +1,79 @@
+﻿<!--Inheritance of Settings-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="object_hierarchy.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="tags.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Inheritance of Settings</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Inheritance of Settings</h1> 
+      <p>The <a href="object_hierarchy.htm" class="topiclink">hierarchical tree</a> does not only help organize the devices and keep everything neat and tidy. There is also an important aspect involved that we call <span class="f_ItalicCustom">inheritance</span>. To ensure administration is quick and easy—especially for large monitoring setups—certain settings are inherited from the higher level. For example, you can change the monitoring interval for all sensors by editing the interval setting of the topmost <span class="f_BoldCustom">Root</span> group (unless no other setting is defined below).</p>
+<p class="p_InTopicHeading"><a id="settings_inheritance"></a><span class="f_InTopicHeading">Settings are Inherited to Child Objects</span></p>
+<p>You can override this inheritance on any level of the hierarchy by setting a different value for a specific probe, group, device, or sensor. All objects below will inherit these new settings; object settings from levels above will not be affected.</p>
+<p>Settings that are inherited among all objects include:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">Monitoring interval</span></li>
+<li><span class="f_ListBulleted">Notification triggers</span></li>
+<li><span class="f_ListBulleted">Authentication settings for several systems</span></li>
+<li><span class="f_ListBulleted">Compatibility settings (for certain types of sensors)</span></li>
+<li><span class="f_ListBulleted">Channel and unit configuration</span></li>
+<li><span class="f_ListBulleted"><a href="user_access_rights.htm" class="topiclink">User access rights</a></span></li>
+<li><span class="f_ListBulleted"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li><span class="f_ListBulleted">Paused status: If an object is paused by the user, or a schedule, all sensors on it are paused as well</span></li>
+<li><span class="f_ListBulleted">etc.</span></li>
+</ul>
+<p>There is one exception for devices and sensors: The <span class="f_BoldCustom">IP address</span> or <span class="f_BoldCustom">DNS name</span> of a device and compatibility settings are always inherited by sensors and cannot be changed on sensor level.</p>
+<p>The actual overriding of the parent's settings takes place in an object's settings: Remove the check mark symbol at the beginning of the respective line <span class="f_BoldCustom">inherit from [parent object]</span>. For example, the screenshot below shows Windows systems credentials settings after removing the check mark symbol.</p>
+<div class="p_ImageCaption"><div style="width:498px;padding:0px"><img src="windows_credentials2_zoom71.png" width="498" height="142" style="border:none" alt="Credentials for Windows Systems" title="Credentials for Windows Systems" /><p style="text-align:center"><span class="f_ImageCaption">Credentials for Windows Systems</span></p></div></div>
+<p class="p_InTopicHeading"><a id="default"></a><span class="f_InTopicHeading">Default Values Set in Root Group</span></p>
+<p>For all settings (except passwords), PRTG already includes a set of default values so you can get started with the software immediately. For example, the following settings will be inherited by all sensors from the <span class="f_BoldCustom">Root</span> group:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">Default monitoring interval of one minute</span></li>
+<li><span class="f_ListBulleted">SNMP version 1 with community string set to </span><span class="f_BoldCustom">public</span><span class="f_ListBulleted"> (default values for most devices)</span></li>
+<li><span class="f_ListBulleted">Dependency type </span><span class="f_BoldCustom">Use parent</span></li>
+<li>etc.</li>
+</ul>
+<p>You may need to change some of the default entries as you become used to the interface. However, these settings will initially suffice for most situations. </p>
+<p>Before sensor setup, please review the <span class="f_BoldCustom">Root</span> group settings and set the default values to suit your setup. This should include the credentials for the types of systems in your network that you want to monitor (Windows, Linux, virtual servers, etc.). </p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" />See section <span class="f_BoldCustom"><a href="root_group_settings.htm" class="topiclink">Root Group Settings</a></span> for more details.</p>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Inheritance of Notification Triggers</span></p>
+<p>If you add notification triggers at probe, group, or device level, these will also be inherited to all sensors underneath, unless you break the inheritance manually. </p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" />See section <span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notifications Settings</a></span> for details.</p>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li><span class="f_BoldCustom"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li><span class="f_BoldCustom"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li><span class="f_BoldCustom"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li><span class="f_BoldCustom"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li><span class="f_BoldCustom"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li><span class="f_BoldCustom"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li><span class="f_BoldCustom"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a> </span></li>
+<li><span class="f_BoldCustom"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Inheritance of Settings</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="object_hierarchy.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="tags.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

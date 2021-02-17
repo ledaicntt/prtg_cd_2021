@@ -1,0 +1,111 @@
+﻿<!--Login-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="ajax_gui_basic.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="ssl_certificate_warning.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Login</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Login</h1> 
+      <p>For PRTG on premises instances, you can log in to the web interface once the PRTG core server is <a href="install_a_prtg_core_server.htm" class="topiclink">installed</a>. In your browser, load the IP address or DNS name of the computer PRTG is installed on and log in using the<span class="f_BoldCustom"> Login</span> button. For PRTG in the cloud instances, open your registered PRTG in the cloud domain and log in to the web interface. </p>
+<p>You can look up and change the web server settings of PRTG on premises instances at any time using the <span class="f_BoldCustom"><a href="prtg_server_administrator.htm#web_server" class="topiclink">PRTG Administration Tool</a></span> Windows application on the system where the PRTG core server is installed. Especially when accessing PRTG from the internet, you should use an SSL-encrypted connection. You can easily switch to SSL using the <span class="f_BoldCustom">Yes, switch to SSL</span> button shown on the welcome screen.</p>
+<p class="p_InTopicHeading"><a id="loading"></a><span class="f_InTopicHeading">Loading the Web Interface</span></p>
+<p>In a web browser window, please enter the IP address or URL of the system PRTG is installed on. When using a cluster, please connect to the primary master node. You can also double-click on the <span class="f_BoldCustom">PRTG Network Monitor </span>icon on the desktop of the system PRTG is installed on. If you are using PRTG in the cloud, enter the URL of your instance, for example <span class="f_ItalicCustom">myfirstdomain.my-prtg.com</span> to access the web interface with a <a href="detailed_system_requirements.htm#browser" class="topiclink">supported browser</a>.</p>
+<p><img src="icon-i-red.png" width="17" height="17" alt="icon-i-red" style="float:left;margin:0px 10px 10px 0px; border:none" />If you run PRTG on localhost, please do not use the DNS name <span class="f_ItalicCustom">http://localhost</span> to log in to the web server, as this may considerably slow down the PRTG web interface. Please use your local IP address or <span class="f_ItalicCustom">http://127.0.0.1</span> instead.</p>
+<p>If you see a certificate warning in your browser, you can usually just confirm it. For more information please see <span class="f_BoldCustom"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span>.</p>
+<p class="p_InTopicHeading"><a id="login"></a><span class="f_InTopicHeading">Login Screen PRTG on Premises</span></p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This only applies to PRTG on premises instances, not to PRTG in the cloud.</p>
+<p>After loading the web interface, the login screen is visible. You can either login as default administrator or as any other PRTG user. As <span class="f_ItalicCustom">PRTG Administrator</span> user you can use all functionalities of the web interface. Administrators can <a href="user_accounts_settings.htm" class="topiclink">create additional users</a> with administrator rights or with more restricted privileges (for example, read-only users).</p>
+<div class="p_ImageCaption"><div style="width:510px;padding:0px"><img src="login_details_zoom52.png" width="510" height="191" style="border:none" alt="PRTG Login Screen" title="PRTG Login Screen" /><p style="text-align:center"><span class="f_ImageCaption">PRTG Login Screen</span></p></div></div>
+<p class="p_BoldCustom"><a id="login_default"></a><span class="f_BoldCustom" style="font-size: 11pt;">Login as Default Administrator (First Time Login)</span></p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This only applies to PRTG on premises instances, not to PRTG in the cloud.</p>
+<p>When logging in for the first time, login name and password for the default administrator login are both <span class="f_BoldCustom">prtgadmin</span>. PRTG automatically fills in the default credentials and shows the password in plain text.</p>
+<p><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" />After login you should change the default password. To do so, go to <span class="f_BoldCustom">Setup | Account Settings | My Account</span> and specify a new password in section <span class="f_BoldCustom">User Account</span>.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />If you are not logged in into the web interface, you can change the credentials for this default user account any time in the <span class="f_BoldCustom"><a href="prtg_server_administrator.htm#administrator" class="topiclink">PRTG Administration Tool</a></span> Windows application.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />If you enter another login name or change your password, the password is no longer shown in plain text.</p>
+<p class="p_BoldCustom"><a id="login_user"></a><span class="f_BoldCustom" style="font-size: 11pt;">Login as PRTG User</span></p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This only applies to PRTG on premises instances, not to PRTG in the cloud.</p>
+<p>If you have received user credentials from your administrator, please enter them here to log in. Also, when using other administrator credentials, please enter them here.</p>
+<p class="p_BoldCustom"><a id="gui"></a><span class="f_BoldCustom" style="font-size: 11pt;">Login Options</span></p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This only applies to PRTG on premises instances, not to PRTG in the cloud.</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Login</span><span class="f_ListBulleted">: Log in to the fully featured Ajax web interface which is the standard interface. We recommend that you use this option for PRTG whenever possible. It offers the full functionality of PRTG. Use</span><span class="f_ListBulleted"> Google Chrome 59 or later (recommended) or Mozilla Firefox 54 or later for best performance. In some browsers, the Ajax option is not shown, for example, in old browser versions.</span></li>
+</ul>
+<p><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" />Although you can log in using Microsoft Internet Explorer 11, the Ajax web interface might <span class="f_ItalicCustom">not</span> be fully compatible with Internet Explorer! When using Microsoft Internet Explorer 11, please set the security level to<span class="f_BoldCustom"> Medium-high </span>(or lower) and make sure no <span class="f_BoldCustom">Compatibility View </span>is enabled!</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Download Client Software (optional, for Windows, iOS, Android)</span>: This option opens the PRTG <a href="downloads.htm#enterprise_console" class="topiclink">download page</a> in the web interface. You can optionally download the native Windows application <span class="f_BoldCustom">Enterprise Console</span> to the desktop. You have to <a href="enterprise_console.htm" class="topiclink">install</a> it on the client computer before use. The <a href="enterprise_console.htm" class="topiclink">Enterprise Console</a> provides full functionality. However, for some functions the Ajax Web GUI opens. As an additional feature, the Enterprise Console can view data of several independent PRTG core installations in one single application. <br />
+<img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />Also, when using this download option, your name and password (or the default credentials) are required for login!</li>
+</ul>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />Only Google Chrome 59 or later (recommended) and Mozilla Firefox 54 or later are fully compatible with the Ajax web interface.</p>
+<p>Enter specific credentials<span class="f_BoldCustom"> </span>or<span class="f_BoldCustom"> </span>use the<span class="f_BoldCustom"> </span>default credentials, which are automatically filled in, and click the <span class="f_BoldCustom">Login </span>button to proceed to the PRTG web interface.</p>
+<p class="p_InTopicHeading"><a id="login_pod"></a><span class="f_InTopicHeading">Login Screen PRTG in the cloud</span></p>
+<p><img src="icon-beta.png" width="37" height="19" alt="icon-beta" style="float:left;margin:0px 10px 10px 0px; border:none" />For PRTG in the cloud instances, load the PRTG web interface with the domain you have registered at <a href="https://my-prtg.com" target="_blank" class="weblink">https://my-prtg.com</a> and use the login method that you chose when signing up.</p>
+<div class="p_ImageCaption"><div style="width:335px;padding:0px"><img src="pod_login_screen_zoom85.png" width="335" height="377" style="border:none" alt="PRTG in the Cloud Login Screen" title="PRTG in the Cloud Login Screen" /><p style="text-align:center"><span class="f_ImageCaption">PRTG in the Cloud Login Screen</span></p></div></div>
+<p class="p_InTopicHeading">To log in with your Facebook, Google+, Windows, or Amazon, click the respective button. A popup window appears where you can enter your credentials for the respective account. Alternatively, you can log in with the email and password that you chose when signing up. If you have received an invitation to PRTG in the cloud, click the link in the invitation and proceed to log in.</p>
+<p class="p_InTopicHeading"><a id="password"></a><span class="f_InTopicHeading">Recover Password</span></p>
+<p>If you cannot remember your PRTG on premises password, click the <span style="font-weight: bold;">Forgot password?</span> link. The <span style="font-weight: bold;">Password Recovery</span> page opens. Enter your <span style="font-weight: bold;">Login Name</span>, click <span style="font-weight: bold;">Request a New Password</span>,<span style="font-weight: bold;"> </span>and PRTG will send a new password to the primary email address of this PRTG user account. The <span style="font-weight: bold;">Need Help? </span>link will open the current manual page.</p>
+<p>If you cannot remember your PRTG in the cloud password, click the <span class="f_BoldCustom">Change/reset password</span> link. You are then asked to enter your email address. Click <span class="f_BoldCustom">Change/reset password</span> again and PRTG will send you an email to reset your password.</p>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Ajax Web Interface—Basic Procedures—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="login.htm" class="topiclink">Login</a></span></li>
+<li><span class="f_BoldCustom"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span></li>
+<li><span class="f_BoldCustom"><a href="welcome_page.htm" class="topiclink">Welcome Page</a></span></li>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="customer_service.htm" class="topiclink">Customer Service</a></span></li>
+</ul>
+<li><span class="f_BoldCustom"><a href="general_layout.htm" class="topiclink">General Layout</a></span></li>
+<li><span class="f_BoldCustom"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span></li>
+<li><span class="f_BoldCustom"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li><span class="f_BoldCustom"><a href="compare_sensors.htm" class="topiclink">Compare Sensors</a></span></li>
+<li><span class="f_BoldCustom"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span></li>
+<li><span class="f_BoldCustom"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span></li>
+<li><span class="f_BoldCustom"><a href="recommended_sensors.htm" class="topiclink">Recommended Sensors</a></span></li>
+<li><span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a></span></li>
+<li><span class="f_BoldCustom"><a href="alarms.htm" class="topiclink">Alarms</a></span></li>
+<li><span class="f_BoldCustom"><a href="system_information.htm" class="topiclink">System Information</a></span></li>
+<li><span class="f_BoldCustom"><a href="logs.htm" class="topiclink">Logs</a></span></li>
+<li><span class="f_BoldCustom"><a href="tickets.htm" class="topiclink">Tickets</a></span></li>
+<li><span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span></li>
+<li><span class="f_BoldCustom"><a href="object_selector.htm" class="topiclink">Object Selector</a></span></li>
+<li><span class="f_BoldCustom"><a href="priority_and_favorites.htm" class="topiclink">Priority and Favorites</a></span></li>
+<li><span class="f_BoldCustom"><a href="pause.htm" class="topiclink">Pause</a></span></li>
+<li><span class="f_BoldCustom"><a href="context_menus.htm" class="topiclink">Context Menus</a></span></li>
+<li><span class="f_BoldCustom"><a href="hover_popup.htm" class="topiclink">Hover Popup</a></span></li>
+<li><span class="f_BoldCustom"><a href="main_menu_structure.htm" class="topiclink">Main Menu Structure</a></span><span class="f_ListBulleted"> </span></li>
+</ul>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li><span class="f_BoldCustom"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+</ul>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="ajax_gui_basic.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="ssl_certificate_warning.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

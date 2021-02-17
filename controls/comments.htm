@@ -1,0 +1,14 @@
+﻿
+<div style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" id="comments">
+<form action="/editsettings" method="post" target="_top"  class="validateForm">
+	<input type="hidden" name="id" value="<#objectid>">
+	<#objectproperty name="comments" show="edit">
+<br>
+	<input class="submit actionbutton" type="submit" value="<#lang key="html.global.save" default="Save">">
+	<input onclick="history.back();return(false)" class="cancel btngrey button hideinwingui" type="reset" value="<#lang key="html.global.cancel" default="Cancel">">
+</form>
+</div>
+
+<div style="<#system type='displaydependingonrights' right='write' hideobjectif='true'>" id="comments">
+	<pre><#objectproperty name="comments" show="text"></pre>
+</div>

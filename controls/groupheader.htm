@@ -1,0 +1,17 @@
+﻿<#objectproperty type="nodename" var="nodename">
+<h1 class="sitecaption">
+  <i><#title></i>
+  <dummy data-id="<#objectid>" status="name;menuclass,class" class="<#sensor type="menuclassofstate">"><#objectproperty name="Name" show="text"></dummy>
+  <span id="objectpriority" title="<#lang key="html.sensorstatusdata.setprio" default="Click to set priority and/or favorite status">">
+    <dummy status="priority"><#objectstatus name="priority"></dummy>
+  </span>
+</h1>
+<div status="menuclass,class,buttonbox " class="buttonbox <#sensor type="menuclassofstate">">
+  <a class="editsettings" onclick="_Prtg.objectTools.editSettingsDialog.call(this,'/multiedit.htm',{id:<#objectid>,objecttype:'group'});return false;" class="checknow" style="<#system type='hideforreadonlyusers'>" href="#" data-placement="bottom" title="<#lang key="common.strings.settings" default="Settings">"><i class="icon-dark icon-wrench"></i></a>
+  <dummy status="paused"><#object type="pause"></dummy>
+  <#include file="includes\linkpagebutton.htm">
+  <a onclick="_Prtg.objectTools.checkObjectNow.call(this,<#objectid>);return false;" class="checknow" style="<#system type='hideforreadonlyusers'>" href="#" data-placement="bottom" title="<#lang key="html.global.CheckNow" default="Check Now">"><i class="icon-dark icon-arrowrefresh-1-s"></i></a>
+  <a onclick="_Prtg.objectTools.deleteObject.call(this,<#objectid>);return false;" data-id="<#objectidorzero>" data-placement="bottom" style="<#system type='hideforreadonlyusers'>" class='hideForID0 no<#sensor type="menuclassofstate"> deletebutton' href="#" title="<#lang key="html.global.delete" default="Delete">"><i class="icon-dark icon-trash"></i></a>
+  <a onclick="_Prtg.objectTools.addObject.call(this,<#objectid>,'device');return false;" data-id="<#objectidorzero>" class='hideforreadonly hideForID0' href="#" data-placement="bottom" title="<#lang key="html.group.adddev" default="Add Device">"><i class="icon-dark icon-plus"></i></a>
+  <a data-id="<#objectidorzero>" href="#" status="menuclass,class,menulink systemmenu menuleft nopopup "  class="menulink systemmenu menuleft nopopup <#sensor type="menuclassofstate">"><i class="icon-dark icon-triangle-1-s"></i></a>
+</div>

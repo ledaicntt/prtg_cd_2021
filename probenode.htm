@@ -1,0 +1,38 @@
+﻿<#checkobjecttype objecttype="probenode">
+<#lang key="html.probenode.title" default="Probe Details" var="title">
+
+<#objectproperty name="name" var="objectname">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" >
+<div id="main" data-title="<#pagetitle>">
+	<dummy class="prtg-plugin" data-plugin="status">
+		<#include file="controls\probeheader.htm"
+	</dummy>
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active"><a href="/controls/groupoverview.htm?id=<#objectid>"><#lang key="html.global.overview" default="Overview"></a></li>
+      <li tabid="2"><a href="/controls/objectgraph.htm?id=<#objectid>&graphid=1&columns=datetime,value_,coverage"><#system type="2period"></a></li>
+      <li tabid="3"><a href="/controls/objectgraph.htm?id=<#objectid>&graphid=2&columns=datetime,value_,coverage"><#system type="3period"></a></li>
+      <li tabid="4"><a href="/controls/objectgraph.htm?id=<#objectid>&graphid=3&columns=datetime,value_,coverage"><#system type="4period"></a></li>
+      <li tabid="5"><a href="/controls/table.htm?id=<#objectid>&tableid=alarmtable&content=sensors&columns=downtimesince,device,sensor,lastvalue,status,message,priority,minigraph,checkbox&sortby=priority&sortable=true&links=true&filter_status=5&filter_status=4&filter_status=10&filter_status=13&filter_status=14&tools=pause,fave,prio,scan,delete&tabletitle=AUTO"><#lang key="html.global.alarms" default="Alarms"></a></li>
+      <li tabid="6"><a href="/controls/table.htm?id=<#objectid>&tableid=messagetable&content=messages&columns=datetime,sensor,status,message&sortby=date&sortable=true&links=true&datepicker=true&filter_drel=7days&tabletitle=<#lang key="html.global.log" default="Log" mailtoencode="true">"><#lang key="html.global.log" default="Log"></a></li>
+      <li tabid="7" class="tab-spacing tab-dark hideforreadonly"><a href="/controls/sensortreemanagetab.htm?id=<#objectid>"><i class="icon-gear icon-white"></i><#lang key="html.global.manage" default="Management"></a></li>
+      <li tabid="8" class="tab-dark"><a href="/controls/objectdata.htm?id=<#objectid>&objecttype=probenode"><i class="icon-wrench icon-white"></i><#lang key="html.global.settings" default="Settings"></a></li>
+      <li tabid="9" class="tab-dark"><a href="/controls/triggersandnotifications.htm?id=<#objectid>&objecttype=probenode"><i class="icon-notification icon-white"></i><#lang key="html.global.notifications" default="Notifications"></a></li>
+      <li tabid="10" class="tab-spacing tab-dark"><a href="/controls/comments.htm?id=<#objectid>" title="<#lang key="html.global.comments" default="Comments">"><i class="icon-comment icon-white"></i><#hascomment></a></li>
+      <li tabid="11" class="tab-dark" style="<#hidefornonadmins>" title="<#lang key="html.global.history" default="History">"><a href="/controls/history.htm?id=<#objectid>"><i class="icon-note icon-white"></i></a></li>
+    </ul>
+    <div class="tab-container"></div>
+  </div>
+<#lang key="html.probenode.help.title" default="Probe Details" var="helptitle">
+<#lang key="html.probenode.help.text" default="Use the tab controls to view various data of this probe as well as edit the probe's settings." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+

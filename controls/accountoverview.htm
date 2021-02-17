@@ -1,0 +1,132 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="true" allowpwchangeusers="true">
+<div id="setuplinks" class="panel row-panel" style="min-width:500px">
+  <div class="col-panel" style="width:50%;min-width:250px;<#hidefornonadmins>">
+    <h2 ><#lang key="html.menu.Setup.Sysadmin" default="System Administration"></h2>
+    <a href='https://www.my-prtg.com' target="=_blank" style="<#hidefornonadmins> <#hidefornonpod>">
+      <img src="/images/PRTG_Cloud-Icon_Weiss.svg" style="background-color: #082559;padding: 2px;border-radius: 1px">
+      <h3><#lang key="html.global.podsubscription" default="Manage Subscription"></h3>
+      <p><#lang key="html.accountoverview.mangepodsubscriptionA" default="Manage your subscription settings like your pricing plan and billing information, and view your history, invoices, and subscription status."></p>
+    </a>
+    <a href="/systemsetup.htm" style="<#hidefornonadmins>">
+      <img src="/images/setup_userinterface.png">
+      <h3><#lang key="html.global.systemsetting4" default="User Interface"></h3>
+      <p><#lang key="html.accountoverview.systemsetuphelp3" default="Manage System settings for the web interface of PRTG, including your website, Geo Maps, web server, and graphs."></p>
+    </a>
+    <a href="/systemsetup.htm?tabid=2" style="<#hidefornonadmins>">
+      <img src="/images/setup_monitoring.png">
+      <h3><#lang key="html.global.setupmonitoring" default="Monitoring"></h3>
+      <p><#lang key="html.accountoverview.monitoring" default="Manage monitoring settings like scanning intervals, unusual detection, similar and recommended sensors detection, and auto-discovery."></p>
+    </a>
+    <a href="/systemsetup.htm?tabid=3" style="<#hidefornonadmins><#hideforpod>">
+      <img src="/images/setup_notifdelivery.png">
+      <h3><#lang key="html.global.notificationdelivery2" default="Notification Delivery"></h3>
+      <p><#lang key="html.accountoverview.notificationdelivery" default="Manage delivery of emails (direct delivery, or over one or two SMTP relay servers) and SMS notifications."></p>
+    </a>
+    <a href="/systemsetup.htm?tabid=4" style="<#hidefornonadmins>">
+      <img src="/images/setup_probes.png">
+      <h3><#lang key="html.global.coreprobesmanager" default="Core & Probes"></h3>
+      <p><#lang key="html.accountoverview.coreprobemanagment" default="Manage settings for the core server, remote probes, Active Directory integration, and historic data purging."></p>
+    </a>
+    <a href="/systemsetup.htm?tabid=5" style="<#hidefornonadmins>">
+      <img src="/images/setup_useraccounts.png">
+      <h3><#lang key="html.menu.Setup.UserAccounts" default="User Accounts"></h3>
+      <p><#lang key="html.accountoverview.useraccountslink1" default="Manage user accounts for this PRTG installation. You can add new users and edit existing users."></p>
+    </a>
+    <a href="/systemsetup.htm?tabid=6" style="<#hidefornonadmins>">
+      <img src="/images/setup_usergroups.png">
+      <h3><#lang key="html.menu.Setup.UserGroups" default="User Groups"></h3>
+      <p><#lang key="html.accountoverview.usergroupshelp1" default="Manage user groups. With user groups, you can define access rights to objects in the device tree."></p>
+    </a>
+    <a href="/systemsetup.htm?tabid=7" style="<#hidefornonadmins>">
+      <img src="/images/setup_admin.png">
+      <h3><#lang key="html.menu.Setup.administrativetools" default="Administrative Tools"></h3>
+      <p><#lang key="html.accountoverview.administrativetools" default="Perform administrative actions like loading lookups and restarting the PRTG server or probes."></p>
+    </a>
+    <a href="/systemsetup.htm?tabid=8" style="<#hidefornonadmins> <#clusterdependent showfor="clusterinstallation">">
+      <img src="/images/setup_cluster.png">
+      <h3 style="<#clusterdependent showfor="clusterinstallation">"><#lang key="html.global.clusteroptions2" default="Cluster"></h3>
+      <p style="<#clusterdependent showfor="clusterinstallation">"><#lang key="html.accountoverview.clustermode" default="Manage cluster nodes and their connections."></p>
+    </a>
+    <a style="<#clusterdependent hidefor="clusterinstallation"> <#hideforpod>"  disabled>
+      <img src="/images/setup_cluster.png" style='opacity:0.4;'>
+      <h3><#lang key="html.global.clusteroptions2a" default="Cluster (Not Enabled)"></h3>
+      <p><#lang key="html.accountoverview.clustermode2a" default="Manage cluster nodes and their connections. Use the PRTG Administration Tool to enable Cluster Mode."></p>
+    </a>
+
+    <h2 style="<#hidefornonadmins>"><#lang key="html.accountoverview.prtgstatus" default="PRTG Status"></h2>
+      <a href="/status.htm"  style="<#hidefornonadmins>">
+        <img src="/images/setup_systemstatus.png">
+        <h3><#lang key="html.accountoverview.systemstatus" default="System Status"></h3>
+        <p><#lang key="html.accountoverview.systemstatushelp2" default="View system information, for example, statistics about your PRTG server. This is useful for debugging with our support team."></p>
+      </a>
+      <a href="/status.htm?tabid=2" style="<#hidefornonadmins> <#clusterdependent showfor="clusterinstallation">">
+        <img src="/images/setup_clusterstatus.png">
+        <h3><#lang key="html.accountoverview.clusterstate" default="Cluster Status"></h3>
+        <p><#lang key="html.accountoverview.clusterstatehelp" default="Review the current state of your cluster installation."></p>
+      </a>
+      <a href="/licensing.htm" style="<#hidefornonadmins> <#hideforpod>">
+        <img src="/images/setup_licensing.png">
+        <h3><#lang key="html.accountoverview.licensing" default="Licensing Status and Settings"> </h3>
+        <p><#lang key="html.accountoverview.licensinghelp" default="View licensing information, change your license key, and refresh your maintenance information."></p>
+      </a>
+      <a href="/autoupdate.htm" style="<#hidefornonadmins> <#hideforpod>">
+        <img src="/images/setup_autoupdate.png">
+        <h3><#lang key="html.accountoverview.autoupdate" default="Auto-Update"> </h3>
+        <p><#lang key="html.accountoverview.autoupdatehelp" default="Manage PRTG software updates, download and install the latest version of PRTG."></p>
+      </a>
+
+  </div>
+  <div class="col-panel" style="width:50%;min-width:250px;">
+    <h2><#lang key="html.accountoverview.accountsettings" default="Account Settings"></h2>
+      <a style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true" allowpwchangeusers="true">' href="/myaccount.htm">
+        <img src="/images/setup_myaccount.png">
+        <h3><#lang key="html.accountoverview.editaccount1a" default="My Account"></h3>
+        <p><#lang key="html.accountoverview.optioneditemail2" default="Manage your personal account settings like email address, password, timezone, and audible alarms."></p>
+      </a>
+      <a style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">' href="/myaccount.htm?tabid=2">
+        <img src="/images/setup_notifications.png">
+        <h3><#lang key="html.accountoverview.notifications" default="Notifications"></h3>
+        <p><#lang key="html.accountoverview.editnotihelp2" default="Manage notification methods like email or push. Define how you are informed if a sensor trigger is activated."></p>
+      </a>
+      <a style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">' href="/myaccount.htm?tabid=4">
+        <img src="/images/setup_notifcontacts.png">
+        <h3><#lang key="html.accountoverview.notifcontacts" default="Notification Contacts"></h3>
+        <p><#lang key="html.accountoverview.editnoticonthelp1" default="Manage notification contacts that PRTG uses to send you notifications.  They are unique for each user account."></p>
+      </a>
+      <a style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">' href="/myaccount.htm?tabid=3">
+        <img src="/images/setup_schedules.png">
+        <h3><#lang key="html.accountoverview.editschedules" default="Schedules"></h3>
+        <p><#lang key="html.accountoverview.editscheduleshelp2a" default="Manage schedules to pause monitoring for groups, devices, sensors, and notification delivery based on time and day of the week."></p>
+      </a>
+
+    <h2 style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">'><#lang key="html.accountoverview.downloads.tools" default="Optional Downloads and Tools"></h2>
+      <a style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true"> <#hideforpod>' href="/downloads.htm?tabid=2">
+        <img src="/images/setup_enterprise.png">
+        <h3><#lang key="html.accountoverview.gui1a1" default="Client App for Windows (Enterprise Console)"></h3>
+        <p><#lang key="html.accountoverview.gui2a" default="Connect to one or more PRTG servers with our native Windows application."></p>
+      </a>
+      <a style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">' href="/downloads.htm">
+        <img src="/images/setup_smartphoneapps.png">
+        <h3><#lang key="html.accountoverview.iphone1a1" default="Client Apps for Mobile Devices"></h3>
+        <p><#lang key="html.accountoverview.iphone2a" default="Connect to PRTG from your iOS or Android device with our PRTG client apps."></p>
+      </a>
+      <a id="remoteprobeinstaller" href="/downloads.htm?tabid=3" style="<#hidefornonadmins>">
+        <img src="/images/setup_remprobeinstaller.png">
+        <h3><#lang key="html.accountoverview.probe1" default="Remote Probe Installer"></h3>
+        <p><#lang key="html.accountoverview.probe2" default="Set up remote probes for your PRTG installation."></p>
+      </a>
+      <a id="browsernotifications" class="onlynotificationbrowser" style="<#system type="hideforreadonlyusers">" href="/downloads.htm?tabid=5">
+        <img src="/images/setup_chromeicon.png">
+        <h3><#lang key="html.accountoverview.chrome.desktopnotificationw" default="Desktop Notifications"></h3>
+        <p><#lang key="html.accountoverview.chrome.enabledesktopnotifications2" default="Enable desktop notifications to show you when you have new alarms."></p>
+      </a>
+    <h2 style='<#hidefeedbacklink> <#hidefornonadmins>'><#lang key="html.accountoverview.support" default="Support"></h2>
+      <a onclick="_Prtg.objectTools.sendFeedback('/sendfeedback.htm?errorurl='+window.location.pathname,'');return false;" style='<#hidefeedbacklink> <#hidefornonadmins>'>
+        <img src="/images/setup_bundle.png">
+        <h3><#lang key="html.accountoverview.bundle3" default="Contact Support"></h3>
+        <p><#lang key="html.accountoverview.bundle4" default="Ask us a question about technical issues or give us feedback on your PRTG experience."></p>
+      </a>
+
+
+  </div>
+</div>

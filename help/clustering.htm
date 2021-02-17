@@ -1,0 +1,72 @@
+﻿<!--Clustering-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="architecture.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="object_hierarchy.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Clustering</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Clustering</h1> 
+      <p>A PRTG Cluster consists of two or more <a href="install_a_prtg_core_server.htm" class="topiclink">installations of PRTG</a> that work together to form a high availability monitoring system. The objective is to reach true 100% uptime for the monitoring tool. By <a href="failover_cluster_configuration.htm" class="topiclink">clustering</a>, the uptime will no longer be degraded by failing connections because of an internet outage at a PRTG server's location, failing hardware, or because of downtime due to a software update for the operating system or PRTG itself.</p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This feature is not available in PRTG in the cloud.</p>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">How a PRTG Cluster Works</span></p>
+<p>A PRTG cluster consists of one <span class="f_BoldCustom">Primary Master Node</span> and one or more <span class="f_BoldCustom">Failover Nodes</span>. Each node is simply a full installation of PRTG which could perform the whole monitoring and alerting on its own. Nodes are connected to each other using two TCP/IP connections. They communicate in both directions and a single node only needs to connect to one other node to integrate into the cluster.</p>
+<p>During normal operation the <span class="f_BoldCustom">Primary Master</span> is used to configure devices and sensors (using the <a href="ajax_gui_basic.htm" class="topiclink">web interface</a> or <a href="enterprise_console.htm" class="topiclink">Enterprise Console</a>). The master automatically distributes the configuration to all other nodes in real time. All nodes are permanently monitoring the network according to this common configuration and each node stores its results into its own database. This way, the storage of monitoring results is also distributed among the cluster (the downside of this concept is that monitoring traffic and load on the network is multiplied by the number of cluster nodes, but this will not be a problem for most usage scenarios). The user can review the monitoring results by logging into the web interface of any of the cluster nodes in read-only mode. Because the monitoring configuration is managed centrally, it can only be changed on the master node, though.</p>
+<p><span class="f_ListBulleted">By default, all devices created on the </span><span class="f_BoldCustom">Cluster Probe</span><span class="f_ListBulleted"> are monitored by all nodes in the cluster</span>, so data from different perspectives is available and monitoring for these devices always continues, even if one of the nodes fails. In case the <span class="f_BoldCustom">Primary Master </span>fails, one of the <span class="f_BoldCustom">Failover Nodes</span> takes over the master role and controls the cluster until the master node is back. This ensures a fail-safe monitoring with gapless data. </p>
+<p>If you use remote probes in a cluster, each probe connects to each node of your cluster and sends the data to all cluster nodes, the current primary master as well as the failover nodes. You can define <span style="font-weight: bold;">Cluster Connectivity</span> of each probe in the <span style="font-weight: bold;"><a href="probe_settings.htm#outgoingipgroup" class="topiclink">Probe Administrative Settings</a></span>.</p>
+<p><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" />During the outage of a node, it will not be able to collect monitoring data. The data of this single node will show gaps. However, monitoring data for this time span is still available on the other node(s). There is no functionality to actually fill in other nodes' data into those gaps.</p>
+<p>If downtimes or threshold breaches are discovered by one or more nodes, only one installation, either the Primary Master or the Failover Master, will send out notifications (via email, SMS text message, etc.). Thus, the administrator will not be flooded with notifications from all cluster nodes in case failures occur. </p>
+<p><img src="icon-i-red.png" width="17" height="17" alt="icon-i-red" style="float:left;margin:0px 10px 10px 0px; border:none" />More than 5,000 sensors per cluster are not officially supported. Please contact your <a href="mailto:presales@paessler.com?subject=PRTG%20Cluster%20consultation" class="weblink">presales team</a> if you exceed this limit.</p>
+<p class="p_InTopicHeading"><a id="setup"></a><span class="f_InTopicHeading">Set Up a PRTG Cluster</span></p>
+<p>For detailed information, see <span class="f_BoldCustom"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span>.</p>
+<p class="p_InTopicHeading"><a id="more"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: What's the Clustering Feature in PRTG?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/6403?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/6403</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Video Tutorial: Cluster in PRTG — This is how it works</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-advanced/cluster-animation?utm_source=prtg&utm_medium=webgui&utm_campaign=homepage" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-advanced/cluster-animation</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Video Tutorial: How to set up a PRTG cluster</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-advanced/how-to-set-up-a-cluster?utm_source=prtg&utm_medium=webgui&utm_campaign=homepage" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-advanced/how-to-set-up-a-cluster</a> </span></li>
+</ul>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Understanding Basic Concepts—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="architecture.htm" class="topiclink">Architecture and User Interfaces</a></span></li>
+<li><span class="f_BoldCustom"><a href="clustering.htm" class="topiclink">Clustering</a></span></li>
+<li><span class="f_BoldCustom"><a href="object_hierarchy.htm" class="topiclink">Object Hierarchy</a></span></li>
+<li><span class="f_BoldCustom"><a href="inheritance_of_settings.htm" class="topiclink">Inheritance of Settings</a></span></li>
+<li><span class="f_BoldCustom"><a href="tags.htm" class="topiclink">Tags</a></span></li>
+<li><span class="f_BoldCustom"><a href="dependencies.htm" class="topiclink">Dependencies</a></span></li>
+<li><span class="f_BoldCustom"><a href="scheduling.htm" class="topiclink">Scheduling</a></span></li>
+<li><span class="f_BoldCustom"><a href="notifying.htm" class="topiclink">Notifying</a></span></li>
+<li><span class="f_BoldCustom"><a href="data_reporting.htm" class="topiclink">Data Reporting</a></span></li>
+<li><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a> </span></li>
+<li><span class="f_BoldCustom"><a href="ipv6.htm" class="topiclink">IPv6</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Cluster,Cluster Basic Concept</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="architecture.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="object_hierarchy.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

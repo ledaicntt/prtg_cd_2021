@@ -1,0 +1,62 @@
+﻿<#system type="denyfornonsvs">
+<#lang key="html.activation.title" default="Activation" var="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="fixedwidth" ajax="exclude">
+<style>
+  .prtg-form fieldset.collapsed fieldset{display:none;}
+  .prtg-checkbox{
+    width: 16px;
+    height: 18px;
+    border: 2px solid #b7b7b7;
+    background-color: #fff;
+    margin: 0 5px 0 0;
+    padding: 0;
+    border-radius: 11px;
+    outline: none;
+  }
+</style>
+
+<div id="login-container" style="width:700px;margin:auto;padding-top:5px;">
+
+  <div class="header">
+    <span class="prtglogo fll">
+      <img border=0 id="prtgname" width="160px" src="/images/prtg_logo_gray.png">
+    </span>
+    <span class="paesslerlogo flr" style="width:500px; line-height:71px;background-color:<#colorcode color="actioncolor">;">
+      <div style='<#hideactivationinfo mode="ok">'>
+        <h1 style="color: white;font-weight: bold; text-align: center; text-transform: uppercase"><#lang key="html.activationrequired.title" default="Activate your license"></h1>
+	  </div>
+      <div style='<#hideactivationinfo mode="error">'>
+        <h1 style="color: white;font-weight: bold; text-align: center; text-transform: uppercase"><#lang key="html.activationupdate.title" default="Update your license"></h1>
+	  </div>
+
+    </span>
+  </div>
+
+  <div id="content" class="ui-dialog-content" style="width:700px;margin:auto;padding-top:40px;overflow-x: hidden;">
+    <div style="<#hidefornonadmins>">
+      <#include file="controls\activationrequired.htm" skiptagfornonadmins='true'>
+    </div>
+    <div class="nagscreen-box" style="width:700px;margin:auto;padding:40px;<#hideforadmins>">
+      <p class="nagscreen-head">
+        <#lang key="html.activationrequired.head" default="PRTG is currently not available!">
+      </p>
+      <p class="nagscreen-cell">
+        <#lang key="html.activationrequired.cell" default="For further informations please contact your PRTG admin.">
+      </p>
+    </div>
+  </div>
+
+</div>
+<script src="/javascript/prtg.js?version=<#system type="version">&language=<#system type="language">"></script>
+<script>
+
+function dataCallback(){
+  return JSON.stringify({
+    'name':$('#licensename').val(),
+    'key':$('#licensekey').val(),
+    'systemid':$('#systemid').val()
+  });
+}
+</script>
+</body>
+</html>

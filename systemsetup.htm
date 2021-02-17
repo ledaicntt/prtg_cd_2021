@@ -1,0 +1,40 @@
+﻿<#system type="denyfornonadmins">
+<#lang key="html.systemsetup.titl2e" default="System Administration" var="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#lang key="html.menu.Setup.setup" default="Setup" var="setup">
+<#breadcrumbs trail="<a href='/setup.htm'>@setup</a>" varexpand="this trail" this="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1><#lang key="html.systemsetup.head2" default="System Administration"></h1>
+  <div id="content">
+    <div class="buttonbox ">
+      <a  href="objecthistory.htm?tabid=" onclick="var tabid = ([2,2,2,2,2,5,6,2,2])[parseInt(_Prtg.Util.getUrlParameters(location.href)['tabid'])]; _Prtg.Hjax.loadLink(this.href+tabid);return false;" data-placement='left' class="objectHistory" title='<#lang key="html.global.History" default="History">'
+          style="<#hidefornonadmins>">
+        <i class='icon-dark icon-note'></i>
+      </a>
+      <#include file="includes\linkpagebutton.htm">
+    </div>
+    <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+        <ul class="nav-tabs">
+            <li tabid="1" class="tab-active"><a href="/controls/objectdata.htm?id=810&tabname=setupuserinterface"><i class="icon-userinterface icon-dark"></i><#lang key="html.global.systemsetting3a" default="User Interface"></a></li>
+            <li tabid="2"><a href="/controls/objectdata.htm?id=810&tabname=setupmonitoring"><i class="icon-monitoring icon-dark"></i><#lang key="html.global.setupmonitoring" default="Monitoring"></a></li>
+            <li tabid="3" style='<#hideforpod>'><a href="/controls/objectdata.htm?id=810&tabname=setupnotifications"><i class="icon-mail-closed icon-dark"></i><#lang key="html.global.notificationdelivery2" default="Notification Delivery"></a></li>
+            <li tabid="4"><a href="/controls/objectdata.htm?id=810&tabname=setupcoreprobes"><i class="icon-arrow-4-diag icon-dark"></i><#lang key="html.global.setupcoreprobes" default="Core &amp; Probes"></a></li>
+
+            <li tabid="5"><a href="/controls/userlist.htm"><i class="icon-person icon-dark"></i><#lang key="html.users.useraccounts" default="User Accounts"></a></li>
+            <li tabid="6"><a href="/controls/usergroups.htm"><i class="icon-person icon-dark"></i><#lang key="html.users.usergroups" default="User Groups"></a></li>
+            <li tabid="7"><a href="/controls/statusadmintools.htm"><i class="icon-wrench icon-dark"></i><#lang key="html.menu.Setup.admintools2" default="Administrative Tools"></a></li>
+            <li tabid="8" style='<#clusterdependent showfor="clusterinstallation">' class=""><a href="/controls/clustersetup.htm?tabname=setupcluster"><i class="icon-shuffle icon-dark"></i><#lang key="html.global.clusteroptions2" default="Cluster"></a></li>
+        </ul>
+        <div class="tab-container"></div>
+    </div>
+  </div>
+
+<#lang key="html.systemsetup.help.title" default="System Administration" var="helptitle">
+<#lang key="html.systemsetup.help.text" default="Here you can start system-specific processes for debugging purposes. Please use these settings if our technical support advises you to do so. You can create status files of your PRTG core server or restart it manually. You can also recalculate the PRTG graph data cache, for example, if you are experiencing graph display problems." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

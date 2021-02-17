@@ -1,0 +1,35 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="true" allowpwchangeusers="true">
+<#lang key="html.setup.title" default="Setup" var="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+<#isadmin var="isadmin">
+
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>" class="setuppage gradientbg">
+  <div id="content" class="ms-fix">
+    <div class="buttonbox normalpage">
+      <#include file="includes\linkpagebutton.htm">
+    </div>
+
+    <div class="setupcontainer panel row-panel">
+      <div class="setupview panel col-panel" style="padding:0;min-height:70em;flex-basis:1px">
+        <#include file="controls\accountoverview.htm">
+        <div class="<#if value="@isadmin" is="true" then="" else="hidden" varexpand="value">" style="align-content:center;padding-top:10px">
+          <#include file="controls\sslnagscreen.htm" skiptagfornonadmins="true">
+          <#include file="controls\defaultloginnagscreen.htm" skiptagfornonadmins="true">
+        </div>
+      </div>
+      <div class="panel col-panel" style="min-width:270px;max-width:550px;padding-left:30px;padding-top:25px;">
+        <img class="prtg-logo-big" width="250" height="150" src="/images/prtg_logo_gray.png" />
+        <#include file="public\newsfeed.htm">
+      </div>
+    </div>
+  </div>
+</div>
+<#lang key="html.setup.help.title" default="Setup" var="helptitle">
+<#lang key="html.setup.help.text" default="The options here allow you to make many different settings for your PRTG configuration. You can manage your system and use administrative tools to restart your server and probes, for example. You can also check your PRTG status information, change your account settings and notifications, download optional tools, contact our support team, and give us feedback." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

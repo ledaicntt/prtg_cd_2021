@@ -1,0 +1,27 @@
+{
+	"prtgversion": 		"<#system type="version">",
+	"sensordata": {
+		"name":             "<#objectproperty name="Name" show="nohtmlencode">",
+		"sensortype": 			"<#objectstatus name="type" show="textraw">",
+		"interval": 				"<#objectstatus name="interval" show="textraw">",
+		"probename":        "<#objectstatus name="probe" show="textraw">",
+		"parentgroupname":  "<#objectproperty name="ParentGroup" show="textraw">",
+		"parentdevicename": "<#objectproperty name="ParentDevice" show="nohtmlencode">",
+		"parentdeviceid":	  "<#objectstatus name="parentid" show="text">",
+		"lastvalue":  			"<#objectstatus name="lastvalue" show="text" utfencode="true">",
+		"lastmessage":  		"<#objectstatus name="message" show="text" utfencode="true">",
+		"favorite":			  	"<#objectstatus name="favorite" show="treejson" utfencode="true">",
+		"statustext":			  "<#objectstatus name="status" show="text" utfencode="true">",
+		"statusid":         "<#objectstatus name="status" show="textraw" utfencode="true">",
+		"lastup":					  "<#objectstatus name="lastup" show="textraw" utfencode="true">",
+		"lastdown":         "<#objectstatus name="lastdown" show="textraw" utfencode="true">",
+		"lastcheck":        "<#objectstatus name="lastcheck" show="textraw" utfencode="true">",
+		"uptime":           "<#objectstatus name="uptime" show="textraw" utfencode="true">",
+		"uptimetime":	      "<#objectstatus name="uptimetime" show="textraw" utfencode="true">",
+		"downtime":         "<#objectstatus name="downtime" show="textraw" utfencode="true">",
+		"downtimetime":     "<#objectstatus name="downtimetime" show="textraw" utfencode="true">",
+		"updowntotal":      "<#objectstatus name="knowntime" show="textraw" utfencode="true">",
+    "updownsince":      "<#objectstatus name="cumsince" show="textraw" utfencode="true">",
+    "info":             "<#objectstatus name="info"  utfencode="true">"
+	}
+}

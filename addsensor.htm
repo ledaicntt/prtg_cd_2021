@@ -1,0 +1,137 @@
+﻿<#system type="denyreadonlyusers">
+<#checkobjecttype objecttype="device">
+<#lang key="html.addsensor.title" default="Add Sensor (Step 1 of 2)" var="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#objectproperty name="name" var="devicename">
+<#system type="usernameshort" var="usernameshort">
+<#breadcrumbs trail="(AUTO)" this="(OBJECT)" varexpand="extra" extra="@pagetitle" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1>
+    <#lang key="html.addsensor4.head2a" default="<b>Add Sensor</b> to Device"> <span data-id="<#objectid>" class="<#sensor type="menuclassofstate">"><#objectproperty name="name"> [<#objectproperty name="host" show="text">]</span>
+		<#lang key="html.addsensor.head2b" default="(Step 1 of 2)">
+	</h1>
+	<div id="content" class="prtg-plugin" data-plugin="AddSensor" data-devid='<#objectid>'>
+<script type="text/x-jqote-template" id="addsensor_listview">
+	<![CDATA[
+		<li>
+		<* if (( this.categorie == 'normal' ) || ( this.categorie == 'istop10' ))  { *>
+			<div class="addsensor_sensorcontainer addsensor" title="<*= this.help *>" sensorindex="<*= this.index *>">
+		<* } else { *>
+		    <div class="addsensor_sensorcontainer addsensor_disabledsensors" title="<*= this.help *>">
+		<* } *>
+			<#system type="paesslerqaaddsensortypelink">
+			<p>
+        <span class="addsensor_sensorname" ><*= this.name *></span>
+        <* if( this.manuallink !== '' ) { *>
+        <a href="<*= this.manuallink *>" target="_blank"><span title="<#langjs key="html.addsensor.showhelpmsg" default="Show help!">" class="addsensor_sensorhelplink ui-icon ui-icon-help"></span></a>
+        <* } *>
+			</p>
+			<p class="addsensor_sensordescription">
+				<*= this.description *>
+			</p>
+			<p class="addsensor_sensorinfo">
+                <span class="addsensor_resourcebar<*= this.resourceusage *> addsensor_resourcebar" title="<*= _Prtg.Lang.addSensor.strings.resourceusage[(this.resourceusage - 1)] *>"></span>
+				<span class="addsensor_addthis addsensor_gradient">
+					<span><#langjs key="html.addsensor.addthis" default="Add This"></span>
+					<span class="addsensor_addthisicon"></span>
+				</span>
+			</p>
+		</div>
+		</li>
+	]]>
+</script>
+<script type="text/x-jqote-template" id="addsensor_filterview">
+	<![CDATA[
+<* for(var k = 0; k < 3 ; k++) { *>
+	<ul>
+		<li class="addsensor_filterheader">
+			<*= this[k].name *>
+		</li>
+	<* for(var l = 0; l <  this[k].familys.length ; l++) { *>
+		<li class="addsensor_filterbutton" filter="<*= this[k].familys[l] *>">
+			<span class="addsensor_filterbuttonicon"><i class="icon-gray icon-radio-on"></i></span>
+			<span><*= this[k].familys[l] *></span>
+		</li>
+	<* } *>
+	</ul>
+<* } *>
+	]]>
+</script>
+<script type="text/x-jqote-template" id="addsensor_sublist">
+	<![CDATA[
+		<div class="addsensor_sensorcategorie addsensor_sensorcategoriehide" id="addsensor_listview_<*= this.type *>">
+			<div class="addsensor_categorieheader addsensor_headertext"><span class="addsensor_sensorwarning"><*= this.text *></span></div>
+			<ul class="addsensor_sensorlistcontainer" id="addsensor_list_<*= this.type *>"></ul>
+		</div>
+	]]>
+</script>
+	<div style="<#system type='displaydependingonrights' right='write' hideobjectif='true'>" class="tabs-container">
+	  	<div class="infomessage" >
+		  	<h3 class="ui-accordion-header"><#lang key="html.addsensor.infomessage1" default="You can not create a new sensor for device @devicename"></h3>
+		  	<p><#lang key="html.addsensor.sorryno" default="Sorry, your user account @usernameshort is not allowed to create a new sensor for device @devicename. Please contact the system admin."></p>
+		  	<input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="<#lang key="html.global.back" default="Back">">
+	  	</div>
+	</div>
+
+  	<div style="<#system type='displaydependingonrights' right='write' hideobjectif='false'>" id="addsensor_form">
+		<div id="addsensor_view">
+
+      <ul class="addsensor_search">
+        <li class="addsensor_filterheader">
+          <#lang key="html.addsensor.search" default="Search">
+        </li>
+        <li>
+          <span id="addsensor_searchbox">
+            <label class="ui-icon ui-icon-white ui-icon-search" id="addsensor_searchicon" for="sensorsearchtext"></label>
+            <input class="searchtext" id="addsensor_searchinput" name="sensorsearchtext" type="text"/>
+            <span id="addsensor_resultcount" class="addsensor_headertext"></span> <#lang key="html.addsensor.matchingsensors" default="Matching Sensor Types">
+          </span>
+        </li>
+      </ul>
+
+      <div id="addsensor_sensorfilter"></div>
+  <tct
+    class="scriptworld"
+    style="display: inline-block;width:auto;height:135px;float:left;padding-left: 30px;margin-top: 30px;"
+    data-role="theater"
+    data-hide-close-button=true
+    >
+    <a
+      class="box video"
+      target="_blank"
+      href="https://www.paessler.com/script-world/all/all/all"
+      style="background-image: url('/images/script-world.png'); background-size: 180px; background-repeat: no-repeat; padding: 41px 20px 10px 182px;">
+        <span class="headline"><#lang key="html.addsensor.scriptworld1" default="Looking for more sensor types?"></span>
+        <span class="text"><#lang key="html.addsensor.scriptworld2" default="See our PRTG Script World."></span>
+    </a>
+  </tct>
+
+			<div id="addsensor_list"><center><p><img src="/images/ajax-loader-big.gif" width="32" height="32"></p></center></div>
+			<br style="clear: both;"/>
+		</div>
+
+		<div id="addsensor_preselection"></div>
+
+		<p><input onClick="history.back();return(false)" class="cancel btngrey button" type="reset" value="&lt; <#lang key="html.addsensor.cancelcreation" default="Cancel sensor creation">">
+			<#lang key="html.addsensor.moresensors1" default="Haven't found what you need?">
+			<a href="/help/additional_sensor_types.htm" target="_blank">
+			<#lang key="html.addsensor.moresensors2" default="Find more custom sensors online"></a>
+			<#lang key="html.addsensor.or" default="or">
+			<a href="#" style="<#hidefornonadmins>" onclick="_Prtg.objectTools.sendFeedback('/sendfeedback.htm?errorurl='+window.location.pathname);return false">
+			<#lang key="html.addsensor.moresensorsfeedback" default="send your feedback to Paessler">!</a>
+		</p>
+	</div>
+</div>
+<#lang key="html.addsensor.help.title" default="Add a sensor" var="helptitle">
+<#lang key="html.addsensor.help.text" default="This wizard will guide you through the process of adding a new sensor to a device. Please choose a sensor type first.<br><br><a href='/help/add_a_sensor.htm' target='_blank'><b>Help: Add a Sensor</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">
+
+
+
+

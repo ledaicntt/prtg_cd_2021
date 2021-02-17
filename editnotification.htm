@@ -1,0 +1,41 @@
+﻿
+<#system type="denyreadonlyusers" allowusersonfailovernode="1">
+<#checkobjecttype objecttype="notification">
+<#objectproperty name="name" var="objectname">
+<#lang key="html.editnotifcation.title" default="Edit Notification" var="title">
+<#setpagetitle pagetitle="@objectname | @title" varexpand="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#lang key="html.global.notifications" default="Notifications" var="notifications">
+<#userid var="userid">
+<#breadcrumbs varexpand="trail" trail="<a href='/myaccount.htm?tabid=2'>@notifications</a>" this="(OBJECT)" >
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <h1 class="sitecaption <#objectidorzero zeroidcode="hidden" objectidcode="show">"><#lang key="html.editnotification.head2a" default="<i>Notification</i><dummy>@objectname</dummy>"></h1>
+  <h1 class="<#objectidorzero zeroidcode="show" objectidcode="hidden">"><#lang key="html.addnotification.head" default="Add Notification"></h1>
+  <wingui-hidden>
+	  <div class="buttonbox">
+		<#include file="includes\linkpagebutton.htm">
+		<a onclick="_Prtg.objectTools.deleteObject.call(this,<#objectid>);return false;" data-id="<#objectidorzero>" data-placement="bottom" style="<#system type='hideforreadonlyusers'>" class='hideForID0' href="#" title="<#lang key="html.global.delete" default="Delete">"><i class="icon-dark icon-trash"></i></a>
+	  </div>
+  </wingui-hidden>
+  <wingui>
+	  <div class="buttonbox">
+		<#include file="includes\linkpagebutton.htm">
+	  </div>
+  </wingui>
+    <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+      <ul class="nav-tabs">
+        <li tabid="1" class="tab-active"><a href="/controls/editnotification.htm?id=<#objectid>"><i class="icon-wrench icon-dark"></i><#lang key="html.global.settings" default="Settings"></a></li>
+        <li tabid="2" class="tab-spacing tab-dark removefornew <#objectidorzero zeroidcode="hidden">" title="<#lang key="html.global.comments" default="Comments">"><a href="/controls/comments.htm?id=<#objectid>"><i class="icon-comment icon-white"></i><#hascomment></a></li>
+        <li tabid="3" class="tab-dark removefornew <#objectidorzero zeroidcode="hidden">" style="<#hidefornonadmins>" title="<#lang key="html.global.history" default="History">"><a href="/controls/history.htm?id=<#objectid>"><i class="icon-note icon-white"></i></a></li>
+      </ul>
+      <div class="tab-container"></div>
+    </div>
+<#lang key="html.editnotification.help.title" default="Enter Notification Details" var="helptitle">
+<#lang key="html.editnotification.help.text" default="Define the kind of messages that will be sent for this notification. You can add several kinds of messages that will all be sent at the same time when this notification is triggered.<br><br><a href='/help/notifications_settings.htm#settings' target='_blank'><b>Help: Notifications Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

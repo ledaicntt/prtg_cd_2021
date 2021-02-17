@@ -1,0 +1,32 @@
+﻿<#system type="denyreadonlyusers">
+
+<div id="editmaplayout" class="map_edit" >
+
+  <#checkobjecttype objecttype="map">
+  <#mapobject type="mapid" var="mapidstr">
+
+  <p><#lang key="html.maphtml.easyeasy" default="PRTG Network Monitor makes it easy for you to include the monitoring results in other web pages:"></p>
+  <h2><#lang key="html.maphtml.option1b" default="Option 1: Link to a web page with the map that requires login credentials"></h2>
+  <p><#lang key="html.maphtml.createlink1" default="Create a link to the following URL(s) and the user will be asked for their login credentials to view the map:"></p>
+
+  <#clustermaps>
+
+  <h2><#lang key="html.maphtml.option2a" default="Option 2: Link to a web page that displays the map without a login"></h2>
+
+
+  <p><#lang key="html.maphtml.li2" default="Use an URL with &quot;mapid-password&quot; (set the <a href='#' onclick=_Prtg.Plugins['prtg-tabs'].plugin.activateTab(3,true);return(false);>Map's &quot;Public Access&quot; setting</a> to &quot;Allow Public Access&quot;):"></p>
+
+  <#clustermaps varexpand="mapid" mapid="@mapidstr">
+
+  <h2><#lang key="html.maphtml.op3" default="Option 3: Show a map inside other web pages using an IFRAME"></h2>
+
+  <p><#lang key="html.maphtml.paste2a" default="Paste the following HTML code into your webpage and set the <a href='#' onclick=_Prtg.Plugins['prtg-tabs'].plugin.activateTab(3,true);return(false);>map's 'Public Access' setting</a> to 'Allow Public Access'."></p>
+
+  <pre style='overflow:scroll;border:1px solid #888;'>
+
+   &lt;iframe width=<#mapobject type="mapwidth"> height=<#mapobject type="mapheight"> frameborder="1"
+   src="<#system type="serverhttpurl">/public/mapshow.htm?id=<#objectid>&mapid=<#mapobject type="mapid">"&gt;
+   &lt;/iframe&gt;
+
+ </pre>
+</div>

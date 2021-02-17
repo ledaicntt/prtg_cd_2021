@@ -1,0 +1,16 @@
+﻿<h1 class="sitecaption">
+  <div class="bigsensoricon <#ticketheader name="type">"></div>
+  <i><#lang key="html.ticketheader.head" default="Ticket"> #<#inserturlparam parameter="id"></i>
+  <dummy><#ticketheader name="subject"></dummy>
+  <dummy status="priority">
+    <div id="objectpriority" class="ticket-<#ticketheader name="status" as="text">" title="<#lang key="html.sensorstatusdata.setprio" default="Click to set priority and/or favorite status">">
+      <#ticketheader name="priority">
+    </div>
+  </dummy>
+</h1>
+
+<wingui-hidden>
+  <div class="buttonbox">
+    <#include file="includes\linkpagebutton.htm">
+  </div>
+</wingui-hidden>

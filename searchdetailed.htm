@@ -1,0 +1,34 @@
+﻿<#lang key="html.searchdetailed.title" default="Search Results" var="pagetitle">
+<#include file="includes\htmlheader.htm"bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#system type="searchtext" var="searchtext">
+<#breadcrumbs varexpand="this" this="@pagetitle" >
+
+<div id="main" data-title="<#pagetitle>" data-namecontexthelpshow="<#system type='showhelp'>">
+	<div id="content">
+    <h1><b><#lang key="html.search.for" default="Searching for &quot;<b>@searchtext</b>&quot;"></b></h1>
+		<div class="buttonbox normalpage">
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+		<div class="tab-container searchdetailed">
+			<div class="searchformsmall">
+				<form id="detailedsearch" action="/searchdetailed.htm" onsubmit="_Prtg.Hjax.loadLink('/searchdetailed.htm?searchtext='+$(this).find('#searchstring2').val()+'&searchtype='+$(this).find('#searchtype2').val()); return false;" method="get" class="validateForm">
+					<input type="hidden" value="<#inserturlparam parameter='searchtype'>" name="searchtype" id="searchtype2">
+          <div>
+            <h2><#lang key="html.searchdetailed.refine" default="Refine Your Search"></h2>
+            <span><#lang key="html.searchdetailed.searchfor" default="Search for">:&nbsp;</span>
+            <span><input id="searchstring2" name="searchtext" type=text value="<#system type="searchtext">"></span>
+            <span><input class="submit actionbutton button btnsmall" type="submit" value="<#lang key="html.search.start" default="Start Search">"></span>
+          </div>
+				</form>
+			</div>
+	  	<div class="searchresults">
+	  		<div class="loadlater loading" loadurl="/controls/searchdetailed.htm?searchtext=<#inserturlparam parameter='searchtext' doenc='1'>&searchtype=<#inserturlparam parameter='searchtype'>"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

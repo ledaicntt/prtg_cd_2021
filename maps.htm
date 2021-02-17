@@ -1,0 +1,42 @@
+﻿<#lang key="html.maps.title" default="Maps" var="pagetitle">
+<#lang key="html.maps.titlefilter" default="maps&nbsp;" var="titlefilter">
+<#include file="includes\htmlheader.htm" bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id=content>
+		<div class="buttonbox normalpage">
+			<a href='objecthistory.htm?tabid=9' data-placement="bottom" title="<#lang key="html.global.History" default="History">" style="<#hidefornonadmins>"><i class="icon-dark icon-note"></i></a>
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+    <div class="prtg-plugin" data-plugin="prtg-table">
+    	<#table tableid="maptable"
+    		content="maps"
+    		userid="<#userid>"
+    		columns="name,securitycontext,publicaccess,priority,links,checkbox"
+    		count="all"
+    		tools="delete,edit,maprotate"
+    		sortby="name"
+    		sortable="true"
+    		links="true"
+        tabletitle="@pagetitle"
+    		refreshable="true"
+        filters="words!@titlefilter,tags"
+        varexpand="tabletitle,filters"
+		  >
+    	</div>
+	<#lang key="html.maps.add" default="Add Map" var="addmap">
+	<#system type="usertype" varexpand="contentnotreadonly" contentnotreadonly="<p><a class=actionbutton href='/addmap.htm'><span class='ui-icon ui-icon-circle-plus'></span>@addmap</a></p>">
+  </div>
+<#system type='showhelp' tct="theater" page="help-maps" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+<#lang key="html.maps.help.title" default="Maps" var="helptitle">
+<#lang key="html.maps.help.text3" default="Using <b>Maps</b>, you can create your own overviews of your monitored network. A map can have a background image (for example, a network drawing) and you can place icons and graphs with your current monitoring status on the map.<br> You can define any number of maps and use them, for example, to create a NOC Dashboard, an overview of the network status for your Intranet, a web page with the graphs of your most important sensors and more. By using the <b>Public Access</b> feature you can give your map URLs to others and they can view the map's data without the need of a user account." var="helptext">
+<#lang key="html.maps.help.link" default="<a href='/help/maps_step_by_step.htm' target='_blank'><b>Help: Maps Step By Step</b></a>" var="helplink">
+<#system type='showhelp' var='showhelp'>
+<#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt @helplink" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

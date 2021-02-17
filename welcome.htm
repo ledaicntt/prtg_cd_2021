@@ -1,0 +1,69 @@
+﻿<#lang key="html.welcome.title" default="Welcome" var="pagetitle">
+<#include file="includes\htmlheader.htm" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="(AUTO)" this="@pagetitle" varexpand="this">
+
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content" class="welcomepage">
+    <div class="welcomepage_container">
+      <div class="welcome_column welcome_column_left">
+        <div class="welcomebox">
+          <h2 class="fll"><#lang key="html.welcome.title" default="Welcome"></h2>
+          <img class="prtg-logo-big flr" src="/images/prtg_logo_gray.png">
+        </div>
+        <a href="/group.htm?id=0" class="welcomebox welcomebutton welcomebutton1">
+          <img src="/images/ReviewResults.png"/>
+          <p><#lang key="html.welcome.colorbutton.viewresults" default="View Results"></p>
+        </a>
+        <a href="help.htm" class="welcomebox welcomebutton welcomebutton2">
+          <img src="/images/HelpSupport.png"/>
+          <p><#lang key="html.welcome.colorbutton.gethelpandsupport" default="Get Help and Support"></p>
+        </a>
+        <a href="downloads.htm?tabid=2" class="welcomebox welcomebutton welcomebutton3">
+          <img src="/images/InstallSmartPhoneApp.png"/>
+          <p><#lang key="html.welcome.colorbutton.installsmartphoneapp" default="Install Smartphone App"></p>
+        </a>
+        <a href="downloads.htm?tabid=1" class="welcomebox welcomebutton welcomebutton4" style="<#hideforpod>">
+          <img src="/images/DownloadEnterprise.png"/>
+          <p><#lang key="html.welcome.colorbutton.ecdownload" default="Download Enterprise Console"></p>
+        </a>
+        <a href='https://www.my-prtg.com' target="=_blank" class="welcomebox welcomebutton welcomebutton4" style="<#hidefornonpodsubscriber>">
+          <img src="/images/PRTG_Cloud-Icon_Weiss.svg" width="80" height="64"/>
+          <p><#lang key="html.global.podsubscription" default="Manage Subscription"></p>
+        </a>
+        <div class="welcomebox refreshable" refreshurl="controls\welcome_currentalarms.htm"><#include file="controls\welcome_currentalarms.htm"></div>
+        <div class="welcomebox" style="<#hidesslnagscreen> <#hidefornonadmins>"><#include file="controls\sslnagscreen.htm" skiptagfornonadmins="true"></div>
+        <div class="welcomebox" style="<#system type="defaultlogin" code="" codeifnot="display:none;"> <#hidefornonadmins> <#clusterdependent insertfor="failovernode" insertcontent="display:none;">"><#include file="controls\defaultloginnagscreen.htm"  skiptagfornonadmins="true"></div>
+
+        <div class="welcomebox">
+          <#system type="showhelp" tct="theater" page="welcomepage-mapsvideo" var="tctfile">
+          <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+          <#system type="showhelp" tct="theater" page="welcomepage-notificationvideo" var="tctfile">
+          <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+        </div>
+
+      </div>
+      <div class="welcome_column welcome_column_right">
+        <div class="welcomeboxwhite hidden"><img class="prtg-logo-big" src="/images/prtg_logo_gray.png"></div>
+        <#isadmin var="isadmin">
+        <div class="welcomebox <#if value="@isadmin" is="true" then="newsfeedboxadmin" else="newsfeedbox" varexpand="value">"><#include file="public\newsfeed.htm"></div>
+
+        <#system type="showhelp" tct="theater" page="welcome-trustpilot" var="tctfile">
+        <#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role">
+
+        <div class="welcomebox" style="<#hidefornonadmins>"><#include file="controls\welcome_yesterdayactivities.htm" skiptagfornonadmins="true"></div>
+        <div class="welcomebox" style="<#hidefornonadmins>"><#include file="controls\welcome_licenseinfo.htm" varexpand="file" skiptagfornonadmins="true"></div>
+        <div class="welcomebox autoupdate <#hidefornonadmins> <#hideforpod asclass='true'> <#system type="autoupdateavailable" insert="autoupdateavailable" insertifyes="" insertifno="hidden">"><#include file="controls\welcome_autoupdate.htm" skiptagfornonadmins="true"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<#lang key="html.welcome.help.title" default="Welcome Page" var="helptitle">
+<#lang key="html.welcome.help.text" default="Get started with PRTG Network Monitor now! While you navigate through the software, this text box will always provide you with further information.<br><br>This is the welcome page and your default homepage. It shows up when you log in and whenever you click the <b>Home</b> link. To select another page as your homepage, navigate to the desired page and choose <b>Make This My Homepage</b> from the <b>Home</b> menu." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

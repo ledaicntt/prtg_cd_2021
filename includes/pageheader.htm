@@ -1,0 +1,30 @@
+﻿<header>
+   <div id="crumblersensorstats" class="prtg-plugin" data-plugin="crumblerSensorStats">
+  	<#include file="\includes\crumblersensorstats.htm">
+  </div>
+  <nav id="header_menu">
+    <div>
+      <#include file="controls\menu.htm">
+    </div>
+  </nav>
+    <div id="quickbar">
+      <ul>
+        <li>
+          <a class="icon-refresh icon-white" onclick="_Prtg.Events.stop('refresh');return false;" title="<#lang key="html.menu.Refresh" default="Refresh">"></a>
+        </li>
+        <li>
+          <a class="icon-help icon-white" href="/help.htm" title="<#lang key="html.menu.helpcenter" default="Help Center">"></a>
+        </li>
+        <li>
+          <a class="icon-power icon-white logout" href="/index.htm?logout=1" title="<#lang key="html.menu.Logout" default="Logout">"></a>
+        </li>
+        <li class="<#system type="logoutAfterInactivity" action="pluginactivation"> inactivitylogout hide" data-plugin="activity" data-loggedout-text="<#lang key="html.menu.autologout2" default="You were automatically logged out after a certain time of inactivity.">" title="<#lang key="html.menu.autologout1" default="After a certain time of inactivity, you will be automatically logged out.">"></li>
+      </ul>
+      <form onsubmit="_Prtg.Hjax.loadLink('/search.htm?searchtext='+encodeURIComponent($(this).find('#searchtext').val())); return false;" method="get" id="searchform">
+        <label class="ui-icon icon-blue ui-icon-search" id="searchicon" for="searchtext"></label>
+        <input id="searchtext" placeholder="<#lang key="html.global.search2" default="Search...">" name="searchtext" type="text" >
+      </form>
+    </div>
+  <div id="header_breadcrumbs"><#breadcrumbs varexpand="this" this="@pagetitle" parent="true"><span class="breadcrumbdivider"></span></div>
+</header>
+<div id="container"><#comment schliessendes div in der pagefooter.htm>

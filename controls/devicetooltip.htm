@@ -1,0 +1,76 @@
+﻿<#checkobjecttype objecttype="device">
+<#objectid var="objid">
+<#objectstatus name="probegroupdevice">
+<div class="overviewsmalldata overviewsmalldatastatus<#objectstatus name="status" show="textraw">">
+  <table width="100%" >
+    <tr>
+      <td class="label">
+        <#lang key="html.devicedata.status" default="Status">:</td>
+      <td class="allowwordwrap" >
+        <div title="<#objectstatus name="message" show="treejson">
+          <#objectstatus name="condition" show="treejson">
+          "> <b><#objectstatus name="message" show="htmllong">
+            <#objectstatus name="condition"></b>
+        </div>
+      </td>
+      <td title="<#lang key="html.devicedata.sensors" default="Sensors">
+        ">
+        <b>
+          <#objectstatus name="downsens">
+          <#objectstatus name="partialdownsens">
+          <#objectstatus name="downacksens">
+          <#objectstatus name="warnsens">
+          <#objectstatus name="upsens">
+          <#objectstatus name="pausedsens">
+          <#objectstatus name="unusualsens">
+          <#objectstatus name="undefinedsens"></b>
+        (
+        <#lang key="html.addsensor.xsensors_of_ysensors" default="of">
+        <#objectstatus name="totalsens">)</td>
+    </tr>
+  </table>
+</div>
+<div class="overviewsmalldata">
+  <table width="100%" >
+    <tr>
+      <td>
+        <#lang key="html.devicedata.dnsip" default="DNS/IP">;
+      </td>
+      <td class="<#if value="@objid" is="0" then="hide" varexpand="value">">
+        <#lang key="html.devicedata.dependency" default="Dependency">:
+      </td>
+      <td class="<#if value="@objid" is="0" then="hide" varexpand="value">" style="<#showbyobjecttype showonlyforobjecttype="group">">
+        <#lang key="html.devicedata.lastautodiscovery" default="Last Auto-Discovery">:
+      </td>
+      <td>
+        <#lang key="html.devicedata.ID" default="ID">:
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <#objectproperty name="host" show="text">
+      </td>
+      <td class="<#if value="@objid" is="0" then="hide" varexpand="value">">
+        <#objectstatus name="dependency">
+      </td>
+      <td class="<#if value="@objid" is="0" then="hide" varexpand="value">" style="<#showbyobjecttype showonlyforobjecttype="group">">
+        <#lastautodisco>
+      </td>
+      <td>
+        <b>#<#objectid></b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<#lang key="html.global.sensors" default="Sensors" var="title">
+<div class="prtg-plugin" data-plugin="prtg-table">
+  <#table tableid="devicesensortable" tabletitle="@title" varexpand="tabletitle"  content="sensors" columns="sensor,status,message" sortby="position" sortable="true" links="true" count="100" refreshable="true"></div>
+<div style="position:relative;" class="<#selectionlist content="geomapprovider" asClass="true">
+  ">
+  <div id="geomap_devicetooltip" class="refreshable geomap <#selectionlist content="geomapprovider">
+    " refreshurl="/controls/geomap.htm?id=
+    <#objectid>
+    &width=445&height=225&maxlegenditems=4&domobjectid=geomap_devicetooltip&nolegend=1">
+    <#selectionlist content="locationlist" width="445" height="225" maxlegenditems="4" domobjectid="geomap_devicetooltip" loadlater="true" nolegend="1"></div>
+</div>

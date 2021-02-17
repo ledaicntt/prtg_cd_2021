@@ -1,0 +1,109 @@
+﻿
+<#include file="includes\htmlheader.htm" title="" bodyclass="wingui" style="">
+<style>
+	.contexthelpbox {display:none;}
+	.hideinwingui,wingui-hidden,#prtg_growls{display:none!important;}
+	.unvisibleinwingui{visibility: hidden;}
+	wingui{display: block;}
+	div#geomap_window.geomap-active {width:355px;height:142px;margin-left:0px;}
+	#main{margin:0;padding:0;background: none;min-width:0; min-height:0;}
+	form.prtg-form{margin-bottom:25px}
+	body{min-width:0; min-height:0;}
+
+</style>
+
+<div id="winguistatus" style="display:none;">
+  <div id="winguicrumbler" class="prtg-plugin" data-plugin="crumblerSensorStats">
+  </div>
+</div>
+<div id="mainstuff" class="loading wingui"></div>
+
+<script type="text/javascript">
+	$(function() {
+    var iprtgRegex=/Android|webOS|iPhone|iPad|iPod|BlackBerry/i
+      , ajax=null;
+    window.action = "<#system type="action">";
+  	window.mainstuff = $('#mainstuff');
+    window.winGUI = true;
+    window.winguiid=null;
+    window.prtgLoadContent = function(url){
+		window.action = decodeURIComponent(_Prtg.Util.getUrlParameters(url)['action']);
+		loadContent();
+	}
+
+	function loadContent() {
+		checkiPrtgGeoMaps();
+		window.mainstuff.addClass('loading');
+		window.winguiid = (_Prtg.Util.getUrlParameters(window.action)['id'] || null);
+
+		if(window.action.length) {
+			if(!!ajax){
+				ajax.abort();
+				ajax = null;
+			}
+      _Prtg.xhrManager && _Prtg.xhrManager.xhrabort();
+			ajax = $.ajax({
+				url: window.action,
+				'wingui': true,
+				data: {
+					_hjax: true,
+          wingui: true
+		    }
+			}).done(function(d) {
+        window.mainstuff
+          .children().remove();
+
+        window.mainstuff
+					.removeClass('loading')
+					.html(d);
+
+        _Prtg.Events && _Prtg.Events.reset();
+				_Prtg.SetupPage(window.mainstuff);
+
+        if(window.action.indexOf('overview.htm?'  ) !== -1
+        && !$('#winguicrumbler').is('.prtg-plugin-initialized'))
+          _Prtg.initPlugins('#winguistatus');
+
+				if (window.action.indexOf("id=new") > -1)
+				  $(".hideinwingui").show();
+        if (window.action.indexOf("android=true") > -1)
+          $(".hideinandroid").hide();
+
+        !!window.__ga && window.__ga('send','pageview', window.__gaStripOrigin(window.action));
+
+			}).always(function(){
+        ajax = null;
+         _Prtg.Plugins["TCT"] && _Prtg.Plugins["TCT"].plugin.init();
+      });
+    }
+	};
+
+	function checkiPrtgGeoMaps() {
+		var iprtg=/Android|webOS|iPhone|iPad|iPod|BlackBerry|iPRTG/i.test(navigator.userAgent)
+      , iprtg_width=320
+			, iprtg_height=330;
+	  if(iprtg
+	  && window.action.indexOf('/controls/geomap.htm')>-1
+	  && window.action.indexOf('domobjectid')===-1) {
+      var vars =  (function (url) {
+      var vars = [], hash;
+	    var hashes = url.slice(url.indexOf('?') + 1).split('&');
+      for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    })(action);
+	    iprtg_width = vars['width'];
+	    iprtg_height = vars['height'];
+	  	//window.action.substring(window.action.indexOf('?')+1).split('&')
+	  	window.mainstuff.attr('loadurl',window.action +'&domobjectid=geomap_iprtg');
+      window.action += '&domobjectid=geomap_iprtg'
+	  	$("<style type='text/css' rel='stylesheet'>#geomap_iprtg{width:"+iprtg_width+"px;height:"+iprtg_height+"px;}</style>").appendTo($("head"))
+	  }
+	};
+	loadContent();
+});
+</script>
+<#include file="includes\htmlfooter.htm">

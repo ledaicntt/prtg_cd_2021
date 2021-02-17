@@ -1,0 +1,30 @@
+﻿<#system type="denyreadonlyusers" allowusersonfailovernode="true" allowpwchangeusers="true">
+<#lang key="html.myaccount.title" default="Account Settings" var="pagetitle">
+<#include file="includes\htmlheader.htm" bodyclass="fixedwidth" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs trail="<a href='/setup.htm'>Setup</a>" varexpand="this" this="@pagetitle">
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+	<h1><b><#lang key="html.myaccount.head2" default="Account Settings"></b></h1>
+	<div class="buttonbox">
+    <a href="objecthistory.htm?tabid=" onclick="var tabid = ([0,1,3,4])[parseInt(_Prtg.Util.getUrlParameters(location.href)['tabid'])]; _Prtg.Hjax.loadLink(this.href+tabid);return false;" data-placement='left' class="objectHistory" title='<#lang key="html.global.History" default="History">' style="<#hidefornonadmins>">
+    <i class='icon-dark icon-note'></i>
+    </a>
+		<#include file="includes\linkpagebutton.htm">
+	</div>
+  <div class="prtg-tabs prtg-plugin" data-plugin="prtg-tabs">
+    <ul class="nav-tabs">
+      <li tabid="1" class="tab-active"><a href="/controls/myaccount.htm?id=<#userid>&objecttype=user"><i class="icon-contact icon-dark"></i><#lang key="html.global.myaccount" default="My Account"></a></li>
+      <li tabid='2' style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">'><a href="/controls/notifications.htm"><i class="icon-notification icon-dark"></i><#lang key="html.global.notifications" default="Notifications"></a></li>
+      <li tabid='4' style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">'><a href="/controls/contactlist.htm?id=<#userid>&objecttype=user&targeturl=myaccount.htm?tabid=4"><i class="icon-mail-closed icon-dark"></i><#lang key="html.global.contactlist" default="Notification Contacts"></a></li>
+      <li tabid='3' style='<#system type="hideforreadonlyusers" allowusersonfailovernode="true">'><a href="/controls/schedules.htm"><i class="icon-clock icon-dark"></i><#lang key="html.global.schedules" default="Schedules"></a></li>
+    </ul>
+    <div class="tab-container"></div>
+	</div>
+<#lang key="html.accountsettings.help.title" default="Account Settings" var="helptitle">
+<#lang key="html.accountsettings.help.text" default="On this page you can edit your account settings." var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptext" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

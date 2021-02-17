@@ -1,0 +1,78 @@
+﻿<!--Monitoring Bandwidth via Packet Sniffing-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="ssh_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="flow_monitoring.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Monitoring Bandwidth via Packet Sniffing</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Monitoring Bandwidth via Packet Sniffing</h1> 
+      <p>Packet Sniffing comes into consideration if your network device(s) do not support SNMP or xFlow to measure bandwidth usage and if you need to differentiate the bandwidth usage by network protocol and/or IP addresses.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />Packet Sniffer sensors support <span class="f_BoldCustom"><a href="toplists.htm" class="topiclink">Toplists</a></span> (Top Talkers, Top Connections, etc.).</p>
+<p class="p_InTopicHeading"><a id="how"></a><span class="f_InTopicHeading">How Packet Sniffing Works</span></p>
+<p>If you need to know what applications or IP addresses cause the traffic in your network, you can use a packet sniffer. A packet sniffer looks at every single data package that travels through your network for accounting purposes.</p>
+<div class="p_ImageCaption"><div style="width:491px;padding:0px"><img src="data-acquisition-using-packet-sniffing-lan_zoom54.png" width="491" height="232" style="border:none" alt="Monitoring with PRTG via Packet Sniffer Sensors" title="Monitoring with PRTG via Packet Sniffer Sensors" /><p style="text-align:center"><span class="f_ImageCaption">Monitoring with PRTG via Packet Sniffer Sensors</span></p></div></div>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Click here to enlarge: <a href="http://media.paessler.com/prtg-screenshots/data-acquisition-using-packet-sniffing-lan.png" target="_blank" class="weblink">http://media.paessler.com/prtg-screenshots/data-acquisition-using-packet-sniffing-lan.png</a> </span></p>
+<p>PRTG can analyze the packets passing the network card of a PC or you can connect it to the <span class="f_ItalicCustom">monitoring port</span> of a switch. To calculate bandwidth usage, PRTG inspects all network data packets either passing the PC's network card (shown on the left side in the schema above) or the data packages that a monitoring port of a switch (right side) sends with its built-in packet sniffer. Using remote probes, you can set up packet sniffers anywhere in your network (see <span class="f_BoldCustom"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span> section).</p>
+<p><a href="bandwidth_monitoring_comparison.htm" class="topiclink">Comparing</a> the four bandwidth monitoring technologies which PRTG provides (SNMP, WMI, xFlow, and packet sniffer) this one creates the most CPU and network load, so you should only use it in small to medium networks, on dedicated computers for larger networks or for individual computers.</p>
+<p class="p_InTopicHeading"><a id="reasons"></a><span class="f_InTopicHeading">Reasons to Choose Packet Sniffing</span></p>
+<p>It is important to understand that the packet sniffer can only access and inspect data packages that actually flow through the network interface(s) of the machine running the PRTG probe software. This is fine if you only want to monitor the traffic of this machine (e.g., your web server). In switched networks, only the traffic for a specific machine is sent to each machine's network card, so PRTG can usually not discern the traffic of the other machines in the network. </p>
+<p>If you also want to monitor the traffic of other devices in your network, you must use a switch that offers a <span class="f_ItalicCustom">monitoring port</span> or <span class="f_ItalicCustom">port mirroring</span> configuration (Cisco calls it <span class="f_ItalicCustom">SPAN</span>). In this case, the switch sends a copy to the monitoring port of all data packages traveling through the switch. As soon as you connect one of the PRTG probe system's network cards to the switch's monitoring port, PRTG is able to analyze the complete traffic that passes through the switch.</p>
+<p>Another option is to set up the PC running PRTG as the gateway for all other computers in the network.</p>
+<p class="p_InTopicHeading"><a id="setup"></a><span class="f_InTopicHeading">Set Up Packet Sniffer Sensors</span></p>
+<p>Find details on how to set up the different flow sensors in the following sections:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="packet_sniffer_header_sensor.htm" class="topiclink">Packet Sniffer Sensor</a></span></li>
+<li><span class="f_BoldCustom"><a href="packet_sniffer_custom_sensor.htm" class="topiclink">Packet Sniffer (Custom) Sensor</a></span></li>
+</ul>
+<p class="p_InTopicHeading"><a id="header"></a><span class="f_InTopicHeading">Header Based Packet Sniffing</span></p>
+<p>For packet sniffing, PRTG looks at the IP addresses and ports of source and destination to assess the protocol. This is a very fast method and saves system resources. </p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />Sometimes, this method is not fully accurate. For example, it is not possible to identify HTTP traffic on ports other than <span class="f_ItalicCustom">80</span>, <span class="f_ItalicCustom">8080</span> and <span class="f_ItalicCustom">443</span> as HTTP. HTTP traffic on non-standard ports would not be accounted as such.</p>
+<p class="p_InTopicHeading"><a id="more"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Video Tutorial: Bandwidth Monitoring With Flows and Packet Sniffing</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://www.paessler.com/support/videos/prtg-advanced/bandwidth-monitoring-advanced?utm_source=prtg&utm_medium=webgui&utm_campaign=homepage" target="_blank" class="weblink">https://www.paessler.com/support/videos/prtg-advanced/bandwidth-monitoring-advanced</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: How can I change the default groups and channels for xFlow and Packet Sniffer sensors?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60203?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60203</a></span></li>
+</ul>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Sensor Technologies—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="snmp_monitoring.htm" class="topiclink">Monitoring via SNMP</a></span></li>
+<li><span class="f_BoldCustom"><a href="wmi_monitoring.htm" class="topiclink">Monitoring via WMI</a></span></li>
+<li><span class="f_BoldCustom"><a href="ssh_monitoring.htm" class="topiclink">Monitoring via SSH</a></span></li>
+<li><span class="f_BoldCustom"><a href="packet_sniffer_monitoring.htm" class="topiclink">Monitoring Bandwidth via Packet Sniffing</a></span></li>
+<li><span class="f_BoldCustom"><a href="flow_monitoring.htm" class="topiclink">Monitoring Bandwidth via Flows</a></span></li>
+<li><span class="f_BoldCustom"><a href="bandwidth_monitoring_comparison.htm" class="topiclink">Bandwidth Monitoring Comparison</a></span></li>
+<li><span class="f_BoldCustom"><a href="quality_of_service_monitoring.htm" class="topiclink">Monitoring Quality of Service</a></span></li>
+<li><span class="f_BoldCustom"><a href="email_round_trip_monitoring.htm" class="topiclink">Monitoring Email Round Trip</a> </span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_backups.htm" class="topiclink">Monitoring Backups</a></span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_virtual_environments.htm" class="topiclink">Monitoring Virtual Environments</a></span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_databases.htm" class="topiclink">Monitoring Databases</a></span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_syslogs_and_snmp_traps.htm" class="topiclink">Monitoring Syslogs and SNMP Traps</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Packet Sniffing,Packet Sniffing Technology</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="ssh_monitoring.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="flow_monitoring.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

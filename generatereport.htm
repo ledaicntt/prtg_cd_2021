@@ -1,0 +1,14 @@
+﻿<#report type="generate" var="extrapar">
+<#include file="includes\reportheader.htm" extraparam="@extrapar" varexpand="extraparam">
+<img style="float:right;" width="250" height="150" src="/images/prtg_logo_gray.png">
+<div style="position:relative;width:100%;height:150px;vertical-align:middle">
+  <img src="/images/ajax-loader-big.gif" style="position:absolute;top:54px">
+  <div style="position:absolute;left:40px;top:50%;height:50%;margin-top:-36px;">
+  <#lang key="html.global.reportisrunning" default="PRTG is now generating your report:"><br><br>
+  <b><#objectproperty name="name"></b><br><br>
+  <#lang key="html.global.reportshowhere" default="The report will be shown here as soon as it's ready."><br><br>
+  <#lang key="html.global.reportshowheredelayed" default="<b>Note:</b> If your report contains Toplists for flow or packet sniffer sensors, this might take several minutes.">
+  </span>
+</div>
+</body>
+</html>

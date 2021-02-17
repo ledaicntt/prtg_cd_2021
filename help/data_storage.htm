@@ -1,0 +1,78 @@
+﻿<!--Data Storage-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="failover_cluster_step_by_step.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="using_your_own_ssl_certificate.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Data Storage</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Data Storage</h1> 
+      <p>PRTG stores the monitoring configuration, monitoring data, logs, tickets, and reports, as well as support and debug data into different folders on the core server or the system running a <span class="f_BoldCustom"><a href="add_remote_probe.htm" class="topiclink">Remote Probe</a></span>. Additionally, there is data from PRTG in the program directory (for example, scripts for your <a href="additional_sensor_types.htm" class="topiclink">custom sensors</a>) and in the Windows registry.</p>
+<p><img src="icon-book-bulb.png" width="17" height="17" alt="icon-book-bulb" style="float:left;margin:0px 10px 10px 0px; border:none" />You can find data in different locations. For detailed information, see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/463?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">How and where does PRTG store its data?</a> </span></p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />You cannot access these directories on the PRTG in the cloud core server system.</p>
+<p class="p_InTopicHeading"><a id="program"></a><span class="f_InTopicHeading">PRTG Program Directory</span></p>
+<p>32-bit systems:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">%programfiles%\PRTG&nbsp;Network&nbsp;Monitor</span></p>
+<p>64-bit systems:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">%programfiles(x86)%\PRTG&nbsp;Network&nbsp;Monitor</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />These are the default paths. If you specified another installation directory, you will find your data there.</p>
+<p class="p_InTopicHeading"><a id="data"></a><span class="f_InTopicHeading">PRTG Data Folder</span></p>
+<p>On Windows Vista (not officially supported), Windows 7, Windows 2008, Windows 8, and Windows 2012:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">%programdata%\Paessler\PRTG&nbsp;Network&nbsp;Monitor</span></p>
+<p>On Windows XP and Windows Server 2003 (both are not officially supported):</p>
+<p class="p_CodeExample"><span class="f_CodeExample">%ALLUSERSPROFILE%\Application&nbsp;data\Paessler\PRTG&nbsp;Network&nbsp;Monitor</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />These are the default paths, depending on your Windows version. If you specified a custom path for data storage, please look it up in the <span class="f_BoldCustom"><a href="prtg_server_administrator.htm#core_server" class="topiclink">PRTG Administration Tool</a></span>: Open this application and switch to the <span class="f_BoldCustom">Core Server</span> tab. You will find the path there.</p>
+<p class="p_InTopicHeading"><a id="registry"></a><span class="f_InTopicHeading">Windows Registry</span></p>
+<p>System settings on 32-bit systems:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">HKEY_LOCAL_MACHINE\SOFTWARE\Paessler\PRTG&nbsp;Network&nbsp;Monitor</span></p>
+<p>System settings on 64-bit systems:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Paessler\PRTG&nbsp;Network&nbsp;Monitor</span></p>
+<p>Enterprise Console settings:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">HKEY_CURRENT_USER\Software\Paessler\PRTG&nbsp;Network&nbsp;Monitor\WinGUI</span></p>
+<p class="p_InTopicHeading"><a id="cached"></a><span class="f_InTopicHeading">HTTP Full Web Page Sensor: Cached Files</span></p>
+<p>If you use the HTTP Full Web Page Sensor, files might be cached in this directory;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Windows\Temporary&nbsp;Internet&nbsp;Files\Content.IE5</span></p>
+<p class="p_InTopicHeading"><a id="more"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: How and where does PRTG store its data?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/463?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/463</a> </span></li>
+</ul>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Advanced Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="active_directory_integration.htm" class="topiclink">Active Directory Integration</a></span></li>
+<li><span class="f_BoldCustom"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span></li>
+<li><span class="f_BoldCustom"><a href="xflow_packet_sniffer_filter_rules.htm" class="topiclink">Filter Rules for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li><span class="f_BoldCustom"><a href="xflow_packet_sniffer_channel_definitions.htm" class="topiclink">Channel Definitions for xFlow, IPFIX, and Packet Sniffer Sensors</a></span></li>
+<li><span class="f_BoldCustom"><a href="define_ip_ranges.htm" class="topiclink">Define IP Ranges</a></span></li>
+<li><span class="f_BoldCustom"><a href="define_lookups.htm" class="topiclink">Define Lookups</a></span></li>
+<li><span class="f_BoldCustom"><a href="regular_expressions.htm" class="topiclink">Regular Expressions</a></span></li>
+<li><span class="f_BoldCustom"><a href="add_remote_probe.htm" class="topiclink">Add Remote Probe</a></span></li>
+<li><span class="f_BoldCustom"><a href="failover_cluster_configuration.htm" class="topiclink">Failover Cluster Configuration</a></span></li>
+<li><span class="f_BoldCustom"><a href="data_storage.htm" class="topiclink">Data Storage</a></span></li>
+<li><span class="f_BoldCustom"><a href="using_your_own_ssl_certificate.htm" class="topiclink">Using Your Own SSL Certificate</a></span></li>
+<li><span class="f_BoldCustom"><a href="calculating_percentiles.htm" class="topiclink">Calculating Percentiles</a> </span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Data,Data Folder,Data Storage,Monitoring Data,Registry,Registry Data</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="failover_cluster_step_by_step.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="using_your_own_ssl_certificate.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,82 @@
+﻿<!--Install a PRTG Remote Probe-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="activate_the_product.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="install_the_enterprise_console.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Install a PRTG Remote Probe</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Install a PRTG Remote Probe</h1> 
+      <p>A PRTG remote probe helps you extend your monitoring to distributed networks or take load from the system running the core installation. All you need is a computer on which you can install your remote probe.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />Your PRTG on premises or PRTG in the cloud installations already include a probe on their core servers, the <a href="glossary.htm#local_probe" class="topiclink">local probe</a> and <a href="glossary.htm#cloud_probe" class="topiclink">cloud probe</a> respectively. This is why you cannot additionally install a remote probe on your core system.</p>
+<p><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" />Because your remote probe needs to connect to your PRTG core server, your PRTG core server must accept incoming connections. Please <span class="f_BoldCustom"><a href="remote_probe_setup.htm#1" class="topiclink">prepare the core server</a></span> first.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />PRTG updates remote probes automatically, but in rare cases a manual probe update is required. You will receive a <a href="tickets.htm#types" class="topiclink">ToDo ticket</a> in this case. Please follow the steps below to manually update a remote probe.</p>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Download the Remote Probe Installer from the PRTG Web Interface</span></p>
+<p>On the computer on which you want to install remote probe, <a href="login.htm" class="topiclink">log in to the PRTG web interface</a>. From the <a href="main_menu_structure.htm" class="topiclink">main menu bar</a>, select <span class="f_BoldCustom">Setup | Downloads | Remote Probe Installer</span>. Click <span class="f_BoldCustom">Download: Remote Probe Installer </span>and save the setup program to your local disk.</p>
+<p><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" />The version numbers of core and probe services must match. PRTG updates probes automatically when a new version is installed on the PRTG core server. If PRTG advises you to update your remote probe manually, open a web browser on your remote computer and download the remote probe installer as described in this manual section.</p>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Install the Remote Probe</span></p>
+<p>Execute the setup program that you have just downloaded.</p>
+<div class="p_ImageCaption"><div style="width:371px;padding:0px"><img src="clip0022_zoom80.png" width="371" height="210" style="border:none" alt="Windows User Account Control Confirmation Request" title="Windows User Account Control Confirmation Request" /><p style="text-align:center"><span class="f_ImageCaption">Windows User Account Control Confirmation Request</span></p></div></div>
+<p>Confirm the Windows<span class="f_BoldCustom"> </span>User Account Control dialog with <span class="f_BoldCustom">Yes </span>to allow the installation. The usual software installation wizard will guide you through the installation process.</p>
+<div class="p_ImageCaption"><div style="width:494px;padding:0px"><img src="remoteprobe_setup_1_zoom66.png" width="494" height="372" style="border:none" alt="PRTG Remote Probe Setup Ready to Install&nbsp;" title="PRTG Remote Probe Setup Ready to Install&nbsp;" /><p style="text-align:center"><span class="f_ImageCaption">PRTG Remote Probe Setup Ready to Install<br/>
+</span></p></div></div>
+<p>Click <span class="f_BoldCustom">Install</span> to start the installation process of your remote probe.</p>
+<div class="p_ImageCaption"><div style="width:494px;padding:0px"><img src="remoteprobe_setup_2_zoom66.png" width="494" height="372" style="border:none" alt="PRTG Remote Probe Setup Installing" title="PRTG Remote Probe Setup Installing" /><p style="text-align:center"><span class="f_ImageCaption">PRTG Remote Probe Setup Installing</span></p></div></div>
+<p>Please wait until the installation is completed. The remote probe will automatically connect to your PRTG core server then.</p>
+<div class="p_ImageCaption"><div style="width:494px;padding:0px"><img src="remoteprobe_setup_3_zoom66.png" width="494" height="372" style="border:none" alt="PRTG Remote Probe Setup Connecting to Server" title="PRTG Remote Probe Setup Connecting to Server" /><p style="text-align:center"><span class="f_ImageCaption">PRTG Remote Probe Setup Connecting to Server</span></p></div></div>
+<p>If the remote probe successfully connects to your PRTG core server, you can complete the setup of your new remote probe.</p>
+<p><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" />To allow your new remote probe to connect to the PRTG core server, PRTG automatically sets the <span class="f_BoldCustom">Allow IPs</span> field in <span class="f_BoldCustom"><a href="probes_settings.htm#probe_connection" class="topiclink">System Administration—Core &amp; Probes</a></span> to <span class="f_BoldCustom">any</span>. We recommend that you use this setting in intranets only. If <span class="f_BoldCustom">any</span> is not an option for you, cancel it in the <span class="f_BoldCustom">Allow IPs</span> field and enter the IP address of your remote probe instead.</p>
+<div class="p_ImageCaption"><div style="width:490px;padding:0px"><img src="remoteprobe_setup_4_zoom98.png" width="490" height="369" style="border:none" alt="PRTG Remote Probe Successful Setup" title="PRTG Remote Probe Successful Setup" /><p style="text-align:center"><span class="f_ImageCaption">PRTG Remote Probe Successful Setup</span></p></div></div>
+<p> Click <span class="f_BoldCustom">Continue</span> to finish the remote probe installation.</p>
+<div class="p_ImageCaption"><div style="width:494px;padding:0px"><img src="remoteprobe_setup_5_zoom66.png" width="494" height="372" style="border:none" alt="PRTG Remote Probe Finish Setup" title="PRTG Remote Probe Finish Setup" /><p style="text-align:center"><span class="f_ImageCaption">PRTG Remote Probe Finish Setup</span></p></div></div>
+<p>Finally, click <span class="f_BoldCustom">Finish</span> to exit the installation wizard. The remote probe is now installed on your computer as a Windows service.</p>
+<p><a id="approve"></a>Remember to log in to the PRTG web interface to acknowledge your new remote probe!</p>
+<div class="p_ImageCaption"><div style="width:412px;padding:0px"><img src="remoteprobe_approve_1.png" width="412" height="141" style="border:none" alt="PRTG Remote Probe Approval" title="PRTG Remote Probe Approval" /><p style="text-align:center"><span class="f_ImageCaption">PRTG Remote Probe Approval</span></p></div></div>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />If you successfully installed the remote probe from a PRTG in the cloud installation, you will see the following dialog box.</p>
+<div class="p_ImageCaption"><div style="width:498px;padding:0px"><img src="remoteprobe_approve_3_zoom62.png" width="498" height="221" style="border:none" alt="Approve PRTG Remote Probe for PRTG on demand" title="Approve PRTG Remote Probe for PRTG on demand" /><p style="text-align:center"><span class="f_ImageCaption">Approve PRTG Remote Probe for PRTG on demand</span></p></div></div>
+<p>Click <span class="f_BoldCustom">Approve and auto-discover new probe</span> to include your new remote probe device and network in your device tree and to start the PRTG <a href="auto_discovery.htm" class="topiclink">auto-discovery</a>. It helps you discover devices and automatically create suitable sensors. Optionally, you can also choose to only approve your remote probe without starting an auto-discovery by clicking <span class="f_BoldCustom">Approve new probe</span>. The probe now appears as a new object in your device tree.</p>
+<p>For unwanted probe connections, you can click <span class="f_BoldCustom">Deny new probe</span>. Note that this does not uninstall the remote probe, but only prohibits the probe from connecting to the PRTG core server.</p>
+<p><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" />If you deny or remove a remote probe, PRTG will include this device's global ID (GID) into <span class="f_BoldCustom">Deny GIDs </span>in <span class="f_BoldCustom"><a href="probes_settings.htm#settings" class="topiclink">System Administration—Core &amp; Probes</a></span>. Future probe connections from this device will be denied automatically.</p>
+<div class="p_ImageCaption"><div style="width:422px;padding:0px"><img src="remoteprobe_approve_2_zoom80.png" width="422" height="165" style="border:none" alt="PRTG Remote Probe Approved" title="PRTG Remote Probe Approved" /><p style="text-align:center"><span class="f_ImageCaption">PRTG Remote Probe Approved</span></p></div></div>
+<p>In the <span style="font-weight: bold;">Approving probe</span> dialog, click <span class="f_BoldCustom">OK</span> to exit the dialog, or click <span class="f_BoldCustom">Show probe in device tree</span> to open the new probe in the device tree directly.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />You do not have to approve remote probes after updates.</p>
+<p class="p_InTopicHeading"><a id="more"></a><span class="f_InTopicHeading">More</span></p>
+<p>For more details about the remote probe installation and core probe connection process, see the <span class="f_BoldCustom"><a href="remote_probe_setup.htm" class="topiclink">Remote Probe Using Installer</a></span> section. </p>
+<p>You can also use the <span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a> </span>to edit administrative settings regarding your PRTG core and probe installations. See the <span class="f_BoldCustom"><a href="remote_probe_setup.htm" class="topiclink">Remote Probe Setup</a></span> section for more detailed information about the remote probe setup.</p>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Installing the Software—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="download.htm" class="topiclink">Download PRTG</a></span></li>
+<li><span class="f_BoldCustom"><a href="update_from_previous_versions.htm" class="topiclink">Update From Previous Versions</a></span></li>
+<li><span class="f_BoldCustom"><a href="install_a_prtg_core_server.htm" class="topiclink">Install a PRTG Core Server</a></span></li>
+<li><span class="f_BoldCustom"><a href="create_a_prtg_in_the_cloud_instance.htm" class="topiclink">Create a PRTG in the Cloud Instance</a></span></li>
+<li><span class="f_BoldCustom"><a href="install_a_prtg_cluster.htm" class="topiclink">Install a PRTG Cluster</a></span></li>
+<li><span class="f_BoldCustom"><a href="enter_license_key.htm" class="topiclink">Enter a License Key</a></span></li>
+<li><span class="f_BoldCustom"><a href="activate_the_product.htm" class="topiclink">Activate the Product</a></span></li>
+<li><span class="f_BoldCustom"><a href="install_a_prtg_remote_probe.htm" class="topiclink">Install a PRTG Remote Probe</a></span></li>
+<li><span class="f_BoldCustom"><a href="install_the_enterprise_console.htm" class="topiclink">Install the Enterprise Console</a></span></li>
+<li><span class="f_BoldCustom"><a href="uninstall.htm" class="topiclink">Uninstall PRTG Products</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: Configure,Configure Probe</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="activate_the_product.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="install_the_enterprise_console.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

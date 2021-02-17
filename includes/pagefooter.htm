@@ -1,0 +1,88 @@
+﻿</div><#comment fuer div id=container in pageheader.htm>
+<footer class="hidebuttons">
+	<div id='alarmsound'></div>
+  <div id="prtg_growls"></div>
+  <div id='helpcontainer' class="hidden prtg-plugin" data-plugin="contexthelp">
+
+    <div class="helptitle">
+      <img src="/images/questionmark.png" style="margin-top:-2px">
+      <#lang key="html.footer.helpheader" default="Help"> <i id="closehelp" class="flr icon-dark ui-button-icon-primary ui-icon ui-icon-closethick"></i>
+    </div>
+    <div class="lasthelpitem contexthelpbox">
+      <div class="helpmorehelp">
+        <a href='/help.htm'><#lang key="html.footer.gohelpcenter4b" default="Get more help in the Help Center">!</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="sendfeedbackbox">
+
+    <span id="feedbackbuttons" style="float:right;">
+      <#include skiptagfornoncluster="true" file="controls\clusterstateforpagetop.htm">
+      <a id="updatevailablebox" onclick="window.top.location.href = '/autoupdate.htm';return false;" style="<#system type="autoupdateavailable" insertifyes="" insertifno="display:none">">
+        <span class="hideonhover"> <i class="icon-gear icon-dark"></i>
+          <#lang key="html.footer.updatevailable" default="Update Available"></span>
+        <span class="showonhover">
+          <#lang key="html.footer.updatevailabletitle2b" default="Install the latest update"></span>
+      </a>
+
+      <a id="followprtg" class="nohjax hidefollowbutton" style="<#hidefollowlink>" href="followprtg.htm">
+        <span class="hideonhover">
+          <i class="icon-signal-diag icon-dark"></i>
+          <#lang key="html.footer.follow1c" default="Follow & Share"></span>
+        <span class="showonhover">
+          <#lang key="html.footer.follow2a" default="Tell others about PRTG!"></span>
+      </a>
+
+      <a id="sendfeedback" class="hidefeedbackbutton" style="<#hidefeedbacklink>" onclick="_Prtg.objectTools.sendFeedback('/sendfeedback.htm?errorurl='+window.location.pathname,'');return false;">
+        <span class="hideonhover">
+          <i class="icon-mail-closed icon-dark"></i>
+          <#lang key="html.footer.feedback" default="Contact Support"></span>
+        <span class="showonhover">
+          <#lang key="html.footer.feedbacktitle" default="Contact Paessler Support"></span>
+      </a>
+
+      <a id="togglehelp">
+        <div class="hideonhover">
+          <i class="icon-help icon-dark"></i>
+          <#lang key="html.footer.help" default="Help"></div>
+        <div class="showonhover">
+          <#lang key="html.footer.showhelp1" default="Show context help"></div>
+        <span class="helpactive" style="display: inline-block;"></span>
+      </a>
+    </span>
+  </div>
+  <div class="footer">
+    <span style="width:105px">
+      <a href="https://www.paessler.com" target="_blank">
+        <div id="paesslerlogo" title="Paessler AG - The Network Monitoring Company"></div>
+      </a>
+    </span>
+    <span style="width:25%">
+      <a href="https://www.paessler.com/prtg" target="_blank" data-placement="top" title="PRTG Network Monitoring Software"><#system type="codename"></a>
+      <#system type="version"> <#system type="installedupdatechannel"> <#system type="expiry">
+    </span>
+    <span>
+      &copy; <#copyrightyear> <a href="https://www.paessler.com" target="_blank" data-placement="top" title="The Network Monitoring Company">Paessler AG</a>
+    </span>
+    <span>
+      <#system type="username">
+    </span>
+    <span id='footerrefresh' class="prtg-plugin" data-plugin="prtg-toggle-autorefresh">
+      <span class="refreshclock"><a class="toggle-autorefresh" href="#"><i class="icon-pause icon-dark"></i></a></span>
+      <span class="refreshclock"><#lang key="html.main.refreshin" default="Refresh in"></span>
+      <span class="refreshclock" id="footerrefreshclock"><#system type="autorefreshinterval"></span>
+      <span class="refreshclock"><#lang key="html.main.sec" default="sec"></span>
+      <span class="refreshinglable"><#lang key="html.main.refreshingtext" default="Refreshing..."></span>
+    </span>
+    <span class="serverclock" style="width:125px;float:right;"><#system type="date"> <#system type="time"></span>
+  </div>
+</footer>
+
+
+<noscript>
+  <div class="ui-widget-overlay ui-front"></div>
+  <div id="nojavascripterror">
+    <#lang key="html.footer.noscript0" default="<b>Sorry, the AJAX Web Interface of PRTG can not work properly without Javascript.</b><br><br><i>Javascript seems to be disabled or this browser does not support Javascript.</i><br><br>Please enable Javascript">
+  </div>
+</noscript>

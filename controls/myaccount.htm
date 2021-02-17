@@ -1,0 +1,7 @@
+﻿
+<#objectproperty name="login" var="login">
+<div class="prtg-plugin qrcode myaccountqr" data-plugin="prtgqrcode" data-placement="left" title='<#lang key="html.qrcode.tooltip" default="Click to enlarge">' data-myaccountqr="1" data-sitename="<#system type="sitename">" data-url="/group.htm?id=0&tabid=1&username=<#objectproperty name="login">" data-name='Mobile App Login' data-host=""></div>
+
+<#include file="\controls\objectdata.htm">
+<#system type='showhelp' tct="guru" page="myaccount" isadmin="true" id_eq="100" wingui="false" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" >

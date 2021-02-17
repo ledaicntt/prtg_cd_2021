@@ -1,0 +1,105 @@
+﻿<!--Desktop Notifications-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="downloads.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="support_contact_support.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Desktop Notifications</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Desktop Notifications</h1> 
+      <p>While you are logged in to the PRTG web interface with your Chrome or Firefox browser, PRTG can show notifications on your desktop whenever there are new alarms in your monitoring.</p>
+<p>PRTG will show desktop notifications (by default, in the lower right corner of your desktop) whenever there are new alarms after a page refresh in the PRTG web interface. The notification displays the number of new alarms and the current number of each sensor status.</p>
+<div class="p_ImageCaption"><div style="width:368px;padding:0px"><img src="chromedestktopnotifihelp2.png" width="368" height="89" style="border:none" alt="Example of a Chrome Desktop Notification" title="Example of a Chrome Desktop Notification" /><p style="text-align:center"><span class="f_ImageCaption">Example of a Chrome Desktop Notification</span></p></div></div>
+<p>To enable desktop notifications in the PRTG web interface, choose <span class="f_BoldCustom">Setup | Downloads | Desktop Notifications</span> from the <a href="main_menu_structure.htm#settings" class="topiclink">main menu bar</a>. You have to initially allow the notifications for each installation/profile of Firefox or Google Chrome.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />Desktop notifications are not available for Internet Explorer.</p>
+<p class="p_InTopicHeading"><a id="settings"></a><span class="f_InTopicHeading">Desktop Notifications Settings</span></p>
+<p>On the settings page, you see one of the following status messages.</p>
+<p><span class="f_BoldCustom">Status: Click button below to enable Desktop Notifications</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">Click the </span><span class="f_BoldCustom">Enable Desktop Notifications</span><span class="f_ListBulleted"> button to add your PRTG URL to the list of allowed sites for desktop notifications in Chrome or Firefox.</span></li>
+<li><span class="f_ListBulleted">On top of your browser window a message appears, asking you to allow desktop notifications. </span></li>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">In Chrome, click </span><span class="f_BoldCustom">Allow</span><span class="f_ListBulleted"> to add the URL of the PRTG web interface to the allowed sites.</span></li>
+<li><span class="f_ListBulleted">In Firefox, click </span><span class="f_BoldCustom">Always Receive Notifications</span><span class="f_ListBulleted"> to add the URL of the web interface to the allowed sites.</span></li>
+</ul></ul>
+<div class="p_ImageCaption"><div style="width:348px;padding:0px"><img src="desknoti_enable.png" width="348" height="116" style="border:none" alt="Click 'Allow' to enable Chrome Desktop Notifications" title="Click 'Allow' to enable Chrome Desktop Notifications" /><p style="text-align:center"><span class="f_ImageCaption">Click 'Allow' to enable Chrome Desktop Notifications</span></p></div></div>
+<div class="p_ImageCaption"><div style="width:347px;padding:0px"><img src="desknoti_firefox_zoom87.png" width="347" height="174" style="border:none" alt="Click 'Always Receive Notifications' to enable Firefox Desktop Notifications" title="Click 'Always Receive Notifications' to enable Firefox Desktop Notifications" /><p style="text-align:center"><span class="f_ImageCaption">Click 'Always Receive Notifications' to enable Firefox Desktop Notifications</span></p></div></div>
+<p class="p_BoldCustom"><span class="f_BoldCustom">Status: Sorry, Desktop Notifications cannot be enabled </span>or<span class="f_BoldCustom"> Unknown</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">Desktop Notifications are explicitly blocked for the URL of the PRTG web interface in the browser options. Please see section <a href="chrome_desktop_notifications.htm#disabling" class="topiclink">Disabling or Re-Enabling Desktop Notifications</a> below.</span></li>
+</ul>
+<p class="p_BoldCustom"><span class="f_BoldCustom">Status: Desktop Notifications enabled</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">Desktop Notifications are successfully activated. To disable them, please see <a href="chrome_desktop_notifications.htm#disabling" class="topiclink">Disabling or Re-Enabling Desktop Notifications</a> below.</span></li>
+</ul>
+<p class="p_InTopicHeading"><a id="disabling"></a><span class="f_InTopicHeading">Disabling or Re-Enabling Desktop Notifications</span></p>
+<p>To disallow or re-allow desktop notifications for the PRTG web interface, edit your browser options:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">In </span><span class="f_BoldCustom">Google Chrome</span><span class="f_ListBulleted">: Click the </span><span class="f_ListBulleted" style="font-weight: bold;">View site information</span><span class="f_ListBulleted"> symbol in the address bar of the browser. You can block or re-allow notifications for the current URL in section </span><span class="f_ListBulleted" style="font-weight: bold;">Permissions</span><span class="f_ListBulleted">. </span></li>
+<li><span class="f_ListBulleted">In </span><span class="f_BoldCustom">Firefox</span><span class="f_ListBulleted">: In the PRTG web interface, hold the </span><span class="f_ItalicCustom">Shift</span><span class="f_ListBulleted"> key and </span><span class="f_ItalicCustom">right-click</span><span class="f_ListBulleted"> to open the browser's context menu. Click </span><span class="f_BoldCustom">View Page Info</span><span class="f_ListBulleted"> and select the </span><span class="f_BoldCustom">Permissions</span><span class="f_ListBulleted"> tab. In section </span><span class="f_BoldCustom">Notifications</span><span class="f_ListBulleted">, select the desired option for the PRTG website, for example, block desktop notifications or enable them again.</span></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Setup—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notifications</a></span></li>
+<li><span class="f_BoldCustom"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li><span class="f_BoldCustom"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span></li>
+<li><span class="f_BoldCustom"><a href="system_website_settings.htm" class="topiclink">System Administration—User Interface</a></span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_settings.htm" class="topiclink">System Administration—Monitoring</a></span></li>
+<li><span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span></li>
+<li><span class="f_BoldCustom"><a href="probes_settings.htm" class="topiclink">System Administration—Core &amp; Probes</a></span></li>
+<li><span class="f_BoldCustom"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span></li>
+<li><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span></li>
+<li><span class="f_BoldCustom"><a href="cluster_settings.htm" class="topiclink">System Administration—Cluster</a></span></li>
+<li><span class="f_BoldCustom"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span></li>
+<li><span class="f_BoldCustom"><a href="system_status.htm" class="topiclink">PRTG Status—System Status</a></span></li>
+<li><span class="f_BoldCustom"><a href="auto_update.htm" class="topiclink">PRTG Status—Auto-Update</a></span></li>
+<li><span class="f_BoldCustom"><a href="cluster_status.htm" class="topiclink">PRTG Status—Cluster Status</a></span></li>
+<li><span class="f_BoldCustom"><a href="activation_status.htm" class="topiclink">PRTG Status—Activation Status</a></span></li>
+<li><span class="f_BoldCustom"><a href="downloads.htm" class="topiclink">Downloads and Add-Ons</a></span></li>
+<li><span class="f_BoldCustom"><a href="chrome_desktop_notifications.htm" class="topiclink">Desktop Notifications</a></span></li>
+<li><span class="f_BoldCustom"><a href="support_contact_support.htm" class="topiclink">Support—Contact Support</a></span></li>
+</ul>
+</th>
+</tr>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading"><a id="others"></a><span class="f_InTopicHeading">Others</span></p>
+<p>There are some settings that you must make in the <span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span>, available as native Windows application. For more details, please see the sections:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a> </span></li>
+<li><span class="f_BoldCustom"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a></span></li>
+</ul>
+</th>
+</tr>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: Chrome,Chrome Desktop Notifications,Google,Google Chrome Desktop Notifications,Notifications,Notifications Chrome Desktop</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="downloads.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="support_contact_support.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

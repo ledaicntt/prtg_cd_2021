@@ -1,0 +1,54 @@
+﻿<#checkobjecttype objecttype="library">
+<#lang key="html.libover.help.title" default="" var="helptitle">
+<#lang key="html.libover.help.text" default="<br><br><a href='/help/libraries_settings.htm' target='_blank'><b>Help: Libraries and Node Settings</b></a>" var="helptext">
+<#system type='showhelp' var='showhelp'>
+<#inserturlparam parameter="wingui" var="wingui">
+<#lang key="html.sensortree.searchtitle" default="RETURN for next hit" var="searchtitle">
+<#help varexpand="title,text,show,target" title="@helptitle" text="<p>@helptext</p>" show="@showhelp" target="#header_help">
+<div class="panel col-panel">
+	<div class="overviewsmalldata">
+		<table width="100%">
+			<tr class="overviewsmalldatatitles">
+				<td>
+					<#lang key="html.devicedata.sensors" default="Sensors">:
+				</td>
+				<td>
+					<#lang key="html.addsensor.searchtext" default="Search">:
+				</td>
+				<td rowspan="2">
+					<#include file="/controls/treeswitches.htm">
+				</td>
+				<td class="size-by-switch <#system type='groupviewsize' overwriteifnottree='show'>">
+					<#lang key="html.global.sizeby" default="Size by">:
+				</td>
+				<td>
+					<#lang key="html.devicedata.ID" default="ID">:
+				</td>
+	      <td rowspan="2" class="qrcoderow" width="50">
+	      	<div class="prtg-plugin qrcode" data-plugin="prtgqrcode" data-placement="left" title='<#lang key="html.qrcode.tooltip" default="Click to enlarge">' data-name='<#objectproperty name="Name" show="textraw" utfencode="true">' data-host=''></div>
+	      </td>
+ 			</tr>
+			<tr>
+				<td style="min-width:150px;white-space:normal;">
+					<b><#include file="/controls/treesensorswitches.htm">&nbsp;</b>
+					(<#lang key="html.addsensor.xsensors_of_ysensors" default="of">&nbsp;<span class='totalsens'><#objectstatus name="totalsens"></span>)
+				</td>
+				<td style="min-width:90px;">
+					<div class="treesearchbox"><input tabindex="1" id="treesearch" class="searchstring" title="<#if value="@wingui" is="true" then="ALT&plus;@searchtitle" else="@searchtitle" varexpand="value,then,else">" type="text" value="Search..." defaultvalue="Search..."  name="searchtext"><label for="treesearch" class="ui-icon ui-icon-search ui-icon-gray searchlogo"></label></div>
+				</td>
+				<td class="size-by-switch control <#system type='groupviewsize' overwriteifnottree='prtg-plugin'>" data-plugin="groupviewsize">
+				</td>
+				<td>
+					<b>#<#objectid></b>
+				</td>
+			</tr>
+	 	</table>
+	</div>
+	<div id="layout" class="focussearch panel row-panel">
+		<div class="panel col-panel stretch-panel">
+      <div id="objecttreecontainer"
+		    <#include file="/controls/libtree.htm" displaymode='overview'>
+      </div>
+		</div>
+	</div>
+</div>

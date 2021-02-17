@@ -1,0 +1,34 @@
+﻿<div class="currentalarmsoverview">
+  <h2><#lang key="html.welcome.currentalarms.headline" default="Current Alarms"></h2>
+  <div class="flexme">
+    <div class="prtg-plugin simpledonut h200" data-plugin="prtg-simpledonut" data-dataset="<#colorcode color="statusunusual">:<#objectstatus name='unusualsens' id='0' show='textraw' valueifempty='0'>,<#colorcode color="statuswarning">:<#objectstatus name='warnsens' id='0' show='textraw' valueifempty='0'>,<#colorcode color="statusdownack">:<#objectstatus name='downacksens' id='0' show='textraw' valueifempty='0'>,<#colorcode color="statuspartialdown">:<#objectstatus name='partialdownsens' id='0' show='textraw' valueifempty='0'>,<#colorcode color="statusdown">:<#objectstatus name='downsens' id='0' show='textraw' valueifempty='0'>">
+    </div>
+    <div class="value-name-list h200">
+      <div>
+        <span class="item value"><#objectstatus name="downsens" id="0" show="textraw" valueifempty="0"></span>
+        <i class="item statusicon sensr"></i>
+        <span class="item name"><#lang key="common.strings.nodestates.onsDown" default="Down"></span>
+      </div>
+      <div>
+        <span class="item value"><#objectstatus name="downacksens" id="0" show="textraw" valueifempty="0"></span>
+        <i class="item statusicon senso"></i>
+        <span class="item name"><#lang key="common.strings.nodestates.onsDownAck" default="Down (Acknowledged)"></span>
+      </div>
+      <div>
+        <span class="item value"><#objectstatus name="warnsens" id="0" show="textraw" valueifempty="0"></span>
+        <i class="item statusicon sensy"></i>
+        <span class="item name"><#lang key="common.strings.nodestates.onsWarning" default="Warning"></span>
+      </div>
+      <div>
+        <span class="item value"><#objectstatus name="unusualsens" id="0" show="textraw" valueifempty="0"></span>
+        <i class="item statusicon sensp"></i>
+        <span class="item name"><#lang key="common.strings.nodestates.onsUnusual" default="Unusual"></span>
+      </div>
+      <div class="posbottom">
+        <span class="item value"></span>
+        <span class="item"><a href="/alarms.htm?filter_status=5&filter_status=4&filter_status=10&filter_status=13&filter_status=14" class="actionbutton"><#lang key="html.welcome.alarmslist.button.viewall" default="View All Alarms"></a></span>
+      </div>
+    </div>
+  </div>
+  <#include file="controls\welcome_opentickets.htm" skiptagforreadonly="true">
+</div>

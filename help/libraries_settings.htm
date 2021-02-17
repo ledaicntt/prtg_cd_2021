@@ -1,0 +1,252 @@
+﻿<!--Libraries and Node Settings-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="libraries_manage.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="libraries_context_menus.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Libraries and Node Settings</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Libraries and Node Settings</h1> 
+      <p>Using the libraries tabs you can access all functionalities and settings for a library.</p>
+<div class="p_ImageCaption"><div style="width:474px;padding:0px"><img src="library_tabs2.png" width="474" height="29" style="border:none" alt="Library Tabs" title="Library Tabs" /><p style="text-align:center"><span class="f_ImageCaption">Library Tabs</span></p></div></div>
+<p class="p_InTopicHeading"><a id="overview"></a><span class="f_InTopicHeading">Overview</span></p>
+<p>Click the <span class="f_BoldCustom">Overview </span>tab any time to show the current state of your library. </p>
+<p class="p_InTopicHeading"><a id="node_display"></a><span class="f_InTopicHeading">Library Node Display Settings</span></p>
+<p>While in the <span class="f_BoldCustom">Overview</span> tab, click the name of a <span class="f_ItalicCustom">library node</span> to change its settings. Or, while in the <span class="f_BoldCustom">Management </span>tab, right-click a library node's name and select <span class="f_BoldCustom">Edit | Settings..</span>. from the context menu. In both cases, the following settings are shown. </p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />You can only change the settings of a node if it already contains monitoring objects like groups, devices, or sensors.</p>
+<p class="p_ListBulleted"><a id="basic"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Basic Library Node Settings</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Library Node Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter a meaningful name for the library node.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter one or more tags, separated by space or comma. For example, you can use tags later to search for the library. Tags are not case sensitive.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_ListBulleted"><a id="libsettings"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Node Display Settings</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Linked Object</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Click the reading-class symbol to change the object that is linked to this library node. The </span><span class="f_BoldCustom"><a href="object_selector.htm" class="topiclink">Object Selector</a></span><span class="f_ListBulleted"> will appear. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Node Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select what you want to view for this library node. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Show a subtree of the device tree in the library</span><span class="f_ListBulleted">: View all objects underneath the linked object as a device tree.</span></li>
+<li><span class="f_BoldCustom">Show a collection of filtered sensors in the library (max. 1000)</span><span class="f_ListBulleted">: View all sensors underneath the linked object (only sensors are shown). You can combine several filters with each other (see below). </span></li>
+</ul>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The node can show up to 1,000 sensors, surplus sensors are discarded. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Filter By Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This option is only visible if collection of sensors is enabled above. Select if you want to filter the sensor list by a certain type. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Show all sensor types</span><span class="f_ListBulleted">: Do not filter for a sensor type.</span></li>
+<li><span class="f_BoldCustom">Show specific sensor types only</span><span class="f_ListBulleted">: Filter the sensor list of the linked object for certain sensor types.</span></li>
+</ul>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This filter is applied in real-time. If the configuration underneath the linked object changes, the library node will show matching sensors accordingly.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select Sensor Types</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This option is only visible if filtering by type is enabled above. A list of all sensor types is shown, currently available sensor types are shown in bold letters for your convenience. </span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Set a check mark in front of each sensor type you want to include in the library node view. You can also select and deselect all items by using the check box in the table head.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This filter is applied in real-time. If the configuration underneath the linked object changes, the library node will show matching sensors accordingly.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">You cannot filter for sensor types that are defined in PRTG Mini Probes.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Filter By Status</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This option is only visible if collection of sensors is enabled above. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Show all sensor states</span><span class="f_ListBulleted">: Do not filter for a sensor status.</span></li>
+<li><span class="f_BoldCustom">Show sensors with a specific status only</span><span class="f_ListBulleted">: Filter the sensor list of the linked object for sensors in certain states.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select Sensor States</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This option is only visible if filtering by sensor state is enabled above. A list of sensor states is shown. Set a check mark in front of each status you want to include in the library node view. Choose from:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Unknown</span></li>
+<li><span class="f_BoldCustom">Up</span></li>
+<li><span class="f_BoldCustom">Warning</span></li>
+<li><span class="f_BoldCustom">Down</span></li>
+<li><span class="f_BoldCustom">Paused</span></li>
+<li><span class="f_BoldCustom">Unusual</span></li>
+<li><span class="f_BoldCustom">Down (Acknowledged)</span></li>
+<li><span class="f_BoldCustom">Down (Partial)</span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">You can also select and deselect all items by using the check box in the table head.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This filter is applied in real-time. If the configuration underneath the linked object changes, the library node will show matching sensors accordingly.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Filter By Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This option is only visible if collection of sensors is enabled above. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Show all sensor tags</span><span class="f_ListBulleted">: Do not filter for a tag.</span></li>
+<li><span class="f_BoldCustom">Show objects with specific tags only</span><span class="f_ListBulleted">: Filter the sensor list of the linked object for sensors with a certain <a href="tags.htm" class="topiclink">tag</a>.</span></li>
+</ul>
+<p class="p_ListBulleted"><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The tag of a sensor can also be <a href="inheritance_of_settings.htm" class="topiclink">inherited</a> by a parent object.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This option is only visible if collection of sensors is enabled above. Enter one or more <a href="tags.htm" class="topiclink">tags</a> of sensors that you want to include in the library node view. You can also use plus (must have) and minus (must not have) signs to categorize tags, for example, </span><span class="f_ItalicCustom">+snmp;–wmi</span><span class="f_ListBulleted"> (must have the tag </span><span class="f_ItalicCustom">snmp</span><span class="f_ListBulleted"> and must not have the tag </span><span class="f_ItalicCustom">wmi</span><span class="f_ListBulleted">). </span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This filter is applied in real-time. If the configuration underneath the linked object changes, the library node will show matching sensors accordingly.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Filter By Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This option is only visible if collection of sensors is enabled above. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Show all priorities</span><span class="f_ListBulleted">: Do not filter for the <a href="priority_and_favorites.htm" class="topiclink">priority setting</a> of a sensor.</span></li>
+<li><span class="f_BoldCustom">Show objects with specific priority only</span><span class="f_ListBulleted">: Filter the sensor list of the linked object for sensors with specific priority.</span></li>
+</ul>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The priority setting of a group, device, or sensor is ignored here; only the priority setting of the sensor itself is regarded.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This option is only visible if collection of sensors is enabled above. Define which priority setting sensors must have to appear in this collection. Set a check mark in front of each priority you want to include in the library node view. Choose from:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">***** (highest)</span></li>
+<li><span class="f_BoldCustom">****</span></li>
+<li><span class="f_BoldCustom">***</span></li>
+<li><span class="f_BoldCustom">**</span></li>
+<li><span class="f_BoldCustom">* (lowest)</span></li>
+</ul>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This filter is applied in real-time. If the configuration underneath the linked object changes, the library node will show matching sensors accordingly.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>Click <span class="f_BoldCustom">Save</span> to save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />After applying filters it might take several seconds for the changes to become visible. This is due to internal filter processes running in the background.</p>
+<p class="p_InTopicHeading"><a id="designer"></a><span class="f_InTopicHeading">Management</span></p>
+<p>Click the <span class="f_BoldCustom">Management</span> tab to edit the contents of your library, for example, to add items to the library using drag&amp;drop. </p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" />For more details, see section <span class="f_BoldCustom"><a href="libraries_manage.htm" class="topiclink">Management</a></span>.</p>
+<p class="p_InTopicHeading"><a id="settings"></a><span class="f_InTopicHeading">Settings</span></p>
+<p>Click the <span class="f_BoldCustom">Settings</span> tab to open a library's general settings. </p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Basic Library Settings</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Library Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter a meaningful name for the library.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter one or more <a href="tags.htm" class="topiclink">tags</a>, separated by space or comma. For example, you can use tags later to search for the library. Tags entered here are <a href="inheritance_of_settings.htm" class="topiclink">inherited</a> to all library nodes underneath. Tags are not case sensitive.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_ListBulleted"><a id="accessgroup"></a><a id="access"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define which user group(s) will have access to the object you're editing. A table with user groups and types of access rights is shown: It contains all user groups from your setup. For each user group you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the access rights settings of the parent object.</span></li>
+<li><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object neither shows up in lists nor in the device tree. Exception: If a child object is visible to the user, the object is visible in the device tree, though not accessible.</span></li>
+<li><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its monitoring results.</span></li>
+<li><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, and edit the object's settings. They cannot edit access rights settings.</span></li>
+<li><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, review its monitoring results, edit the object's settings, and edit access rights settings.</span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings. To automatically set all objects further down in the hierarchy to inherit this object's access rights, set a check mark for the </span><span class="f_BoldCustom">Revert children's access rights to inherited</span><span class="f_ListBulleted"> option.</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">For more details on access rights, please see the section </span><span class="f_BoldCustom"><a href="user_access_rights.htm" class="topiclink">User Access Rights</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />When giving access rights to a user group, all members of this user group will be able to see the objects in the library just as seen by the user who originally created the library.</p>
+<p>Click <span class="f_BoldCustom">Save</span> to save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading"><a id="notifications"></a><span class="f_InTopicHeading">Notifications</span></p>
+<p>You can define notification triggers for any kind of object libraries. This is even possible for dynamic libraries which can change with every scanning interval, for example, when you filter a library for the sensor status or priority. </p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" />For details about how to use notifications, please see section <span class="f_BoldCustom"><a href="notifications.htm" class="topiclink">Notifications</a></span>.</p>
+<p class="p_InTopicHeading"><a id="comments"></a><span class="f_InTopicHeading">Comments</span></p>
+<p>On the <span class="f_BoldCustom">Comments </span>tab you can enter free text for each object. You can use this function for documentation purposes or to leave information for other users.</p>
+<p>Click <span class="f_BoldCustom">Save</span> to save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading"><a id="history"></a><span class="f_InTopicHeading">History</span></p>
+<p>In the <span class="f_BoldCustom">History </span>tab all changes in the settings of an object are logged with a timestamp, the name of the PRTG user who made the change, and a message. The history log retains the last 100 entries.</p>
+<p class="p_InTopicHeading"><a id="delete"></a><span class="f_InTopicHeading">Delete</span></p>
+<p><span class="f_ListBulleted">You can delete the entire library any time by clicking on the trash symbol on the right.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Libraries—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="libraries_step_by_step.htm" class="topiclink">Libraries Step By Step</a></span></li>
+<li><span class="f_BoldCustom"><a href="libraries_manage.htm" class="topiclink">Management</a></span></li>
+<li><span class="f_BoldCustom"><a href="libraries_settings.htm" class="topiclink">Libraries and Node Settings</a> </span></li>
+<li><span class="f_BoldCustom"><a href="libraries_context_menus.htm" class="topiclink">Context Menus</a></span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">&nbsp;</span></p>
+</th>
+</tr>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: Libraries,Libraries Node,Libraries Settings</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="libraries_manage.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="libraries_context_menus.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

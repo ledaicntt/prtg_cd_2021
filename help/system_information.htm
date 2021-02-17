@@ -1,0 +1,208 @@
+﻿<!--System Information-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="alarms.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="logs.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>System Information</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: System Information</h1> 
+      <p>The <span style="font-weight: bold;">System Information</span> feature can show you various information about a device such as connected hardware, installed software, connected user accounts, running processes, and available Windows services with their current status. This is a great possibility to see at a glance what is currently running on the systems in your network. Together with your everyday monitoring you will receive a really profound knowledge about your IT infrastructure from only a single source—your PRTG Network Monitor! </p>
+<p>System information is available for all devices which you add to PRTG and run with an <a href="detailed_system_requirements.htm#os" class="topiclink">officially supported Windows version</a>. You can also retrieve system information from other devices with enabled Simple Network Management Protocol (SNMP). On the overview page of a device, click the <span style="font-weight: bold;">System Information</span> tab to see available information.</p>
+<p>Basically you do not have to configure anything special to use the system information feature. PRTG uses the same <a href="sensor_technologies.htm" class="topiclink">technologies</a> to request system information data as sensors that receive monitoring data from a device. If you already monitor a device with <a href="available_sensor_types.htm#wmi" class="topiclink">WMI</a> and <a href="available_sensor_types.htm#snmp" class="topiclink">SNMP sensors</a>, the main preconditions for retrieving system information for this device are already met. The data will be displayed in the corresponding table automatically. Section <span style="font-weight: bold;"><a href="system_information.htm#preconditions" class="topiclink">Preconditions</a></span> below shows in detail what you need to get system information.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />System information is not supported by the <a href="enterprise_console.htm" class="topiclink">Enterprise Console</a>. Please use the <a href="ajax_gui_basic.htm" class="topiclink">PRTG web interface</a> to access the system information of a device.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />System information for your devices only has informational purposes. We cannot guarantee that the display in PRTG fully corresponds to the device parameters.</p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />You cannot use this feature with cloud probes in<span class="f_ImageCaption"> </span>PRTG in the cloud. You can use this feature on <a href="remote_probes_and_multiple_probes.htm" class="topiclink">remote probes</a>.</p>
+<div class="p_ImageCaption"><div style="width:494px;padding:0px"><img src="systeminfo-tab_zoom26.png" width="494" height="219" style="border:none" alt="System Information Tab on a Windows Device (Snippet)" title="System Information Tab on a Windows Device (Snippet)" /><p style="text-align:center"><span class="f_ImageCaption">System Information Tab on a Windows Device (Snippet)</span></p></div></div>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Click here to enlarge: <a href="https://media-s3.paessler.com/prtg-screenshots/systeminfo-tab.png" target="_blank" class="weblink">https://media-s3.paessler.com/prtg-screenshots/systeminfo-tab.png</a></span></p>
+<p class="p_InTopicHeading"><a id="preconditions"></a><span class="f_InTopicHeading">Prerequisites</span></p>
+<p>Fulfill the following requirements to show all available system information data for a device. It is not necessary to meet every single prerequisite but then some tables will not show all data or may even remain empty. For example, if you do not configure SNMP on the target device, you will get less information for the <span style="font-weight: bold;">System</span> table. </p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted" style="font-weight: bold;">Valid credentials</span><span class="f_ListBulleted"> in the <a href="device_settings.htm" class="topiclink">device settings</a> (or <a href="object_hierarchy.htm" class="topiclink">inherited</a>): Enter correct settings for the target device in the sections </span><span class="f_ListBulleted" style="font-weight: bold;">Credentials for Windows Systems</span><span class="f_ListBulleted"> and </span><span class="f_ListBulleted" style="font-weight: bold;">Credentials for SNMP Devices</span><span class="f_ListBulleted">.</span></li>
+<li><span class="f_ListBulleted" style="font-weight: bold;">Remote Registry</span><span class="f_ListBulleted"> Windows service: Enable the </span><span class="f_ItalicCustom">Remote Registry</span><span class="f_ListBulleted"> Windows service on the target computer, for example, via </span><span class="f_ItalicCustom">services.msc</span><span class="f_ListBulleted">, and set the start type to automatic.</span></li>
+<li><span class="f_ListBulleted" style="font-weight: bold;">Remote Procedure Call (RPC)</span><span class="f_ListBulleted"> Windows service: Enable the RPC Windows service on the target computer, for example, via </span><span class="f_ItalicCustom">services.msc</span><span class="f_ListBulleted">, and set the start type to automatic.</span></li>
+<li><span class="f_ListBulleted" style="font-weight: bold;">WMI</span><span class="f_ListBulleted"> on probe and target computer: Configure Windows Management Instrumentation (WMI) on the target computer and on the computer that runs the PRTG probe with the device. Especially configure the firewall of the target computer to allow WMI. For more details, see manual section </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="wmi_monitoring.htm" class="topiclink">Monitoring via WMI</a></span><span class="f_ListBulleted"> and the Knowledge Base article </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="https://kb.paessler.com/en/topic/1043?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">General Introduction to WMI and PRTG</a></span><span class="f_ListBulleted">. </span></li>
+<li><span class="f_ListBulleted" style="font-weight: bold;">SNMP</span><span class="f_ListBulleted"> on target computer: Configure Simple Network Management Protocol (SNMP) on the target computer. For more details, see manual section </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="snmp_monitoring.htm" class="topiclink">Monitoring via SNMP</a></span><span class="f_ListBulleted"> and the Knowledge Base article </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="https://kb.paessler.com/en/topic/46863?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">General Introduction to SNMP and PRTG</a></span><span class="f_ListBulleted">.</span></li>
+</ul>
+<p>Usually you will see data for a system information table after a few minutes, depending on the used protocols (WMI takes longer than SNMP). A system information table will show an according error message if PRTG cannot get data for a table because of misconfiguration. </p>
+<p><img src="icon-book-bulb.png" width="17" height="17" alt="icon-book-bulb" style="float:left;margin:0px 10px 10px 0px; border:none" />For details about error messages, please see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/67824?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">How can PRTG get data for System Information tables?</a></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />To show information data, you need to enable <span style="font-weight: bold;">System Information</span> in section <span style="font-weight: bold;"><a href="device_settings.htm#analysisgroup" class="topiclink">Advanced Network Monitoring</a></span> in the device settings (or inherit it from an object higher in the <a href="object_hierarchy.htm" class="topiclink">hierarchy</a>). This is the default setting. If system information is disabled, the <span style="font-weight: bold;">System Information</span> tab will not be available for the device.</p>
+<div class="p_ImageCaption"><div style="width:495px;padding:0px"><img src="systeminfo-nodata_zoom79.png" width="495" height="279" style="border:none" alt="No Data Available: Check the Preconditions" title="No Data Available: Check the Preconditions" /><p style="text-align:center"><span class="f_ImageCaption">No Data Available: Check the Preconditions</span></p></div></div>
+<p class="p_InTopicHeading"><a id="sysinfotab"></a><span class="f_InTopicHeading">System Information (Device Tab)</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Probe, group, device, and sensor pages have tabs that you can use to navigate between the different options. For example, you can view your network's status, view monitoring results, or change settings. </span></p>
+<div class="p_ImageCaption"><div style="width:494px;padding:0px"><img src="tabs-bar-devices_zoom65.png" width="494" height="19" style="border:none" alt="Tabs Bar on Device Level" title="Tabs Bar on Device Level" /><p style="text-align:center"><span class="f_ImageCaption">Tabs Bar on Device Level</span></p></div></div>
+<p>On the details page of a device, click the <span style="font-weight: bold;">System Information</span> tab to show several tables with information about this device. Each table contains information about one category.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">System Information</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:118px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">System</span></p>
+</td>
+<td style="vertical-align:top; width:998px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Shows information about the device like BIOS serial number, IP addresses, MAC addresses, and Windows version.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:118px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Hardware</span></p>
+</td>
+<td style="vertical-align:top; width:998px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Shows hardware connected to the device like disk drives, CD/DVD, video controllers, processors, network adapters, sound devices, printers, and memory. You can see </span><span class="f_ListBulleted" style="font-weight: bold;">Class</span><span class="f_ListBulleted"> and </span><span class="f_ListBulleted" style="font-weight: bold;">Caption</span><span class="f_ListBulleted"> of a hardware device. In the </span><span class="f_ListBulleted" style="font-weight: bold;">Properties</span><span class="f_ListBulleted"> column you can get more information about the hardware (for example, the description).</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:118px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Software</span></p>
+</td>
+<td style="vertical-align:top; width:998px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Shows installed software and the </span><span class="f_ListBulleted" style="font-weight: bold;">Version</span><span class="f_ListBulleted"> number on the device. In the </span><span class="f_ListBulleted" style="font-weight: bold;">Properties</span><span class="f_ListBulleted"> column you can get more information about the software (for example, the size).</span></p>
+<p class="p_ListBulleted"><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />PRTG uses <span class="f_ItalicCustom">Uninstall</span> registry keys to retrieve the list of installed software, so the displayed software might differ from the software that the target Windows system shows under <span class="f_ItalicCustom">Programs and Features</span>.</p>
+<p class="p_ListBulleted"><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />The System Information scan for software on the probe device uses the credentials the <a href="architecture.htm#probe" class="topiclink">probe</a> runs with and ignores credentials from the <span style="font-weight: bold;">Settings</span> tab.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:118px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Users</span></p>
+</td>
+<td style="vertical-align:top; width:998px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Shows the user accounts connected to the device and their </span><span class="f_ListBulleted" style="font-weight: bold;">Domain</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:118px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Services</span></p>
+</td>
+<td style="vertical-align:top; width:998px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Shows the available Windows services on the device. This table shows the </span><span class="f_ListBulleted" style="font-weight: bold;">State</span><span class="f_ListBulleted"> of the service (running, stopped) and the start type (</span><span class="f_ListBulleted" style="font-weight: bold;">Startmode</span><span class="f_ListBulleted"> automatic, manual, or disabled). In the </span><span class="f_ListBulleted" style="font-weight: bold;">Properties</span><span class="f_ListBulleted"> column you can get more information about a service (for example, the description).</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:118px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Processes</span></p>
+</td>
+<td style="vertical-align:top; width:998px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Shows the processes that are currently running on the device as listed on the </span><span class="f_ItalicCustom">Processes</span><span class="f_ListBulleted"> tab of the Windows Task Manager. You can also see the </span><span class="f_ListBulleted" style="font-weight: bold;">Start Time</span><span class="f_ListBulleted"> and </span><span class="f_ListBulleted" style="font-weight: bold;">Process ID</span><span class="f_ListBulleted"> of a process.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>Click the refresh button in the upper-right corner of a table to retrieve current information for this system information category. The timestamp shows the time passed since the last table refresh. PRTG automatically retrieves data for all tables, including <span style="font-weight: bold;">System</span>, <span style="font-weight: bold;">Hardware</span>, and <span style="font-weight: bold;">Software</span>, once every 24 hours. The tables <span style="font-weight: bold;">Users</span>, <span style="font-weight: bold;">Services</span>, and <span style="font-weight: bold;">Processes</span> refresh each time you open the <span style="font-weight: bold;">System Information</span> tab. PRTG also updates all system information tables when the PRTG server is restarted, for example, after an update. </p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />PRTG can perform up to 24 system information scans simultaneously so it may take some time until the tables are filled after a server restart.</p>
+<div class="p_ImageCaption"><div style="width:101px;padding:0px"><img src="systeminfo-refresh.png" width="101" height="24" style="border:none" alt="Table Refresh" title="Table Refresh" /><p style="text-align:center"><span class="f_ImageCaption">Table Refresh</span></p></div></div>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 20px 0px; border:none" />You can sort each table by clicking the column headers. Please see <span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span> section for more information.<br />
+&nbsp;</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />PRTG user accounts with read-only <a href="user_access_rights.htm" class="topiclink">access rights</a> to a device can view system information on this device but they cannot refresh tables manually.</p>
+<p class="p_InTopicHeading"><a id="storage"></a><span class="f_InTopicHeading">Data Storage</span></p>
+<p>PRTG stores data files with the retrieved system information in the <span style="font-weight: bold;">\System Information Database</span> subfolder of the <a href="data_storage.htm#data" class="topiclink">PRTG data folder</a> under the according categories. Please note that if you delete a device in PRTG, the system information files of this device will remain here unless you delete them manually from the folder.</p>
+<p>The PRTG uses the following subfolders for system information data.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">System Information Database: Data Folders</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">hardware</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Data for the </span><span class="f_ListBulleted" style="font-weight: bold;">Hardware</span><span class="f_ListBulleted"> table</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">loggedonusers</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Data for the </span><span class="f_ListBulleted" style="font-weight: bold;">Users</span><span class="f_ListBulleted"> table</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">processes</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Data for the </span><span class="f_ListBulleted" style="font-weight: bold;">Processes</span><span class="f_ListBulleted"> table</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">services</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Data for the </span><span class="f_ListBulleted" style="font-weight: bold;">Services</span><span class="f_ListBulleted"> table</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">software</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Data for the </span><span class="f_ListBulleted" style="font-weight: bold;">Software</span><span class="f_ListBulleted"> table</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">system</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Data for the </span><span class="f_ListBulleted" style="font-weight: bold;">System</span><span class="f_ListBulleted"> table</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading"><a id="more"></a><span class="f_InTopicHeading">More</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: How can PRTG get data for System Information tables?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/67824?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/67824</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: General Introduction to WMI and PRTG</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/1043?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/1043</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: General Introduction to SNMP and PRTG</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/46863?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/46863</a> </span></li>
+</ul>
+<p>&nbsp;</p>
+<p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Ajax Web Interface—Basic Procedures—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="login.htm" class="topiclink">Login</a></span></li>
+<li><span class="f_BoldCustom"><a href="ssl_certificate_warning.htm" class="topiclink">SSL Certificate Warning</a></span></li>
+<li><span class="f_BoldCustom"><a href="welcome_page.htm" class="topiclink">Welcome Page</a></span></li>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="customer_service.htm" class="topiclink">Customer Service</a></span></li>
+</ul>
+<li><span class="f_BoldCustom"><a href="general_layout.htm" class="topiclink">General Layout</a></span></li>
+<li><span class="f_BoldCustom"><a href="sensor_states.htm" class="topiclink">Sensor States</a></span></li>
+<li><span class="f_BoldCustom"><a href="review_monitoring_data.htm" class="topiclink">Review Monitoring Data</a></span></li>
+<li><span class="f_BoldCustom"><a href="compare_sensors.htm" class="topiclink">Compare Sensors</a></span></li>
+<li><span class="f_BoldCustom"><a href="historic_data_reports.htm" class="topiclink">Historic Data Reports</a></span></li>
+<li><span class="f_BoldCustom"><a href="similar_sensors.htm" class="topiclink">Similar Sensors</a></span></li>
+<li><span class="f_BoldCustom"><a href="recommended_sensors.htm" class="topiclink">Recommended Sensors</a></span></li>
+<li><span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a></span></li>
+<li><span class="f_BoldCustom"><a href="alarms.htm" class="topiclink">Alarms</a></span></li>
+<li><span class="f_BoldCustom"><a href="system_information.htm" class="topiclink">System Information</a></span></li>
+<li><span class="f_BoldCustom"><a href="logs.htm" class="topiclink">Logs</a></span></li>
+<li><span class="f_BoldCustom"><a href="tickets.htm" class="topiclink">Tickets</a></span></li>
+<li><span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span></li>
+<li><span class="f_BoldCustom"><a href="object_selector.htm" class="topiclink">Object Selector</a></span></li>
+<li><span class="f_BoldCustom"><a href="priority_and_favorites.htm" class="topiclink">Priority and Favorites</a></span></li>
+<li><span class="f_BoldCustom"><a href="pause.htm" class="topiclink">Pause</a></span></li>
+<li><span class="f_BoldCustom"><a href="context_menus.htm" class="topiclink">Context Menus</a></span></li>
+<li><span class="f_BoldCustom"><a href="hover_popup.htm" class="topiclink">Hover Popup</a></span></li>
+<li><span class="f_BoldCustom"><a href="main_menu_structure.htm" class="topiclink">Main Menu Structure</a></span><span class="f_ListBulleted"> </span></li>
+</ul>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Other Ajax Web Interface Sections</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="ajax_gui_setup.htm" class="topiclink">Ajax Web Interface—Device and Sensor Setup</a></span></li>
+<li><span class="f_BoldCustom"><a href="ajax_gui_advanced.htm" class="topiclink">Ajax Web Interface—Advanced Procedures</a></span></li>
+</ul>
+<p class="p_InTopicHeading"><span class="f_InTopicHeading">Related Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="enterprise_console.htm" class="topiclink">Enterprise Console</a></span></li>
+</ul>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="smartphone_apps.htm" class="topiclink">PRTG Apps for Mobile Network Monitoring</a></span></li>
+</ul>
+
+    </div>
+    <p><small>Keywords: </small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="alarms.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="logs.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

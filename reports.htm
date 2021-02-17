@@ -1,0 +1,43 @@
+﻿<#lang key="html.reports.title" default="Reports" var="pagetitle">
+<#lang key="html.reports.titlefilter" default="reports&nbsp;" var="titlefilter">
+<#include file="includes\htmlheader.htm" bodyclass="" ajax="exclude">
+<#include file="includes\pageheader.htm" ajax="exclude">
+<#breadcrumbs varexpand="this" this="@pagetitle">
+<div id="main" data-title="<#pagetitle>" data-contexthelpshow="<#system type='showhelp'>">
+  <div id="content">
+		<div class="buttonbox normalpage">
+			<a href='objecthistory.htm?tabid=7' data-placement="bottom" title="<#lang key="html.global.History" default="History">" style="<#hidefornonadmins>"><i class="icon-dark icon-note"></i></a>
+			<#include file="includes\linkpagebutton.htm">
+		</div>
+		<#system type="checkie7">
+		<div class="prtg-plugin" data-plugin="prtg-table">
+			<#table tableid="reporttable"
+				content="reports"
+				userid="<#userid>"
+				columns="name,template,securitycontext,period,schedule,email,status,nextrun,lastrun,numberofsensors,links,checkbox"
+				count="all"
+				tools="delete,edit"
+				sortby="name"
+				sortable="true"
+				tabletitle="@pagetitle"
+				links="true"
+				refreshable="true"
+		    filters="words!@titlefilter,tags"
+				varexpand="tabletitle,filters"
+				>
+		</div>
+		<#lang key="html.reports.addreport" default="Add Report" var="addreport">
+		<#system type="usertype" varexpand="contentnotreadonly" contentnotreadonly="<p><a class=actionbutton href='/addreport.htm?id=new'><span class='ui-icon ui-icon-circle-plus'></span>@addreport</a></p>">
+  </div>
+<#system type='showhelp' tct="theater" page="help-reports" var="tctfile">
+<#include file="@tctfile" page="@page" role="@role" varexpand="file,page,role" var="tctcontent">
+<#lang key="html.reports.title" default="Reports" var="helptitle">
+<#lang key="html.reports.text2" default="Reports are used to analyze monitoring data, either once or at specified intervals. You can define any number of reports." var="helptext">
+<#lang key="html.reports.help.link" default="<a href='/help/reports_step_by_step.htm' target='_blank'><b>Help: Reports Step By Step</b></a>" var="helplink">
+<#system type='showhelp' var='showhelp'>
+<#if value="@tctcontent" is="" then="@helptext" else="<tcthelp>@tctcontent</tcthelp>" var="helptxt" varexpand="value,then,else">
+<#help varexpand="title,text,show,target" title="@helptitle" text="@helptxt @helplink" show="@showhelp" target="#header_help">
+</div>
+<#include file="includes\foreachpageview.htm">
+<#include file="includes\pagefooter.htm" ajax="exclude">
+<#include file="includes\htmlfooter.htm" ajax="exclude">

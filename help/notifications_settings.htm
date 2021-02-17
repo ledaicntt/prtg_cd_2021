@@ -1,0 +1,824 @@
+﻿<!--Account Settings—Notifications-->
+
+
+<div id="main">
+  <div id="head">
+     <div class="buttonbox">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="my_account_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="notification_contacts.htm" class="manual-next-icon">Next</a>
+     </div>
+     PRTG Manual: <b>Account Settings—Notifications</b>
+  </div> 
+
+
+  <div id="content">
+    <div class="tabs-container help"> 
+      <h1><%NUMBERING1%>.<%NUMBERING2%>.<%NUMBERING3%> PRTG Manual: Account Settings—Notifications</h1> 
+      <p>To open the account settings of the currently logged in user, select <span class="f_BoldCustom">Setup</span><span class="f_ImageCaption" style="font-family: 'Trade Gothic LT Std Cn'; font-style: italic;"> </span><span class="f_BoldCustom">| Account Settings </span>from the main menu. Select the various tabs to change the different settings.</p>
+<div class="p_ImageCaption"><div style="width:435px;padding:0px"><img src="account_settings_tabs.png" width="435" height="33" style="border:none" alt="Account Settings Tabs" title="Account Settings Tabs" /><p style="text-align:center"><span class="f_ImageCaption">Account Settings Tabs</span></p></div></div>
+<p>You can define the following aspects of your account settings:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notifications</a></span></li>
+<li><span class="f_BoldCustom"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li><span class="f_BoldCustom"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a> </span><br />
+<span class="f_BoldCustom">&nbsp;</span></li>
+</ul>
+<p>In the notification settings you can define and change notifications for the current PRTG user. Notifications can be triggered for specific sensor states and values. </p>
+<p><img src="icon-prtg-on-premises.png" width="17" height="17" alt="icon-prtg-on-premises" style="float:left;margin:0px 10px 10px 0px; border:none" />If you use PRTG on premises and open the system administration page from another administration page, PRTG will ask you to enter your credentials again for security reasons if 15 minutes (900 seconds) have passed since your last credential-based login. A dialog box will appear. Enter your <span class="f_BoldCustom">Login Name</span> and <span class="f_BoldCustom">Password</span> for PRTG in the corresponding fields and confirm to continue.</p>
+<div class="p_ImageCaption"><div style="width:489px;padding:0px"><img src="account_settings_notifications_zoom46.png" width="489" height="167" style="border:none" alt="Notification Settings" title="Notification Settings" /><p style="text-align:center"><span class="f_ImageCaption">Notification Settings</span></p></div></div>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Click here to enlarge: <a href="https://media-s3.paessler.com/prtg-screenshots/account_settings_notifications.png" target="_blank" class="weblink">https://media-s3.paessler.com/prtg-screenshots/account_settings_notifications.png</a></span></p>
+<p class="p_InTopicHeading"><a id="note"></a><span class="f_InTopicHeading">Note</span></p>
+<p>This section describes one of four steps to set up the notification system in PRTG. A complete notification setup involves:</p>
+<ol style="text-indent:0px; margin-left: 15px;list-style-position:outside;">
+<li value=""1""><span class="f_ListNumbered">Checking and setting up the </span><span class="f_BoldCustom">Notification Delivery</span><span class="f_ListNumbered"> settings. This tells PRTG how and where to send messages.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span><span class="f_ListNumbered">.</span></li>
+<li value=""2""><span class="f_ListNumbered">Checking and setting up </span><span class="f_BoldCustom">Notification Contacts</span><span class="f_ListNumbered"> for the users of your PRTG installation. This defines where to send notifications.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListNumbered">.</span></li>
+<li value=""3""><span class="f_ListNumbered">Checking and setting up </span><span class="f_BoldCustom">Notifications</span><span class="f_ListNumbered">. This defines the kind of message and its content.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notifications</a></span><span class="f_ListNumbered">.</span></li>
+<li value=""4""><span class="f_ListNumbered">Checking and setting up </span><span class="f_BoldCustom">Notification Triggers</span><span class="f_ListNumbered"> for objects. This provokes the defined notifications.</span><br />
+<span class="f_ListNumbered">For detailed information, see </span><span class="f_BoldCustom"><a href="sensor_notifications_settings.htm" class="topiclink">Sensor Notifications Settings</a></span><span class="f_ListNumbered">.</span></li>
+</ol>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />We recommend that you always set up at least two notifications with different delivery methods for a notification trigger, for example, one <a href="notifications_settings.htm#email" class="topiclink">email notification</a> and one <a href="notifications_settings.htm#sms" class="topiclink">SMS notification</a>. If delivery via email fails (due to an email server failure or other reasons), PRTG can still notify you via your smartphone. Simply set your latency setting to a <a href="sensor_notifications_settings.htm#state" class="topiclink">state trigger</a> and a notification via a delivery method other than the one for the first trigger. Or set up a second trigger with another notification for the corresponding object.</p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" />For background information, please see the <span class="f_BoldCustom"><a href="notifications.htm" class="topiclink">Notifications</a></span> section.</p>
+<p class="p_InTopicHeading"><a id="overview"></a><span class="f_InTopicHeading">Notifications Overview</span></p>
+<p>Click the <span class="f_BoldCustom">Notifications</span> tab to show a list of existing notifications. Using the buttons in the column <span style="font-weight: bold;">Links</span>, perform the following actions to set up a notification:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Test</span><span class="f_ListBulleted">: Trigger this notification immediately</span> <span class="f_ListBulleted">for testing purposes. </span><br />
+<img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">When testing notifications, PRTG will not resolve the placeholders, but rather send the original variables instead.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+<li><span class="f_BoldCustom">Pause</span><span class="f_ListBulleted">: Pause this notification. If a notification is <a href="pause.htm" class="topiclink">paused</a>, PRTG will not send messages when this notification is triggered.</span></li>
+<li><span class="f_BoldCustom">Edit</span><span class="f_ListBulleted">: Open the <a href="notifications_settings.htm#settings" class="topiclink">settings of a notification</a> to edit them. </span></li>
+<li><span class="f_BoldCustom">Clone</span><span class="f_ListBulleted">: Create an exact copy of this notification. The <a href="clone_object.htm" class="topiclink">clone</a> is added to the notifications list as </span><span class="f_ItalicCustom">Clone of [...]</span></li>
+<li><span class="f_BoldCustom">Delete</span><span class="f_ListBulleted">: Delete this notification (not possible for predefined notifications).</span></li>
+<li><span class="f_BoldCustom">Used by</span><span class="f_ListBulleted">: Show all objects that trigger this notification.</span></li>
+</ul>
+<p>Please also see <span class="f_BoldCustom"><a href="working_with_lists.htm" class="topiclink">Working with Table Lists</a></span>. Additionally, the multi-edit functionality is available. This enables you to change properties of several objects simultaneously via bulk changes. For more details, see the <span class="f_BoldCustom"><a href="multi_edit_lists.htm" class="topiclink">Multi-Edit Lists</a></span> section.</p>
+<p class="p_InTopicHeading"><a id="settings"></a><span class="f_InTopicHeading">Notifications Settings</span></p>
+<p>Click the <span class="f_BoldCustom">Add new notification</span> button to add a new notification, or click the name of an existing notification to edit it.</p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />This documentation refers to the <span class="f_BoldCustom">PRTG System Administrator</span> user accessing the Ajax interface on a master node. If you use other user accounts, interfaces, or nodes, you might not see all of the options in the way described here. If you use a cluster installation, note that failover nodes are read-only by default.</p>
+<p><a id="basic"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Basic Notification Settings</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Notification Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter a meaningful name for the notification, for example, </span><span class="f_ItalicCustom">SMS to service team</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Tags</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter one or more <a href="tags.htm" class="topiclink">tags</a>. Confirm each tag with the space, comma, or enter key. You can use tags to group sensors and use tag-filtered views later on. Tags are not case sensitive. Tags will be automatically <a href="tags.htm" class="topiclink">inherited</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Status</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select the status of the notification. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Started</span>: This notification is active. PRTG executes this notification when it is triggered.</li>
+<li><span class="f_BoldCustom">Paused</span>: <span class="f_ListBulleted">Pause this notification. If a notification is paused, PRTG does not execute this notification when it is triggered.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Schedule</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define intervals for notifications to pause. You might want the notifications to pause for scheduled maintenance periods or regular server reboots at certain intervals. For continuous notification select </span><span class="f_BoldCustom">None.</span><span class="f_ListBulleted"> This selection will make your notifications be active 24/7 without pause. You can also choose one of the suggested schedules from the list. Usually schedules define when this notification will be active. Schedules defined as period list set this notification to </span><span class="f_ItalicCustom">inactive</span><span class="f_ListBulleted"> at the corresponding time spans. The available options depend on your setup. To add or change existing schedules, please see </span><span class="f_BoldCustom"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Postpone</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define whether PRTG should send you notifications that were triggered while the notification was </span><span class="f_BoldCustom">Paused</span><span class="f_ListBulleted"> later on, when the notification status is in </span><span class="f_BoldCustom">Started</span><span class="f_ListBulleted"> again.</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">No</span>: Discard all notifications that are triggered while the notification is paused.</li>
+<li><span class="f_BoldCustom">Yes</span>: Collect all notifications that are triggered while the notification is paused. Send out all these notifications once the <span class="f_BoldCustom">Paused </span>status ends.</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="summarization"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Notification Summarization</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; height:489px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Method</span></p>
+</td>
+<td style="vertical-align:top; width:324px; height:489px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define if and how PRTG summarizes several notifications into one or more messages (max. 1,000 characters). Define if several notification triggers are to be collected over a specified time period and then send as a single summarized notification. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Always notify ASAP</span><span class="f_ListBulleted">: Always send out one notification for each received notification trigger as soon as possible (for example, immediately).</span></li>
+<li><span class="f_BoldCustom">Send first DOWN message ASAP, then summarize</span><span class="f_ListBulleted">: When receiving several </span><span class="f_BoldCustom">DOWN</span><span class="f_ListBulleted"> triggers, send the first notification immediately, then keep summarizing notification triggers into one message, regardless of sensor state.</span></li>
+<li><span class="f_BoldCustom">Send first DOWN and UP message ASAP, then summarize</span><span class="f_ListBulleted">: When receiving several </span><span class="f_BoldCustom">DOWN</span><span class="f_ListBulleted"> or </span><span class="f_BoldCustom">UP</span><span class="f_ListBulleted"> triggers, send each first notification immediately, then keep summarizing notification triggers into one message, regardless of sensor state. </span></li>
+<li><span class="f_BoldCustom">Send all DOWN messages ASAP, summarize other trigger types</span><span class="f_ListBulleted">: When receiving several </span><span class="f_BoldCustom">DOWN</span><span class="f_ListBulleted"> triggers, send out one notification for each trigger received, but summarize notifications for all non-DOWN triggers into one message.</span></li>
+<li><span class="f_BoldCustom">Send all DOWN and UP messages ASAP, summarize other trigger types</span><span class="f_ListBulleted">: When receiving several </span><span class="f_BoldCustom">DOWN</span><span class="f_ListBulleted"> or </span><span class="f_ListBulleted" style="font-weight: bold;">UP</span><span class="f_ListBulleted"> triggers, send out one notification for each trigger received, but summarize the notifications for all non-DOWN and non-UP triggers into one message.</span></li>
+<li><span class="f_BoldCustom">Always summarize notifications</span><span class="f_ListBulleted">: When receiving several notification triggers, summarize notifications, regardless of the kind of trigger received. Please note, the maximum number of notifications (see below) still applies.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></li>
+</ul>
+<p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">Regardless of the option you choose, PRTG always executes notifications of the types </span><span class="f_ListBulleted" style="font-weight: bold;">Ticket</span><span class="f_ListBulleted">, </span><span class="f_BoldCustom">Execute HTTP Action</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">Execute Program</span><span class="f_ListBulleted"> immediately. PRTG will always send out one message for each of these notifications immediately. All other notification types can be summarized.</span></p>
+<p class="p_ListBulleted"><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">'first DOWN' and 'first UP' messages refer to trigger condition and clear condition respectively. You can also define 'WARNING' or 'UNUSUAL' states as trigger conditions or even thresholds or other triggers notification summarizations. The condition clear triggers, if applicable, are defined in the respective trigger conditions as well. The triggers all qualify as &quot;first DOWN&quot; or &quot;first UP&quot; messages.  </span></p>
+<p class="p_ListBulleted"><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">PRTG collects up to 25 single notifications for one summarization and will send out the message as soon as this number is reached (or when the gathering time has passed). If there are more than 25 notifications within the defined time span, you will receive more than one message with up to 25 entries each. For example, 74 collected notifications would result in 3 summarized messages with 25, 25, and 24 collected notifications.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Subject for Summarized Messages</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define a subject that PRTG will include when sending summarized notifications. You can use the placeholder </span><span class="f_ItalicCustom">%SUMMARYCOUNT</span><span class="f_ListBulleted"> for the number of messages that are summarized. </span></p>
+<p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The subject you define is only used for </span><span class="f_BoldCustom">Send Email</span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom">Amazon SNS</span><span class="f_ListBulleted"> messages.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Length of Gathering (Minutes)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define a time span in minutes to define how long PRTG collects notifications for summarization. Please enter an integer value. </span></p>
+<p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">If you enter a rather long time span, for example, </span><span class="f_BoldCustom">60</span><span class="f_ListBulleted"> minutes, PRTG will collect notifications for one hour before sending them out summarized unless other features (see above) require an earlier message dispatch. </span></p>
+</td>
+</tr>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 5px 0px 5px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Access Rights</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">User Group Access</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define which user group(s) will have access to the object that you are editing. A table with user groups and rights is shown; it contains all user groups from your setup. For each user group you can choose from the following access rights:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Inherited</span><span class="f_ListBulleted">: Use the settings of the parent object.</span></li>
+<li><span class="f_BoldCustom">None</span><span class="f_ListBulleted">: Users in this group cannot see or edit the object. The object does not show up in lists. </span></li>
+<li><span class="f_BoldCustom">Read</span><span class="f_ListBulleted">: Users in this group can see the object and review its settings.</span></li>
+<li><span class="f_BoldCustom">Write</span><span class="f_ListBulleted">: Users in this group can see the object, as well as review and edit its settings. However, they cannot edit access rights settings.</span></li>
+<li><span class="f_BoldCustom">Full</span><span class="f_ListBulleted">: Users in this group can see the object, as well as review and edit its settings as well as edit access rights.</span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">You can create new user groups in the </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a> </span><span class="f_ListBulleted">settings.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_InTopicHeading"><a id="methods"></a><span class="f_InTopicHeading">Notifications Settings—Choose Notification Methods</span></p>
+<p>With the following settings, you can add one or more methods for how PRTG sends out a notification message. You can choose one method or combine several methods from the list. Whenever the notification is triggered, PRTG sends out messages or performs actions for all configured methods at once.</p>
+<p>To choose a method, mark the check box in front of the corresponding notification type. You can then see and set the options as described below. The following notification methods are available.</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#email" class="topiclink">Email</a> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#push" class="topiclink">Push Notification</a> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#sms" class="topiclink">SMS/Pager Message</a> </span><img src="icon-prtg-on-premises.png" width="17" height="17" alt="icon-prtg-on-premises" style="border:none" /><span class="f_ImageCaption"> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#eventlog" class="topiclink">Add Entry to Event Log</a> </span><img src="icon-prtg-on-premises.png" width="17" height="17" alt="icon-prtg-on-premises" style="border:none" /><span class="f_ImageCaption"> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#syslog" class="topiclink">Syslog Message</a> </span><img src="icon-prtg-on-premises.png" width="17" height="17" alt="icon-prtg-on-premises" style="border:none" /><span class="f_ImageCaption"> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#trap" class="topiclink">SNMP Trap Message</a> </span><img src="icon-prtg-on-premises.png" width="17" height="17" alt="icon-prtg-on-premises" style="border:none" /><span class="f_ImageCaption"> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#http" class="topiclink">Execute HTTP Action</a> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#program" class="topiclink">Execute Program</a> </span><img src="icon-prtg-on-premises.png" width="17" height="17" alt="icon-prtg-on-premises" style="border:none" /><span class="f_ImageCaption"> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#sns" class="topiclink">Amazon SNS Message</a> </span></li>
+<li><span class="f_ListBulleted"><a href="notifications_settings.htm#ticket" class="topiclink">Ticket</a> </span></li>
+</ul>
+<p><img src="icon-book-bulb.png" width="17" height="17" alt="icon-book-bulb" style="float:left;margin:0px 10px 10px 0px; border:none" />In your message, you can use various placeholders. Some of them are already filled in by default. For a complete list of available placeholders, please see this <span class="f_ListBulleted">Knowledge Base article: <a href="https://kb.paessler.com/en/topic/373?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">What placeholders can I use with PRTG?</a></span></p>
+<p><img src="icon-prtg-on-premises.png" width="17" height="17" alt="icon-prtg-on-premises" style="float:left;margin:0px 10px 10px 0px; border:none" />Some notification types are only available for PRTG on premises (marked with the PRTG on premises icon). You cannot use these on PRTG in the cloud instances. </p>
+<p><a id="email"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Send Email</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This notification method uses notification contacts to deliver the messages. Please set up and check them for the desired user accounts in advance under </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted">.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The three options for recipients below (user, user group, email address) work simultaneously. Because of this, you can define more than one user as recipient of this notification. PRTG sends the notification email to the active email contacts of the user you select, to the active email contacts of all members of the user group you select, and to all email addresses you enter into the </span><span class="f_BoldCustom">Send to Email Address</span><span class="f_ListBulleted"> field.</span></p>
+<p><img src="icon-book-bulb.png" width="17" height="17" alt="icon-book-bulb" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">You can include custom email headers and footers into PRTG HTML emails. For details, please see this Knowledge Base article <a href="https://kb.paessler.com/en/topic/65782?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">How can I include my own logo into HTML emails?</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Send to User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select a user of your PRTG installation to send the notification email to. PRTG sends this notification to each email contact of this user account. You can add and edit email contacts of a user in </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted">. Choose </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> to not use this feature.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Send to User Group</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select a user group to send an email with the notification to all members of this group. PRTG sends this notification to the email contact of every group member. You can edit user groups under </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span><span class="f_ListBulleted"> and email contacts under </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted">. Choose </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> to not use this feature. </span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">If you select a user group and a specific member of this group as recipients, the user will only receive a single email. This also applies if you enter an individual email address below that is already defined as an email contact of the selected user.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">If you define individual email addresses (see below), to a specific user (see above), and a user group, PRTG sends the message to the individual email addresses, to the individual user, as well as to the members of the selected user group. In all cases, PRTG sends one message with all recipients in the &quot;To&quot; field of the email.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Send to Email Address</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter one or more recipient email addresses to which PRTG sends the notification email. If you enter more than one address, separate them with commas. Leave this field empty to send this notification only to the email contacts of the user or members of the user group you choose above.</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">We recommend that you use the options </span><span class="f_BoldCustom">Send to User</span><span class="f_ListBulleted"> and/or </span><span class="f_BoldCustom">Send to User Group</span><span class="f_ListBulleted"> instead because you can manage the notification contacts of users more easily this way.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Subject</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter the subject of the email notification. </span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Several <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> (variables) are used here by default: </span><span class="f_ItalicCustom">[%sitename] %device %name %status %down (%message)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Format</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the kind of email that PRTG sends when the notification is triggered. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">HTML</span><span class="f_ListBulleted">: PRTG uses the default HTML email template for the message part of the email. </span><br />
+<img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" />Please use an email client that can show HTML emails, otherwise you cannot read emails from PRTG.<br />
+&nbsp;</li>
+<li><span class="f_BoldCustom">Text</span><span class="f_ListBulleted">: PRTG uses the default plain text email template for the message part of the email.</span></li>
+<li><span class="f_BoldCustom">Text with custom content</span><span class="f_ListBulleted">: PRTG uses custom plain text for the message part of the email. You can enter your individual text below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Custom Content</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This field is only visible if you select the custom text option above. Enter the desired message for this email notification in plain text format. You can use <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> here. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Priority</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the priority that PRTG sets for the email. Most email clients can show this priority flag. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">highest</span></li>
+<li><span class="f_BoldCustom">high</span></li>
+<li><span class="f_BoldCustom">normal</span></li>
+<li><span class="f_BoldCustom">low</span></li>
+<li><span class="f_BoldCustom">lowest</span></li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="push"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Send Push Notification</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="icon-book-bulb.png" width="17" height="17" alt="icon-book-bulb" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">Push notifications only work with the apps </span><span class="f_BoldCustom"><a href="smartphone_apps.htm#android" class="topiclink">PRTG for Android</a></span><span class="f_ListBulleted"> and </span><span class="f_BoldCustom"><a href="smartphone_apps.htm#ios" class="topiclink">PRTG for iOS</a></span><span class="f_ListBulleted">. You have to activate push notifications in the settings of your app first. For details about the setup, please see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/60892?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">How can I send push notifications with PRTG?</a></span></p>
+<p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This notification method uses notification contacts to deliver the messages. Please set up and check them for the desired user accounts in advance under </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted">.</span></p>
+<p class="p_ListBulleted"><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The PRTG server needs to communicate on port 443 to the PRTG Cloud to send push notifications, which is </span><span class="f_Remarks" style="font-weight: bold;">https://api.prtgcloud.com:443</span><span class="f_ListBulleted"> (the same as for the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="cloud_http_sensor.htm" class="topiclink">Cloud HTTP Sensor</a>,</span><span class="f_ListBulleted"> the </span><span class="f_ListBulleted" style="font-weight: bold;"><a href="cloud_ping_sensor.htm" class="topiclink">Cloud Ping Sensor</a> </span><span class="f_Remarks">and <a href="support_contact_support.htm" class="topiclink">support tickets</a></span><span class="f_ListBulleted">).</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The two options for recipients below (user, user group) work simultaneously. Because of this, you can define more than one user as recipient of this notification. PRTG sends the notification to the active push contacts of the user you select and to the active push contacts of all members of the user group you select.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Send to User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select a user of your PRTG installation to send the push notification to. PRTG sends this notification to each push contact of this user account. You can edit push contacts of a user in </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted"> and add push contacts by activating push notifications in the Android or iOS app with this user. Choose </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> to not use this feature.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Send to User Group</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select a user group to send the push notification to all members of this group. PRTG sends this notification to each push contact of every member of this group. You can edit user groups under </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span><span class="f_ListBulleted"> and push contacts under </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted">. Choose </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> to not use this feature. </span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">If you select a user group and a specific member of this group as recipients at the same time, this user receives the text message only one time.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the message. A message with information about the sensor status is already predefined. Several <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> (variables) are used here: </span><span class="f_ItalicCustom">[%sitename] %device %name %status %down (%message)</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">You can change the message to your liking. </span><span class="f_ListBulleted">To reset this field to its default value, enter a single star symbol </span><span class="f_ItalicCustom">*</span><span class="f_ListBulleted"> (and nothing else). </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="sms"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Send SMS/Pager Message</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">You have to set up this notification method in the </span><span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span><span class="f_ListBulleted"> settings first.</span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This notification method uses notification contacts to deliver the messages. Please set up and check them for the desired user accounts in advance under </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted">.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The three options for recipients below (user, user group, email address) work simultaneously. Because of this, you can define more than one user as recipient of this notification. PRTG sends the notification to the active SMS contacts of the user you select, to the active SMS contacts of all members of the user group you select, and to every phone number you enter into the </span><span class="f_BoldCustom">Send to Number</span><span class="f_ListBulleted"> field.</span></p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This notification method uses the central proxy settings that you define for your PRTG core server. For details, please see </span><span class="f_BoldCustom"><a href="probes_settings.htm#proxy" class="topiclink">System Administration—Core &amp; Probes</a> </span><span class="f_ListBulleted">(section </span><span class="f_BoldCustom">Proxy Configuration</span><span class="f_ListBulleted">).</span></p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This option is not available in PRTG in the cloud.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Send to User</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select a user of your PRTG installation to send the notification to. PRTG sends this notification to each SMS contact of this user account. You can add and edit SMS contacts of a user in </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted">. Choose </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> to not use this feature.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Send to User Group</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select a user group to send a text message with the notification to all members of this group. PRTG sends this notification to each SMS contact of every member of this group. You can edit user groups under </span><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span><span class="f_ListBulleted"> and SMS contacts under </span><span class="f_BoldCustom"><a href="notification_contacts.htm#settings" class="topiclink">Account Settings—Notification Contacts</a></span><span class="f_ListBulleted">. Choose </span><span class="f_BoldCustom">None</span><span class="f_ListBulleted"> to not use this feature. </span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">If you select a user group and a specific member of this group as recipients at the same time, this user receives the text message only one time. This also counts if you enter an individual phone number below that is already defined as an SMS contact of the selected user.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Recipient Number</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the number to which PRTG sends the text message. The format depends on the SMS provider. Usually, you use a plus sign &quot;</span><span class="f_ItalicCustom">+</span><span class="f_ListBulleted">&quot;, followed by country code and number. For example, enter </span><span class="f_ItalicCustom">+1555012345</span>. </p>
+<p class="p_ListBulleted"><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">Ensure the number format meets the requirements of your SMS provider or the hardware that you use in combination with an API call. Sometimes a preceded plus sign is not required. A wrong format may result in undelivered messages!</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">If you enter more than one number, separate them by comma. Leave this field empty to send this notification only to the SMS contacts of the user or members of the user group you choose above.</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">We recommend that you use the options </span><span class="f_BoldCustom">Send to User</span><span class="f_ListBulleted"> and/or </span><span class="f_BoldCustom">Send to User Group</span><span class="f_ListBulleted"> instead because you can manage the notification contacts of users more easily this way.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the message. A message with information about the sensor status is already predefined. Several <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> (variables) are used here: </span><span class="f_ItalicCustom">[%sitename] %device %name %status %down (%message)</span></p>
+<p class="p_ListBulleted"><span class="f_ListBulleted">You can change the message to your liking. </span><span class="f_ListBulleted">To reset this field to its default value, enter a single star symbol </span><span class="f_ItalicCustom">*</span><span class="f_ListBulleted"> (and nothing else). </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="eventlog"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Add Entry to Event Log</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This option is not available in PRTG in the cloud.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Logfile</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the log file into which PRTG writes the message. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Application</span>: Use the Windows application log file in the event log.</li>
+<li><span class="f_BoldCustom">PRTG Network Monitor</span>: Write messages to the PRTG Network Monitor log file in the Windows event log.</li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Event Source</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This setting is only relevant when using the </span><span class="f_BoldCustom">Application</span><span class="f_ListBulleted"> log file. Enter the source for the event. Usually, this is the name of the application.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Event Type</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select the type of the event. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Error</span></li>
+<li><span class="f_BoldCustom">Warning</span></li>
+<li><span class="f_BoldCustom">Information</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Event Log Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the message. A message with information about the sensor status is already predefined. Several <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> (variables) are used here. You can change it to your liking. </span><span class="f_Comment">To reset this field to its default value, enter a single star symbol </span><span class="f_ItalicCustom">*</span><span class="f_Comment"> (and nothing else). </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="syslog"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Send Syslog Message</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This option is not available in PRTG in the cloud.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Host/IP</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the IP address or DNS name of the computer running the syslog server.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">You can receive and analyze syslog messages with the </span><span class="f_BoldCustom"><a href="syslog_receiver_sensor.htm" class="topiclink">Syslog Receiver Sensor</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Syslog Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter the port number on which syslog messages are sent. By default, this is port number </span><span class="f_BoldCustom">514</span><span class="f_ListBulleted">. </span></p>
+<p class="p_ListBulleted"><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">Only User Datagram Protocol (UDP) is supported.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Facility</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the facility information. There are several options available from the list.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Encoding</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the encoding of the syslog message that PRTG sends to your syslog receiver. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted" style="font-weight: bold;">ANSI</span></li>
+<li><span class="f_ListBulleted" style="font-weight: bold;">UTF-8</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the message. A message with information about the sensor status is already predefined. Several <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> (variables) are used here. You can change it to your liking. </span><span class="f_Comment">To reset this field to its default value, enter a single star symbol </span><span class="f_ItalicCustom">*</span><span class="f_Comment"> (and nothing else).</span></p>
+</td>
+</tr>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Send Syslog Message—Syslog Message Severity Status</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ImageCaption"> </span><span class="f_ListBulleted">Depending on the status of the sensor that triggers the syslog notification, PRTG sets the </span><span class="f_ListBulleted" style="font-weight: bold;">Severity</span><span class="f_ListBulleted"> level of the message automatically.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="led_green_big.png" width="21" height="21" alt="led_green_big" style="border:none" /><span class="f_ListBulleted"> OK</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Severity level: Notice (5)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="led_yellow_big.png" width="21" height="21" alt="led_yellow_big" style="border:none" /><span class="f_ListBulleted"> Warning</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Severity level: Warning (4)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="led_red_big.png" width="21" height="21" alt="led_red_big" style="border:none" /><span class="f_ListBulleted"> Error</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Severity level: Error (3)</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="trap"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Send SNMP Trap</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="icon-book-bulb.png" width="17" height="17" alt="icon-book-bulb" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">For information about the OIDs that PRTG uses in the content of the SNMP traps, please see this Knowledge Base article: <a href="https://kb.paessler.com/en/topic/1133?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">Is it possible to send SNMP traps using PRTG?</a></span><br />
+<span class="f_ListBulleted">&nbsp;</span></p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This option is not available in PRTG in the cloud.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Host/IP</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the IP address or DNS name of the computer running the trap receiver.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">You can receive and analyze SNMP trap messages with the </span><span class="f_BoldCustom"><a href="snmp_trap_receiver_sensor.htm" class="topiclink">SNMP Trap Receiver Sensor</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">SNMP Port</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter the port number on which trap messages are sent. By default, this is port number </span><span class="f_BoldCustom">162</span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Community String</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter the community string of the device. By default, this is set to </span><span class="f_BoldCustom">public</span><span class="f_ListBulleted">. Please enter a string or leave the field empty.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Specific Trap Code</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter a code that can help you identify the purpose of the trap. Default value is </span><span class="f_BoldCustom">0</span><span class="f_ListBulleted">. Please enter an integer value.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Message ID</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter an ID that helps you identify the origin of the trap. Please enter an integer value. PRTG sends it on the OID </span><span class="f_ItalicCustom">1.3.6.1.4.1.32446.1.1.1</span>. </p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the message. A message with information about the sensor status is already predefined. Several <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> (variables) are used here. You can change it to your liking. </span><span class="f_Comment">To reset this field to its default value, enter a single star symbol </span><span class="f_ItalicCustom">*</span><span class="f_Comment"> (and nothing else). </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Agent IP</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the IP address of the agent. Leave this field empty to use the IP address of your PRTG web server.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="http"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Execute HTTP Action</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">Regardless of the </span><span class="f_BoldCustom">Notification Summarization</span><span class="f_ListBulleted"> method chosen above, PRTG sends notifications of the type </span><span class="f_BoldCustom">Execute HTTP Action</span><span class="f_ListBulleted"> always as soon as possible (ASAP). They are never summarized.</span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">This notification method uses the central proxy settings that you define for your PRTG core server. For details, please see </span><span class="f_BoldCustom"><a href="probes_settings.htm#proxy" class="topiclink">System Administration—Core &amp; Probes</a></span><span class="f_ListBulleted"> (section </span><span class="f_BoldCustom">Proxy Configuration</span><span class="f_ListBulleted">). </span></p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">For more details, please see the PRTG </span><span class="f_BoldCustom"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span><span class="f_ListBulleted"> in your PRTG web interface. You can find ready-to-use custom notifications in the PRTG Script World, please see <a href="notifications_settings.htm#scriptworld" class="topiclink">below</a>.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">URL</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter the URL to which PRTG sends the request. </span></p>
+<p><img src="icon-i-round.png" width="17" height="17" alt="icon-i-round" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">HTTP notifications work with and without SSL.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">SNI (Server Name Indication)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select if PRTG will send the SNI extension to the TLS protocol along with the HTTP request. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Do not send SNI (default)</span><span class="f_ListBulleted">: PRTG will not send an SNI when executing the HTTP action.</span></li>
+<li><span class="f_BoldCustom">Send SNI</span><span class="f_ListBulleted">: PRTG will send an SNI when calling the target URL. Specify the SNI below.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Virtual Host (SNI)</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">This field is only visible if you select the SNI option above. Enter the SNI name that your endpoint configuration requires. Usually, this is the Fully Qualified Domain Name (FQDN) of the virtual host.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Postdata</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_Comment">Enter postdata if you want to send this data to the URL. You can use <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> here. Line breaks are supported.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="program"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Execute Program</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">Regardless of the </span><span class="f_BoldCustom">Notification Summarization</span><span class="f_ListBulleted"> method chosen above, PRTG sends notifications of the type </span><span class="f_BoldCustom">Execute Program</span><span class="f_ListBulleted"> always as soon as possible (ASAP). They are never summarized.</span></p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">For more details about </span><span class="f_BoldCustom">Custom Notifications</span><span class="f_ListBulleted">, please see the </span><span class="f_BoldCustom"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a></span><span class="f_ListBulleted"> in your PRTG web interface. You can find ready-to-use custom notifications in the PRTG Script World, please see <a href="notifications_settings.htm#scriptworld" class="topiclink">below</a>.</span></p>
+<p><img src="icon-prtg-on-demand.png" width="17" height="17" alt="icon-prtg-on-demand" style="float:left;margin:0px 10px 10px 0px; border:none" />This option is not available in PRTG in the cloud.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Program File</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Select an executable file from the list. PRTG runs it every time the notification is triggered. In this list, you see the files which are in the corresponding </span><span class="f_BoldCustom">/Notifications/EXE</span><span class="f_ListBulleted"> sub-directory of your PRTG core server system. To appear in this list, store the files as </span><span class="f_ListBulleted">BAT, CMD, DLL, EXE, PS1, or VBS. To find this path, please see section </span><span class="f_BoldCustom"><a href="data_storage.htm" class="topiclink">Data Storage</a></span><span class="f_ListBulleted">. </span></p>
+<p class="p_ListBulleted"><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">In a cluster setup, copy your files to every cluster node installation manually. This makes sure PRTG can execute the notification even when the master node fails. If your custom notification executes an external program, install it on all cluster nodes as well. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Parameter</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_Comment">Enter parameters with which the program file will be started. You can use <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> here. For example, is you use a batch file that contains a </span><span class="f_ItalicCustom">%1</span><span class="f_Comment"> variable, you can provide a value for this variable here.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Domain or Computer Name</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_Comment">Enter a Windows authority if you want to use another security context for the program than the security context of the PRTG probe service.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Username</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_Comment">Enter the username for Windows access.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Password</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_Comment">Enter the password for Windows access.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Timeout</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_Comment">Enter a timeout in seconds. After this time has passed, PRTG stops the process if it has not terminated yet. Please enter an integer value.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="sns"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Send Amazon Simple Notification Service Message</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">AWS Access Key ID</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter your access key as shown in your login area at aws.amazon.com. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">AWS Secret Access Key</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter your secret access key as shown in your login area at aws.amazon.com. Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Location</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the location of your Amazon service. Choose one of the shown locations:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">US East (Northern Virginia)</span></li>
+<li><span class="f_ListBulleted">US West (Ohio)</span></li>
+<li><span class="f_ListBulleted">US West (Northern California)</span></li>
+<li><span class="f_ListBulleted">US West (Oregon)</span></li>
+<li><span class="f_ListBulleted">Canada (Central)</span></li>
+<li><span class="f_ListBulleted">EU West (Ireland)</span></li>
+<li><span class="f_ListBulleted">EU Central (Frankfurt)</span></li>
+<li><span class="f_ListBulleted">EU (London)</span></li>
+<li><span class="f_ListBulleted">Asia Pacific (Singapore)</span></li>
+<li><span class="f_ListBulleted">Asia Pacific (Sydney)</span></li>
+<li><span class="f_ListBulleted">Asia Pacific (Seoul)</span></li>
+<li><span class="f_ListBulleted">Asia Pacific (Tokyo)</span></li>
+<li><span class="f_ListBulleted">Asia Pacific (Mumbai)</span></li>
+<li><span class="f_ListBulleted">South America (Sao Paulo)</span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">ARN</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_Comment">Enter the Amazon resource name. </span><span class="f_ListBulleted">Please enter a string.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Subject</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter the subject of the message. Please enter a string.</span></p>
+<p class="p_ListBulleted"><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The maximum length for the subject is 202 characters. Characters that exceed this number will be cut off.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:112px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Message</span></p>
+</td>
+<td style="vertical-align:top; width:324px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the message. A message with information about the sensor status is already predefined. Several <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> (variables) are used here. You can change it to your liking. </span><span class="f_ListBulleted">To reset this field to its default value, enter a single star symbol </span><span class="f_ListBulleted" style="font-family: 'Trade Gothic LT Std Bold'; font-weight: bold;">*</span><span class="f_ListBulleted"> (and nothing else).</span></p>
+<p class="p_ListBulleted"><img src="icon-i-round-red.png" width="17" height="17" alt="icon-i-round-red" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">The message part is only sent if you use email based notifications delivered by Amazon SNS. For SMS delivery, only the subject is sent while the message part is ignored because of SMS size restrictions.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><a id="ticket"></a></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; border:solid 1px #d6d7d8; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_SettingsTableHeader"><span class="f_SettingsTableHeader">Assign Ticket</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" style="vertical-align:top; width:436px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><img src="icon-i-blue.png" width="17" height="17" alt="icon-i-blue" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">Regardless of the </span><span class="f_BoldCustom">Notification Summarization</span><span class="f_ListBulleted"> method chosen above, PRTG sends notifications of the type </span><span class="f_BoldCustom">Assign Ticket</span><span class="f_ListBulleted"> always as soon as possible (ASAP). They are never summarized.</span></p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" /><span class="f_ListBulleted">For details about the ticket system, please see manual section </span><span class="f_BoldCustom"><a href="tickets.htm" class="topiclink">Tickets</a></span><span class="f_ListBulleted">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; height:70px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Assign to User or User Group</span></p>
+</td>
+<td style="vertical-align:top; width:849px; height:70px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Specify whether to assign the notification ticket to a user group or to a single user. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">To User Group</span><span class="f_ListBulleted">: Select a user group below to which PRTG assigns this ticket.</span></li>
+<li><span class="f_BoldCustom">To User</span><span class="f_ListBulleted">: Select the dedicated user below to whom PRTG assigns this ticket.</span><span class="f_ListBulleted"> </span></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Assign Ticket to this User Group / User</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_Comment">Select the user resp. user group to which PRTG assigns the notification ticket.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Subject</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Enter the subject of the ticket. Several placeholders (variables) are used here by default. You can change it to your liking.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Content</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Define the message in the ticket. A message with information about the sensor status is already predefined. Several <a href="notifications_settings.htm#more" class="topiclink">placeholders</a> (variables) are used here. You may change it as you wish. </span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:top; width:297px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">When Condition Clears</span></p>
+</td>
+<td style="vertical-align:top; width:849px; background-color:#ffffff; padding:5px; border:none"><p class="p_ListBulleted"><span class="f_ListBulleted">Specify if PRTG closes the ticket automatically when the defined trigger condition clears. Choose between:</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom">Close ticket automatically (recommended)</span><span class="f_ListBulleted">: PRTG closes the ticket automatically if the trigger condition is not met anymore.</span></li>
+<li><span class="f_BoldCustom">Leave ticket open</span><span class="f_ListBulleted">: PRTG does not close the ticket after the condition has cleared.</span></li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<p>Click <span class="f_BoldCustom">Save</span> to save your settings. If you change tabs or use the main menu, all changes to the settings will be lost!</p>
+<p class="p_InTopicHeading"><a id="scriptworld"></a><span class="f_InTopicHeading">Script World Notifications</span></p>
+<p>In addition to the built-in notification, you can create your own notifications. Just write a script or a program and use it with an <span class="f_BoldCustom">Execute Program</span> notification or execute an HTTP action. There are already many free, useful scripts, plugins, and add-ons for PRTG in the <span class="f_BoldCustom"><a href="https://www.paessler.com/script-world?utm_source=prtg&utm_medium=webgui&utm_campaign=homepage" target="_blank" class="weblink">PRTG Script World</a></span><span class="f_ListBulleted"> available for download</span>. Here is a list of the custom notifications that you can find there.</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted">How to Send Custom HTML Notifications</span></li>
+<li><span class="f_ListBulleted">Microsoft Teams</span></li>
+<li><span class="f_ListBulleted">Sending Notifications Using Telegram Bots</span></li>
+<li><span class="f_ListBulleted">Slack</span></li>
+</ul>
+<p class="p_InTopicHeading"><a id="others"></a><span class="f_InTopicHeading">Others</span></p>
+<p><img src="icon-book-arrows.png" width="17" height="17" alt="icon-book-arrows" style="float:left;margin:0px 10px 10px 0px; border:none" />For information about the comments and history tabs, please see <span class="f_BoldCustom"><a href="object_settings.htm" class="topiclink">Object Settings</a> </span>section.</p>
+<p class="p_InTopicHeading"><a id="more"></a><span class="f_InTopicHeading">More</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="application_programming_interface_api_definition.htm" class="topiclink">Application Programming Interface (API) Definition</a> </span></li>
+<li><span class="f_BoldCustom"><a href="setting_up_a_notification_example.htm" class="topiclink">Setting Up Notifications Based on Sensor Limits: Example</a></span></li>
+<li><span class="f_BoldCustom"><a href="setting_up_notifications_based_on_libraries.htm" class="topiclink">Setting up Notifications Based on Libraries: Example</a></span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: What placeholders can I use with PRTG?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/373?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/373</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: Documentation of SNMP Traps Sent by PRTG</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/1133?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/1133</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: How can PRTG send instant messages to Jabber, ICQ, MSN, Yahoo, etc., using external software?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/14803?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/14803</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: Which audible notifications are available in PRTG? Can I change the default sound?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/26303?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/26303</a> </span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">Knowledge Base: How can I send push notifications with PRTG?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/60892?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/60892</a></span></li>
+</ul>
+<p class="p_ListBulleted"><span class="f_ListBulleted">How can I include my own logo into HTML emails?</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_ListBulleted"><a href="https://kb.paessler.com/en/topic/65782?utm_source=prtg&utm_medium=webgui&utm_campaign=kb" target="_blank" class="weblink">https://kb.paessler.com/en/topic/65782</a> </span></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading"><a id="topics"></a><span class="f_InTopicHeading">Setup—Topics</span></p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="my_account_settings.htm" class="topiclink">Account Settings—My Account</a></span></li>
+<li><span class="f_BoldCustom"><a href="notifications_settings.htm" class="topiclink">Account Settings—Notifications</a></span></li>
+<li><span class="f_BoldCustom"><a href="notification_contacts.htm" class="topiclink">Account Settings—Notification Contacts</a></span></li>
+<li><span class="f_BoldCustom"><a href="schedules_settings.htm" class="topiclink">Account Settings—Schedules</a></span></li>
+<li><span class="f_BoldCustom"><a href="system_website_settings.htm" class="topiclink">System Administration—User Interface</a></span></li>
+<li><span class="f_BoldCustom"><a href="monitoring_settings.htm" class="topiclink">System Administration—Monitoring</a></span></li>
+<li><span class="f_BoldCustom"><a href="notification_delivery_settings.htm" class="topiclink">System Administration—Notification Delivery</a></span></li>
+<li><span class="f_BoldCustom"><a href="probes_settings.htm" class="topiclink">System Administration—Core &amp; Probes</a></span></li>
+<li><span class="f_BoldCustom"><a href="user_accounts_settings.htm" class="topiclink">System Administration—User Accounts</a></span></li>
+<li><span class="f_BoldCustom"><a href="user_groups_settings.htm" class="topiclink">System Administration—User Groups</a></span></li>
+<li><span class="f_BoldCustom"><a href="cluster_settings.htm" class="topiclink">System Administration—Cluster</a></span></li>
+<li><span class="f_BoldCustom"><a href="administrative_tools_settings.htm" class="topiclink">System Administration—Administrative Tools</a></span></li>
+<li><span class="f_BoldCustom"><a href="system_status.htm" class="topiclink">PRTG Status—System Status</a></span></li>
+<li><span class="f_BoldCustom"><a href="auto_update.htm" class="topiclink">PRTG Status—Auto-Update</a></span></li>
+<li><span class="f_BoldCustom"><a href="cluster_status.htm" class="topiclink">PRTG Status—Cluster Status</a></span></li>
+<li><span class="f_BoldCustom"><a href="activation_status.htm" class="topiclink">PRTG Status—Activation Status</a></span></li>
+<li><span class="f_BoldCustom"><a href="downloads.htm" class="topiclink">Downloads and Add-Ons</a></span></li>
+<li><span class="f_BoldCustom"><a href="chrome_desktop_notifications.htm" class="topiclink">Desktop Notifications</a></span></li>
+<li><span class="f_BoldCustom"><a href="support_contact_support.htm" class="topiclink">Support—Contact Support</a></span></li>
+</ul>
+</th>
+</tr>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 10px 0px 10px 0px;"><table style="width:100%; background-color:#f3f2f2; border:none; border-spacing:2px;">
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:436px; padding:5px;"><p class="p_InTopicHeading"><a id="others"></a><span class="f_InTopicHeading">Others</span></p>
+<p>There are some settings that you must make in the <span class="f_BoldCustom"><a href="system_administration_programs.htm" class="topiclink">PRTG Administration Tool</a></span>, available as native Windows application. For more details, please see the sections:</p>
+<ul style="text-indent:0px; margin-left: 13px;list-style-position:outside;">
+<li><span class="f_BoldCustom"><a href="prtg_server_administrator.htm" class="topiclink">PRTG Administration Tool on Core Server System</a> </span></li>
+<li><span class="f_BoldCustom"><a href="prtg_probe_administrator.htm" class="topiclink">PRTG Administration Tool on Remote Probe System</a></span></li>
+</ul>
+</th>
+</tr>
+</table>
+</div>
+
+    </div>
+    <p><small>Keywords: Configure,Configure Notification,Notification</small></p>
+  </div>
+  <div class="buttonbox">
+  <div id="manual-navigation">
+       <a href="/help/index.htm" class="manual-content-icon">Content</a>
+       <span class="spacer"></span><a href="my_account_settings.htm" class="manual-previous-icon">Previous</a>
+       <span class="spacer"></span><a href="notification_contacts.htm" class="manual-next-icon">Next</a>
+  </div>
+  </div>
+</div>
+
+
+

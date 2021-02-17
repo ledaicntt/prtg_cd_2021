@@ -1,0 +1,44 @@
+﻿<#checkobjecttype objecttype="group,device,probenode">
+
+<div class="clusterselector"><#include file="controls\clusterselector.htm"></div>
+
+<div class="prtg-box prtg-plugin" data-plugin="prtg-graphs" data-id="<#objectid>">
+	<div class="graphzoomicon">
+    <a class="zoom" title='<#lang key="html.global.zoomgraph" default="Zoom graph in new window">' href="/graphzoom.htm?id=<#objectid>&graphid=<#graphid>&clgid=<#clgid>" target="_blank">
+      <img class="ui-icon ui-icon-newwin" src="/images/transparent.gif">
+    </a>
+    <a class="save" title='<#lang key="html.global.downloadpng" default="Download the graph (PNG)">' target="_blank" href="<#device type="graphurl" forcepng="true" graphid="0" width="975" height="300" graphstylefile="graphstyling.htm" datastylefile="graphdatastyling.htm"  graphstyling="baseFontSize='10'%20showLegend='1'" datastyling="drawAnchors='1'%20anchorRadius='1'%20lineThickness='2'">">
+      <img class="ui-icon ui-icon-disk" src="/images/transparent.gif">
+    </a>
+    <a class="save" title='<#lang key="html.global.downloadsvg" default="Download the graph (SVG)">' target="_blank" href="<#device type="graphurl" forcesvg="true" graphid="0" width="1500" height="500" graphstylefile="graphstyling.htm" datastylefile="graphdatastyling.htm"  graphstyling="baseFontSize='10'%20showLegend='1'" datastyling="drawAnchors='1'%20anchorRadius='1'%20lineThickness='2'">">
+      <img class="ui-icon ui-icon-disk" src="/images/transparent.gif">
+    </a>
+  </div>
+  <table>
+    <tr>
+     <td>
+      <#object
+      type="graph"
+      width="772"
+      height="125"
+      bgcolor="#f3f2f2"
+      graphtitle="@@notitle@@"
+      graphstylefile="graphstyling.htm"
+      datastylefile="graphdatastyling.htm"
+      graphstyling="baseFontSize='9'%20showLegend='0'"
+      datastyling="lineThickness='2'"
+      refreshable="true">
+    </td>
+    <td>
+      <#group type="legend" width="135">
+    </td>
+  </tr>
+</table>
+</div>
+
+<#include file="controls\sensorgraphs.htm">
+
+<#lang key="html.groupgraph.data" default="Data" var="title">
+<div class="clear scrollabletablecontainer prtg-plugin" data-plugin="prtg-table">
+	<#table tableid="valuetable" content="values" varexpand="tabletitle" tabletitle="@title" columns="datetime,value_,coverage" sortby="-datetime" refreshable="true" display="extendedheaders">
+</div>
